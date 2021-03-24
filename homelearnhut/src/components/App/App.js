@@ -5,6 +5,7 @@ import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
+import TopBar from "../TopBar";
 
 /*
 initial idea: Top level app has 4 states ( or routes)
@@ -54,12 +55,15 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/myClass">
+              <TopBar />
               <MyClassroom />
             </Route>
             <Route path="/pupilPage">
+              <TopBar />
               <HomeworkViewer />
             </Route>
             <Route path="/">
+              <TopBar />
               <NewsFeed />
             </Route>
           </Switch>
