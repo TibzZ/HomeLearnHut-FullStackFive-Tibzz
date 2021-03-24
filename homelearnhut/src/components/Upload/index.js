@@ -1,0 +1,5 @@
+/*
+This is opened when the upload button is clicked on the TopBar component
+
+See wireframe for details of this component
+*/
