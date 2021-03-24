@@ -9,8 +9,8 @@ import AuthButton from "../AuthButton";
 function AppContent() {
     return (
       <div className="App">
-        <h1 className="heading">HomeLearn Hut</h1>
-        <p>LOGO</p>
+        {/* <h1 className="heading">HomeLearn Hut</h1>
+        <p>LOGO</p> */}
         {/* <AuthProvider> */}
         <Router>
           <div>

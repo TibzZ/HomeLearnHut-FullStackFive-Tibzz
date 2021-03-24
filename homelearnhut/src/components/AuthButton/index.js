@@ -13,7 +13,7 @@ function AuthButton() {
       <div>
         <LogoutButton />
         <UserProfile />
-        <AppContent />
+        {/* <AppContent /> */}
       </div>
     );
   }
