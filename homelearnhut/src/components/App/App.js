@@ -3,7 +3,6 @@ import "./App.css";
 import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
-import AuthButton from "../AuthButton";
 /*
 initial idea: Top level app has 4 states ( or routes)
 (- Landing pagedrills down to)
@@ -18,8 +17,6 @@ function App() {
   if (isAuthenticated) {
     return (
       <div className="App">
-        <h1 className="heading">HomeLearn Hut</h1>
-        <p>LOGO</p>
         <AppContent />
       </div>
     );
@@ -27,11 +24,7 @@ function App() {
 
   return (
     <div className="App">
-          <h1 className="heading">HomeLearn Hut</h1>
-          <p>LOGO</p>
-          <AuthButton />
-          <p>If you haven't got an account, click the Sign up button below</p>
-          {/* <Landing /> */}
+          <Landing />
     </div>
   );
 }
