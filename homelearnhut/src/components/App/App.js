@@ -31,46 +31,50 @@ drills down to:
 
 function App() {
   return (
-    <div className="App">
-      {/* <AuthProvider> */}
-      <Router>
-        <div>
-          <h1 data-testid="heading">HomeLearn Hut</h1>
-          <AuthButton />
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">HomeWork Feed</Link>
-              </li>
-              <li>
-                <Link to="/myClass">MyClassroom</Link>
-              </li>
-              <li>
-                <Link to="/pupilPage">Pupil Page</Link>
-              </li>
-            </ul>
-          </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/myClass">
-              <TopBar />
-              <MyClassroom />
-            </Route>
-            <Route path="/pupilPage">
-              <TopBar />
-              <HomeworkViewer />
-            </Route>
-            <Route path="/">
-              <TopBar />
-              <NewsFeed />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-      {/* </AuthProvider> */}
-    </div>
+    <>
+      <HomeworkViewer />
+    </>
+    // <div className="App">
+    //   {/* <AuthProvider> */}
+    //   <Router>
+    //     <div>
+    //       <h1 data-testid="heading">HomeLearn Hut</h1>
+    //       <AuthButton />
+    //       <nav>
+    //         <ul>
+    //           <li>
+    //             <Link to="/">HomeWork Feed</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/myClass">MyClassroom</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/pupilPage">Pupil Page</Link>
+    //           </li>
+    //         </ul>
+    //       </nav>
+
+    //       {/* A <Switch> looks through its children <Route>s and
+    //         renders the first one that matches the current URL. */}
+    //       <Switch>
+    //         <Route path="/myClass">
+    //           <TopBar />
+    //           <MyClassroom />
+    //         </Route>
+    //         <Route path="/pupilPage">
+    //           <TopBar />
+    //           <HomeworkViewer />
+    //         </Route>
+    //         <Route path="/">
+    //           <TopBar />
+    //           <NewsFeed />
+    //         </Route>
+    //       </Switch>
+    //     </div>
+    //   </Router>
+    //   {/* </AuthProvider> */}
+    //</div >
   );
 }
 
