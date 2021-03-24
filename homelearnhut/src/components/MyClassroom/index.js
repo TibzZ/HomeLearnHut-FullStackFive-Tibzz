@@ -8,9 +8,10 @@ a) not submitted the homework ( e.g.  a cross icon)
 b) submitted the homework but is has not been reviwed by teacher ( e.g. a file sheet icon )
 c) submitted the homework and it has been approved ( e.g. a tick icon )
 */
+
 import React from 'react';
 
-function myClassroom(){
+function MyClassroom(){
 
 
     return(
@@ -25,4 +26,4 @@ function myClassroom(){
     );
 }
 
-export default myClassroom;
+export default MyClassroom;
