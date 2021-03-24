@@ -4,7 +4,7 @@ This is accessed through clicking on a student within the "MyClassroom" componen
 */
 
 function HomeworkViewer() {
-    return null;
+    return <></>
 }
 
 export default HomeworkViewer;
