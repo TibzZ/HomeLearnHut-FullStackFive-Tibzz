@@ -9,7 +9,7 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 import Post from "./Post";
 
 const NewsFeed = () => {
-    return NewsFeed(
+    return (
 
         <ul>
             <li>
