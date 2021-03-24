@@ -20,6 +20,8 @@ const Upload = () => {
             <br />
             <button>Upload</button>
             <br />
+            upload status
+            <br />
             <button>Submit</button>
         </>
     );
