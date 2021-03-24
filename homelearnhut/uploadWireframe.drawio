@@ -1,0 +1,49 @@
+<mxfile>
+    <diagram id="poGAtl-klRRa6cUFjhaT" name="Page-1">
+        <mxGraphModel dx="598" dy="188" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="16" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="170" y="90" width="310" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry width="310.00000000000006" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Title" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="16" vertex="1">
+                    <mxGeometry x="128.27586206896552" y="32.400000000000006" width="42.758620689655174" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Enter title.." style="rounded=0;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry x="32.06896551724138" y="54.00000000000001" width="245.86206896551727" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Comment&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="16" vertex="1">
+                    <mxGeometry x="128.27586206896552" y="75.60000000000001" width="42.758620689655174" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Enter comment..." style="rounded=0;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry x="32.06896551724138" y="97.20000000000002" width="245.86206896551727" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Due date:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="16" vertex="1">
+                    <mxGeometry x="96.20689655172416" y="118.80000000000001" width="106.89655172413795" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Enter due date..." style="rounded=0;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry x="32.06896551724138" y="140.40000000000003" width="245.86206896551727" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Browse" style="rounded=1;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry x="10.689655172413794" y="183.60000000000002" width="85.51724137931035" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Submit" style="rounded=1;whiteSpace=wrap;html=1;" parent="16" vertex="1">
+                    <mxGeometry x="58.79310344827587" y="216.00000000000003" width="181.72413793103453" height="43.2" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Status message:&lt;br&gt;homework.png" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="16" vertex="1">
+                    <mxGeometry x="96.20689655172416" y="183.60000000000002" width="181.72413793103453" height="21.6" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="16" vertex="1">
+                    <mxGeometry x="260.0013333333333" y="6.608461538461539" width="37.34466666666667" height="37.34466666666667" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="shape=cross;whiteSpace=wrap;html=1;rotation=45;size=0.2000093882600815;" parent="16" vertex="1">
+                    <mxGeometry x="262.63503355759156" y="9.076413556597982" width="32.06896551724138" height="32.400000000000006" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
