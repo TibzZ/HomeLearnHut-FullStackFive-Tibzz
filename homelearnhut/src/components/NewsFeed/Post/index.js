@@ -8,6 +8,9 @@ const Post
         HomeWork piece
                 <br />
         Comment
+                <br />
+                <button></button>
+
             </>
         );
     }
