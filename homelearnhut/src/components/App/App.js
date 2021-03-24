@@ -4,6 +4,7 @@ import "./App.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
+import AuthButton from "../AuthButton";
 
 /*
 initial idea: Top level app has 4 states ( or routes)
@@ -34,7 +35,7 @@ function App() {
       <Router>
         <div>
           <h1 data-testid="heading">HomeLearn Hut</h1>
-          {/* <AuthButton /> */}
+          <AuthButton />
           <nav>
             <ul>
               <li>
