@@ -10,6 +10,7 @@ c) submitted the homework and it has been approved ( e.g. a tick icon )
 */
 
 import React from 'react';
+import Student from './Student';
 
 function MyClassroom(){
 
