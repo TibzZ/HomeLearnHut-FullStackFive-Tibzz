@@ -8,16 +8,18 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 
 import Post from "./Post";
 
-const NewsFeed = () => {
+const NewsFeed = ({ homeworkList }) => {
+
+
     return (
 
         <ul>
-            <li>
-                <Post />
-            </li>
-            <li>
-                <Post />
-            </li>
+
+            {homeworkList.map((homework, index) => [
+
+                <li><Post homework={homework} /></li>,
+
+            ])}
         </ul>
     );
 }

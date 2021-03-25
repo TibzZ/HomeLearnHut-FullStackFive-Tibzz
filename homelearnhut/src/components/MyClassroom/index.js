@@ -12,17 +12,24 @@ c) submitted the homework and it has been approved ( e.g. a tick icon )
 import React from 'react';
 import Student from './Student';
 
-function MyClassroom(){
+function MyClassroom({ children }) {
 
 
-    return(
+    return (
         <>
-        <h1>My Classroom</h1>
-        <Student name={"Tom"} age={5}/>
-        <Student name={"Jack"} age={6}/>
-        <Student name={"Ellie"} age={4}/>
-        <Student name={"Jane"} age={7}/>
-        <Student name={"Claire"} age={5}/>
+
+            {console.log(children)}
+
+            <h1>My Classroom</h1>
+
+            <ul>
+
+                {children.map((child, index) => [
+                    <li><Student name={child.name} avatar={child.avatar} age={5} /></li>,
+                ])}
+            </ul>
+
+
         </>
     );
 }

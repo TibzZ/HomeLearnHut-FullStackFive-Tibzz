@@ -13,6 +13,7 @@ drills down to:
 */
 
 function App() {
+
   const { isAuthenticated } = useAuth0();
   if (isAuthenticated) {
     return (
@@ -23,6 +24,10 @@ function App() {
   }
 
   return (
+
+    // <>
+    //   <HomeworkViewer />
+    // </>
     <div className="App">
           <Landing />
     </div>
