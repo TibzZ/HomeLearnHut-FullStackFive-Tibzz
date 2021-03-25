@@ -4,7 +4,6 @@ This is accessed through clicking on a student within the "MyClassroom" componen
 */
 
 function HomeworkViewer() {
-
     const name = "Lucas";
     const setDate = "Yesterday"
     const dueDate = "Tommorow";
