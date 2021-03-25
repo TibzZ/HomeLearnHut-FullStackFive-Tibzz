@@ -10,14 +10,18 @@ import TopBar from "../TopBar";
 import { reducer } from "../../libs/reducer"
 import { initialState } from "../../libs/initialState"
 
+import * as actions from "../../libs/actions";
+
 
 function AppContent() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
+  // () => dispatch(state, { type: actions.UPLOAD })
+  //() => console.log(actions.UPLOAD)
 
   return (
     <div className="App">
+      <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD })} />
 
 
       <h1 data-testid="heading">HomeLearn Hut</h1>
@@ -45,16 +49,13 @@ function AppContent() {
 
           <Switch>
             <Route path="/myClass">
-              <TopBar />
+              <TopBar uploadClick={() => console.log("test")} />
               <MyClassroom children={state[0].children} />
             </Route>
             <Route path="/pupilPage">
-              <TopBar />
-              {/* <TopBar uploadClick={() => console.log("click")} /> */}
               <HomeworkViewer />
             </Route>
             <Route path="/">
-              <TopBar />
               <NewsFeed homeworkList={state} />
             </Route>
           </Switch>
