@@ -5,11 +5,11 @@ import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
-//import TopBar from "../TopBar";
+import TopBar from "../TopBar";
 import Database from "../Database";
 
 function AppContent() {
-  const [state, dispatch] = Database();
+  const [homework, dispatch] = Database();
 
 
   return (
@@ -36,16 +36,21 @@ function AppContent() {
 
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
+
+
           <Switch>
             <Route path="/myClass">
-              <MyClassroom children={state[0].children} />
+              <TopBar />
+              <MyClassroom children={homework[0].children} />
             </Route>
             <Route path="/pupilPage">
+              <TopBar />
               {/* <TopBar uploadClick={() => console.log("click")} /> */}
               <HomeworkViewer />
             </Route>
             <Route path="/">
-              <NewsFeed homeworkList={state} />
+              <TopBar />
+              <NewsFeed homeworkList={homework} />
             </Route>
           </Switch>
         </div>
