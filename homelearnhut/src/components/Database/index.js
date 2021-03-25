@@ -58,11 +58,14 @@ const Database = () => {
         addChild("Elaine");
         addChild("Rupert");
         addChild("Janice");
+        addChild("Fifi");
+
 
         // create homework
         addHomework("Maths week 1", tempHomeworkUrl, "yesterday", "tommorow", children);
         addHomework("English week 1", tempHomeworkUrl, "yesterday", "tommorow", children);
         addHomework("Art week 1", tempHomeworkUrl, "yesterday", "tommorow", children);
+        addHomework("Art week 1", "https://static.thenounproject.com/png/363640-200.png", "yesterday", "tommorow", children);
 
         return homework;
     }
