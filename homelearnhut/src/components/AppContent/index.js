@@ -16,8 +16,6 @@ import * as actions from "../../libs/actions";
 function AppContent() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // () => dispatch(state, { type: actions.UPLOAD })
-  //() => console.log(actions.UPLOAD)
 
   return (
     <div className="App">
