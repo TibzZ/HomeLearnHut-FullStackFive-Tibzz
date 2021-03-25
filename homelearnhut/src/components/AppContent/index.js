@@ -14,6 +14,10 @@ function AppContent() {
 
   return (
     <div className="App">
+      Test top bar
+      <TopBar onClick={() => console.log("call the reducer here or something.")} />
+
+
       <h1 data-testid="heading">HomeLearn Hut</h1>
       <p>LOGO</p>
       {/* <AuthProvider> */}
