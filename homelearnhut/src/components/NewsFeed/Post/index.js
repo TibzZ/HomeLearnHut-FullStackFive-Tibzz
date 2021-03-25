@@ -1,15 +1,23 @@
 const Post
-    = () => {
+    = ({ homework }) => {
         return (
 
             <>
-                Date
+                {homework.name}
                 <br />
-        HomeWork piece
+                {homework.imageUrl}
+                <img src={homework.image} />
                 <br />
-        Comment
+                date set<br />
+                {homework.dateSet}
                 <br />
-                <button></button>
+                date due<br />
+                {homework.dateDue}
+                <br />
+                Comment:
+                <br />
+                {homework.comment}<br />
+                <button>Inspect</button>
 
             </>
         );

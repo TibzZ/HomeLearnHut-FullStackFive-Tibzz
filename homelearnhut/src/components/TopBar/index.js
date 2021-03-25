@@ -10,7 +10,7 @@ It says who is logged in, (perhaps even an avatar), and has a logout button
 const TopBar = () => {
     return (
         <>
-            HomeWork Hut (Logo)<button>Upload</button><button>Logout</button>
+            HomeWork Hut (Logo)<button onClick={console.log("need to implement upload functionality")}>Upload</button><button>Logout</button>
         </>
     );
 }
