@@ -11,6 +11,7 @@ import Database from "../Database";
 function AppContent() {
   const [state, dispatch] = Database();
 
+
   return (
     <div className="App">
       <h1 data-testid="heading">HomeLearn Hut</h1>
