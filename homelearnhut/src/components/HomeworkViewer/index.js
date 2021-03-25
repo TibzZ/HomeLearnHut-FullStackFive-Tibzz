@@ -19,7 +19,7 @@ function HomeworkViewer() {
         submitted: = {submissionDate}<br />
 
         <br />
-        <img src="https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png" />
+        <img src="https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png" alt="" />
         <br />
         Homework annotation controls
         <br />
