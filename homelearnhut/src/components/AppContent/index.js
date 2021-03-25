@@ -18,13 +18,10 @@ function AppContent() {
 
   return (
     <div className="App">
-      Test top bar
-      <TopBar uploadClick={() => dispatch()} />
 
 
       <h1 data-testid="heading">HomeLearn Hut</h1>
       <p>LOGO</p>
-      {/* <AuthProvider> */}
       <Router>
         <div>
           <AuthButton />
@@ -63,8 +60,8 @@ function AppContent() {
           </Switch>
         </div>
       </Router>
-      {/* </AuthProvider> */}
-    </div>
+
+    </div >
   );
 }
 
