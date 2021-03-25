@@ -20,7 +20,8 @@ const Database = () => {
     // UseReducer hook
     const [homeworkState, dispatch] = useReducer(reducer, initialHomeworkState);
 
-    function reducer(homeworkState, action) {
+    function reducer(state, action) {
+        action = { type: 'uploadHomework' };
         switch (action.type) {
             case 'uploadHomework':
                 // addHomework(action.payload.name, action.payload.imageUrl, action.payload.dateSet, action.payload.dateDue, children)
@@ -31,6 +32,7 @@ const Database = () => {
                 break;
             default:
                 console.log("fix the reducer");
+                break;
             //throw new Error();
         }
     }

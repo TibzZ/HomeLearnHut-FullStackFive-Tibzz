@@ -6,16 +6,20 @@ import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
 import TopBar from "../TopBar";
-import Database from "../Database";
+
+import { reducer } from "../../libs/reducer"
+import { initialState } from "../../libs/initialState"
+
 
 function AppContent() {
-  const [homework, dispatch] = Database();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
 
 
   return (
     <div className="App">
       Test top bar
-      <TopBar onClick={() => console.log("call the reducer here or something.")} />
+      <TopBar uploadClick={() => dispatch()} />
 
 
       <h1 data-testid="heading">HomeLearn Hut</h1>
@@ -45,7 +49,7 @@ function AppContent() {
           <Switch>
             <Route path="/myClass">
               <TopBar />
-              <MyClassroom children={homework[0].children} />
+              <MyClassroom children={state[0].children} />
             </Route>
             <Route path="/pupilPage">
               <TopBar />
@@ -54,7 +58,7 @@ function AppContent() {
             </Route>
             <Route path="/">
               <TopBar />
-              <NewsFeed homeworkList={homework} />
+              <NewsFeed homeworkList={state} />
             </Route>
           </Switch>
         </div>
