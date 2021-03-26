@@ -2,7 +2,9 @@
 Views a piece of homework for an individual student.
 This is accessed through clicking on a student within the "MyClassroom" component
 */
+
 import CanvasTool from "./CanvasTool";
+import css from "../HomeworkViewer/HomeworkViewer.module.css";
 
 function HomeworkViewer() {
   const name = "Lucas";
@@ -25,6 +27,8 @@ function HomeworkViewer() {
       submitted: = {submissionDate}
       <br />
       <br />
+        {/* CSS test HomeworkViewer module only: */}
+        {/* <p className={css.Test}> test Css</p> */}
       <img
         src="https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png"
         alt=""
@@ -39,6 +43,7 @@ function HomeworkViewer() {
       <button>Reject</button>
       <br />
       <button>Back</button>
+
     </>
   );
 }

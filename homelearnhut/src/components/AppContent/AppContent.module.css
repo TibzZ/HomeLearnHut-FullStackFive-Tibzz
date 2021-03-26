@@ -1,0 +1,18 @@
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+    background:url('../ImagesLogo/logoHH.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+  }
+
+/* => To Test css uncomment below */
+
+  /* .Test {
+
+    font-weight: bold;
+    color: rgb(3, 13, 110);
+
+
+  } */

@@ -1,29 +1,36 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "../App/App.css";
+import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
 import TopBar from "../TopBar";
-
 import { reducer } from "../../libs/reducer"
 import { initialState } from "../../libs/initialState"
-
 import * as actions from "../../libs/actions";
-
+import Button from "../Button";
+import InputField from "../InputField";
+import Upload from "../Upload";
 
 function AppContent() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
 
   return (
-    <div className="App">
+
+    <div className={css.Test}>
       <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD })} />
-
-
       <h1 data-testid="heading">HomeLearn Hut</h1>
-      <p>LOGO</p>
+      {/* CSS Button component test only: */}
+      {/* <Button/> */}
+       {/* CSS Input component test only: */}
+      {/* <InputField/> */}
+      {/* CSS TopBar and Upload (needs TopBar) tests : */}
+      {/* <TopBar/>
+      <Upload/> */}
+      <div className="App-logo">LOGO</div>
+      {/* <AuthProvider> */}
       <Router>
         <div>
           <AuthButton />
