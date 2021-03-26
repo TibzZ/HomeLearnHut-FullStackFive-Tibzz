@@ -1,18 +1,9 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
-import AuthButton from "../AuthButton";
 
-import TopBar from "../TopBar";
-
-
-import Button from "../Button";
-import InputField from "../InputField";
-import Upload from "../Upload";
 import * as pages from "../../libs/pages";
-
 import * as actions from "../../libs/actions";
 
 
@@ -57,8 +48,6 @@ function AppContent({ state, dispatch }) {
       </div >
     );
   }
-
-
 }
 
 export default AppContent;
