@@ -10,6 +10,7 @@ import Database from "../Database";
 import Button from "../Button";
 import InputField from "../InputField";
 import TopBar from "../TopBar";
+import Upload from "../Upload";
 
 function AppContent() {
   const [state, dispatch] = Database();
@@ -21,8 +22,9 @@ function AppContent() {
       {/* <Button/> */}
        {/* CSS Input component test only: */}
       {/* <InputField/> */}
-      {/* CSS TopBar component test only: */}
-      {/* <TopBar/> */}
+      {/* CSS TopBar and Upload (needs TopBar) tests : */}
+      {/* <TopBar/>
+      <Upload/> */}
       <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
       <Router>
