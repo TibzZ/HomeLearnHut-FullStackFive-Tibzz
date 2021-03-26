@@ -1,4 +1,5 @@
 import React from "react";
+import css from "../AuthButton/AuthButton.module.css";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import UserProfile from "./UserProfile";
@@ -10,7 +11,9 @@ function AuthButton() {
   if (isAuthenticated) {
     return (
       <div>
-        <LogoutButton />
+        {/* Line to test CSS working */}
+        {/* <p className={css.Test}> Hello </p> */}
+        <LogoutButton/>
         <UserProfile />
       </div>
     );
