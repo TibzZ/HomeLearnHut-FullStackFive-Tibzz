@@ -14,6 +14,7 @@ const NewsFeed = ({ homeworkList }) => {
     return (
 
         <ul>
+            {console.log(homeworkList)}
 
             {homeworkList.map((homework, index) => [
 

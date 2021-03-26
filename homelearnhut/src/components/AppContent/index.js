@@ -5,17 +5,25 @@ import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
-//import TopBar from "../TopBar";
-import Database from "../Database";
+import TopBar from "../TopBar";
+
+import { reducer } from "../../libs/reducer"
+import { initialState } from "../../libs/initialState"
+
+import * as actions from "../../libs/actions";
+
 
 function AppContent() {
-  const [state, dispatch] = Database();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
 
   return (
     <div className="App">
+      <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD })} />
+
+
       <h1 data-testid="heading">HomeLearn Hut</h1>
       <p>LOGO</p>
-      {/* <AuthProvider> */}
       <Router>
         <div>
           <AuthButton />
@@ -28,19 +36,21 @@ function AppContent() {
                 <Link to="/myClass">MyClassroom</Link>
               </li>
               <li>
-                <Link to="/pupilPage">Pupil Page</Link>
+                <Link to="/homeworkViewer">Homework Viewer</Link>
               </li>
             </ul>
           </nav>
 
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
+
+
           <Switch>
             <Route path="/myClass">
+              <TopBar uploadClick={() => console.log("test")} />
               <MyClassroom children={state[0].children} />
             </Route>
-            <Route path="/pupilPage">
-              {/* <TopBar uploadClick={() => console.log("click")} /> */}
+            <Route path="/homeworkViewer">
               <HomeworkViewer />
             </Route>
             <Route path="/">
@@ -49,8 +59,8 @@ function AppContent() {
           </Switch>
         </div>
       </Router>
-      {/* </AuthProvider> */}
-    </div>
+
+    </div >
   );
 }
 
