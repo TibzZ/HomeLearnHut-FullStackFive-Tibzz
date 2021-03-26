@@ -13,7 +13,7 @@ const TopBar = () => {
         <>
             HomeWork Hut (Logo)<button onClick={console.log("need to implement upload functionality")}>Upload</button><button>Logout</button>
             {/* CSS test Topbar only: */}
-            <h2 className={css.Test}>Css Test |</h2>
+            {/* <h2 className={css.Test}>Css Test |</h2> */}
         </>
     );
 }
