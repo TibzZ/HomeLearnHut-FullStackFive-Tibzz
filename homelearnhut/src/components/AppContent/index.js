@@ -7,6 +7,7 @@ import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
 //import TopBar from "../TopBar";
 import Database from "../Database";
+import Button from "../Button";
 
 function AppContent() {
   const [state, dispatch] = Database();
@@ -14,6 +15,8 @@ function AppContent() {
   return (
     <div className={css.Test}>
       <h1 data-testid="heading">HomeLearn Hut</h1>
+      {/* CSS test only: */}
+      {/* <Button/> */}
       <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
       <Router>
