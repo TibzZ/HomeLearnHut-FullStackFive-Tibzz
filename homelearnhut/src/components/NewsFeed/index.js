@@ -9,7 +9,7 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 import Post from "./Post";
 import css from "../NewsFeed/NewsFeed.module.css";
 
-const NewsFeed = ({ homeworkList }) => {
+const NewsFeed = ({ homeworkList, clickToClassroom }) => {
 
 
     return (
@@ -21,7 +21,7 @@ const NewsFeed = ({ homeworkList }) => {
             {/* <h2 className={css.Test}>Css Test ||</h2> */}
             {homeworkList.map((homework, index) => [
 
-                <li><Post homework={homework} /></li>,
+                <li><Post homework={homework} index={index} clickToClassroom={clickToClassroom} /></li>,
 
             ])}
         </ul>

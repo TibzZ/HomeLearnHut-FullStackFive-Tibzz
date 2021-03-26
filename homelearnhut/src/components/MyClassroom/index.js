@@ -13,7 +13,7 @@ import React from 'react';
 import Student from './Student';
 import css from "../MyClassroom/MyClassroom.module.css";
 
-function MyClassroom({ children }) {
+function MyClassroom({ children, backClick }) {
 
 
     return (
@@ -30,6 +30,8 @@ function MyClassroom({ children }) {
                     <li><Student name={child.name} avatar={child.avatar} age={5} /></li>,
                 ])}
             </ul>
+            <br />
+            <button onClick={backClick}>Back</button>
 
 
         </>

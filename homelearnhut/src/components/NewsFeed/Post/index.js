@@ -1,5 +1,5 @@
 const Post
-    = ({ homework }) => {
+    = ({ homework, index, clickToClassroom }) => {
         return (
 
             <>
@@ -17,7 +17,7 @@ const Post
                 Comment:
                 <br />
                 {homework.comment}<br />
-                <button>Inspect</button>
+                <button onClick={(index) => clickToClassroom(index)}>Inspect</button>
 
             </>
         );
