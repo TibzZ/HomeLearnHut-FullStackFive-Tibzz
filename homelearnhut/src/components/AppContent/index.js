@@ -12,7 +12,6 @@ import * as actions from "../../libs/actions";
 import Button from "../Button";
 import InputField from "../InputField";
 import Upload from "../Upload";
-import { LinkContainer } from "react-router-bootstrap";
 import DropDown from "../DropDown";
 
 function AppContent() {

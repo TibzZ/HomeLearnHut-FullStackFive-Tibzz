@@ -1,88 +1,147 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.menu-container {
-  position: relative;
-  display: block;
-  justify-content: center;
-  align-items: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-.menu-trigger {
-  background: #ffffff;
-  border-radius: 90px;
-  cursor: pointer;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #dadce1;
+  text-decoration: none;
+}
+
+/* Top Navigation Bar */
+
+/* <nav> */
+.navbar {
+  height: 60px;
+  background-color: #242526;
+  padding: 0 1rem;
+  border-bottom: 1px solid #474a4d;
+}
+
+/* <ul> */
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+/* <li> */
+.nav-item {
+  width: calc(100px * 0.8);
+  display: flex;
   align-items: center;
-  padding: 4px 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  border: none;
-  vertical-align: middle;
-  transition: box-shadow 0.4s ease;
-  margin-left: auto; /* Strictly for positioning */
+  justify-content: center;
 }
 
-.menu-trigger:hover {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+/* Icon Button */
+.icon-button {
+  width: calc(40px * 0.5);
+  height: calc(40px * 0.5);
+  background-color: #484a4d;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
 }
 
-.menu-trigger span {
-  font-weight: 700;
-  vertical-align: middle;
-  font-size: 14px;
-  margin: 0 10px;
+.icon-button:hover {
+  filter: brightness(1.2);
 }
 
-.menu-trigger img {
-  border-radius: 90px;
+.icon-button svg {
+  fill: #dadce1;
+  width: 50px;
+  height: 50px;
+}
+
+/* Dropdown Menu */
+
+.dropdown {
+  position: absolute;
+  top: 100px;
+  width: 250px;
+  transform: translateX(-45%);
+  background-color: #242526;
+  border: 1px solid #474a4d;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height 500ms ease;
 }
 
 .menu {
-  background: #ffffff;
+  width: 100%;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
   border-radius: 8px;
-  position: absolute;
-  top: 170px;
-  right: 0;
-  width: 300px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  transition: background 500ms;
+  padding: 0.5rem;
 }
 
-/* #autumn {
+.menu-item .icon-button {
+  margin-left: 0.5rem;
+}
+
+.menu-item .icon-button:hover {
+  filter: none;
+}
+
+.menu-item:hover {
+  background-color: #525357;
+}
+
+.icon-right {
+  margin-right: auto;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
   position: absolute;
-  top: 60px;
-  right: 0;
-  color: red;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all 500ms ease;
+}
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+/* .menu-secondary-exit {
 } */
-
-.menu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
-  border-bottom: 1px solid #dddddd;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #333333;
-  padding: 15px 20px;
-  display: block;
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all 500ms ease;
 }

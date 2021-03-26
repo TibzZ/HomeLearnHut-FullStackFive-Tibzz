@@ -1,128 +1,170 @@
-//import React from 'react';
-// import {
-//   ProSidebar,
-//   Menu,
-//   MenuItem,
-//   SubMenu,
-//   SidebarHeader,
-//   SidebarFooter,
-//   SidebarContent,
-// } from 'react-pro-sidebar';
-// import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
-// import sidebarBg from './bg1.jpg';
-// import { Dropdown, Menu } from 'semantic-ui-react';
-
-// function DropDown() {
-
-//   return (
-//   <Menu vertical>
-//     <Menu.Item>Home</Menu.Item>
-//     <Dropdown text='Messages' pointing='left' className='link item'>
-//       <Dropdown.Menu>
-//         <Dropdown.Item>Inbox</Dropdown.Item>
-//         <Dropdown.Item>Starred</Dropdown.Item>
-//         <Dropdown.Item>Sent Mail</Dropdown.Item>
-//         <Dropdown.Item>Drafts (143)</Dropdown.Item>
-//         <Dropdown.Divider />
-//         <Dropdown.Item>Spam (1009)</Dropdown.Item>
-//         <Dropdown.Item>Trash</Dropdown.Item>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//     <Menu.Item>Browse</Menu.Item>
-//     <Menu.Item>Help</Menu.Item>
-//   </Menu>
-// )
-//   }
-
-// export default DropDown;
-
-import React, { useRef } from "react";
+import { ReactComponent as BellIcon } from "./icons/bell.svg";
+import { ReactComponent as MessengerIcon } from "./icons/messenger.svg";
+import { ReactComponent as CaretIcon } from "./icons/caret.svg";
+import { ReactComponent as PlusIcon } from "./icons/plus.svg";
+import { ReactComponent as CogIcon } from "./icons/cog.svg";
+import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
+import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
 import "./index.css";
-import { useDetectOutsideClick } from "./useDetectOutsideClick";
-/*
- * Read the blog post here:
- * https://letsbuildui.dev/articles/building-a-dropdown-menu-component-with-react-hooks
- */
-export default function DropDown() {
-  const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
+import React, { useState, useEffect, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
+
+function DropDown() {
+  return (
+    <Navbar>
+      <NavItem icon={<PlusIcon />} />
+      <NavItem icon={<BellIcon />} />
+      <NavItem icon={<MessengerIcon />} />
+
+      <NavItem icon={<CaretIcon />}>
+        <DropdownMenu></DropdownMenu>
+      </NavItem>
+    </Navbar>
+  );
+}
+
+function Navbar(props) {
+  return (
+    <nav className="navbar">
+      <ul className="navbar-nav">{props.children}</ul>
+    </nav>
+  );
+}
+
+function NavItem(props) {
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="container">
-      <div className="menu-container">
-        <button onClick={onClick} className="menu-trigger">
-          <span>Autumn</span>
-          <img
-            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-            alt="User avatar"
-          />
-        </button>
-        <nav
-          ref={dropdownRef} id="autumn"
-          className={`menu ${isActive ? "active" : "inactive"}`}
-        >
-          <ul>
-            <li>
-              <a href="#">Week 1</a>
-            </li>
-            <li>
-              <a href="#">Week 2</a>
-            </li>
-            <li>
-              <a href="#">Week 3</a>
-            </li>
-          </ul>
-        </nav>
-        <br/>
-        <button onClick={onClick} className="menu-trigger">
-          <span>Spring</span>
-          <img
-            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-            alt="User avatar"
-          />
-        </button>
-        <nav
-          ref={dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
-        >
-          <ul>
-            <li>
-              <a href="#">Week 1</a>
-            </li>
-            <li>
-              <a href="#">Week 2</a>
-            </li>
-            <li>
-              <a href="#">Week 3</a>
-            </li>
-          </ul>
-        </nav>
-        <br/>
-        <button onClick={onClick} className="menu-trigger">
-          <span>Summer</span>
-          <img
-            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-            alt="User avatar"
-          />
-        </button>
-        <nav
-          ref={dropdownRef}
-          className={`menu ${isActive ? "active" : "inactive"}`}
-        >
-          <ul className="list">
-            <li>
-              <a href="#">Week 1</a>
-            </li>
-            <li>
-              <a href="#">Week 2</a>
-            </li>
-            <li>
-              <a href="#">Week 3</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <li className="nav-item">
+      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+        {props.icon}
+      </a>
+
+      {open && props.children}
+    </li>
+  );
+}
+
+function DropdownMenu() {
+  const [activeMenu, setActiveMenu] = useState("main");
+  const [menuHeight, setMenuHeight] = useState(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+  }, []);
+
+  function calcHeight(el) {
+    const height = el.offsetHeight;
+    setMenuHeight(height);
+  }
+
+  function DropdownItem(props) {
+    return (
+      <a
+        href="#"
+        className="menu-item"
+        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+      >
+        <span className="icon-button">{props.leftIcon}</span>
+        {props.children}
+        <span className="icon-right">{props.rightIcon}</span>
+      </a>
+    );
+  }
+
+  return (
+    <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
+      <CSSTransition
+        in={activeMenu === "main"}
+        timeout={500}
+        classNames="menu-primary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem
+            leftIcon="👩"
+            rightIcon={<ChevronIcon />}
+            goToMenu="profile"
+          >
+            My Profile
+          </DropdownItem>
+
+          <DropdownItem
+            leftIcon={<CogIcon />}
+            rightIcon={<ChevronIcon />}
+            goToMenu="settings"
+          >
+            Settings
+          </DropdownItem>
+
+          <DropdownItem
+            leftIcon="📙"
+            rightIcon={<ChevronIcon />}
+            goToMenu="work set"
+          >
+            Work Set
+          </DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "profile"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>More Info</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon="😎">Class Teacher</DropdownItem>
+          <DropdownItem leftIcon="🌈">Class Assigned</DropdownItem>
+          <DropdownItem leftIcon="✍">Pupil Profiles</DropdownItem>
+          <DropdownItem leftIcon="🎉">Pupil Progress</DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "settings"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>More Info</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon={<CogIcon />}>Account Details</DropdownItem>
+          <DropdownItem leftIcon={<CogIcon />}>Privacy Details</DropdownItem>
+          <DropdownItem leftIcon={<CogIcon />}>Helpdesk</DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "work set"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2> School Term</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon="🍂">Autumn Pt I</DropdownItem>
+          <DropdownItem leftIcon="🦔">Autumn Pt II</DropdownItem>
+          <DropdownItem leftIcon="🌷">Spring Pt I</DropdownItem>
+          <DropdownItem leftIcon="🐇">Spring Pt II</DropdownItem>
+          <DropdownItem leftIcon="🌞">Summer Pt I</DropdownItem>
+          <DropdownItem leftIcon="👙">Summer Pt II</DropdownItem>
+        </div>
+      </CSSTransition>
     </div>
   );
 }
+
+export default DropDown;
