@@ -23,7 +23,7 @@ function AppContent({ state, dispatch }) {
 
 
   function clickToClassroom(classroomIndex) {
-    dispatch({ type: actions.DOWNTOCLASSROOM });
+    dispatch({ type: actions.DOWNTOCLASSROOM, payload: classroomIndex });
   }
 
 
