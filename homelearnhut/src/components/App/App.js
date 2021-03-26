@@ -1,9 +1,10 @@
-import React from "react";
 import css from "./App.module.css";
 //import "./App.css";
 import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
+import AuthButton from "../AuthButton";
+import TopBar from "../TopBar";
 /*
 initial idea: Top level app has 4 states ( or routes)
 (- Landing pagedrills down to)
@@ -12,14 +13,27 @@ initial idea: Top level app has 4 states ( or routes)
 drills down to:
 - Homework viewer page ( can go back )
 */
+import { reducer } from "../../libs/reducer";
+import { initialState } from "../../libs/initialState";
+import React, { useReducer } from "react";
+import * as actions from "../../libs/actions";
+import { dummyAdd } from "../../libs/dummyAdd";
+
+
 
 function App() {
 
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const { isAuthenticated } = useAuth0();
+
+
   if (isAuthenticated) {
     return (
       <div className={css.AppStyle}>
-        <AppContent />
+        <AuthButton />
+        <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD, payload: dummyAdd })} />
+        <AppContent state={state} dispatch={dispatch} />
       </div>
     );
   }
@@ -30,7 +44,7 @@ function App() {
     //   <HomeworkViewer />
     // </>
     <div className={css.AppStyle}>
-          <Landing />
+      <Landing />
     </div>
   );
 }
