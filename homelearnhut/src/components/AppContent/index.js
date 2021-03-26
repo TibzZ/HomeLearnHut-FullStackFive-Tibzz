@@ -36,7 +36,7 @@ function AppContent() {
                 <Link to="/myClass">MyClassroom</Link>
               </li>
               <li>
-                <Link to="/pupilPage">Pupil Page</Link>
+                <Link to="/homeworkViewer">Homework Viewer</Link>
               </li>
             </ul>
           </nav>
@@ -50,7 +50,7 @@ function AppContent() {
               <TopBar uploadClick={() => console.log("test")} />
               <MyClassroom children={state[0].children} />
             </Route>
-            <Route path="/pupilPage">
+            <Route path="/homeworkViewer">
               <HomeworkViewer />
             </Route>
             <Route path="/">
