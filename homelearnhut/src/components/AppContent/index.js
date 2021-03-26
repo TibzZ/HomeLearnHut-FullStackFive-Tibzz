@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import css from "../App/App.module.css";
+import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
@@ -12,7 +12,7 @@ function AppContent() {
   const [state, dispatch] = Database();
 
   return (
-    <div className="App">
+    <div className={css.Test}>
       <h1 data-testid="heading">HomeLearn Hut</h1>
       <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
