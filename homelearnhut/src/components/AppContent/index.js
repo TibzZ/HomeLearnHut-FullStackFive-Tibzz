@@ -6,30 +6,33 @@ import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
 import React, { useReducer } from "react";
 import TopBar from "../TopBar";
-import { reducer } from "../../libs/reducer"
-import { initialState } from "../../libs/initialState"
+import { reducer } from "../../libs/reducer";
+import { initialState } from "../../libs/initialState";
 import * as actions from "../../libs/actions";
 import Button from "../Button";
 import InputField from "../InputField";
 import Upload from "../Upload";
+import { LinkContainer } from "react-router-bootstrap";
+import DropDown from "../DropDown";
 
 function AppContent() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
   return (
-
     <div className={css.Test}>
       <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD })} />
-      <h1 data-testid="heading">HomeLearn Hut</h1>
+      <br/>
+      <br/>
+      <DropDown />
+      <br/>
+      <br/>
       {/* CSS Button component test only: */}
       {/* <Button/> */}
-       {/* CSS Input component test only: */}
+      {/* CSS Input component test only: */}
       {/* <InputField/> */}
       {/* CSS TopBar and Upload (needs TopBar) tests : */}
       {/* <TopBar/>
       <Upload/> */}
-      <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
       <Router>
         <div>
@@ -51,7 +54,6 @@ function AppContent() {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
 
-
           <Switch>
             <Route path="/myClass">
               <TopBar uploadClick={() => console.log("test")} />
@@ -66,8 +68,7 @@ function AppContent() {
           </Switch>
         </div>
       </Router>
-
-    </div >
+    </div>
   );
 }
 
