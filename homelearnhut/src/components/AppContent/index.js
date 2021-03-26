@@ -1,74 +1,53 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
-import AuthButton from "../AuthButton";
-import React, { useReducer } from "react";
-import TopBar from "../TopBar";
-import { reducer } from "../../libs/reducer";
-import { initialState } from "../../libs/initialState";
+
+import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
-import Button from "../Button";
-import InputField from "../InputField";
-import Upload from "../Upload";
-import DropDown from "../DropDown";
 
-function AppContent() {
-  const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
-    <div className={css.Test}>
-      <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD })} />
-      <br/>
-      <br/>
-      <DropDown />
-      <br/>
-      <br/>
-      {/* CSS Button component test only: */}
-      {/* <Button/> */}
-      {/* CSS Input component test only: */}
-      {/* <InputField/> */}
-      {/* CSS TopBar and Upload (needs TopBar) tests : */}
-      {/* <TopBar/>
-      <Upload/> */}
-      {/* <AuthProvider> */}
-      <Router>
-        <div>
-          <AuthButton />
-          <nav>
-            <ul>
-              <li>
-                <Link to="/feed">HomeWork Feed</Link>
-              </li>
-              <li>
-                <Link to="/myClass">MyClassroom</Link>
-              </li>
-              <li>
-                <Link to="/homeworkViewer">Homework Viewer</Link>
-              </li>
-            </ul>
-          </nav>
+function AppContent({ state, dispatch }) {
+  function backToFeed() {
+    dispatch({ type: actions.BACKTOFEED });
+  }
 
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
+  function clickToClassroom(classroomIndex) {
+    dispatch({ type: actions.GOTOCLASSROOM, payload: classroomIndex });
+  }
 
-          <Switch>
-            <Route path="/myClass">
-              <TopBar uploadClick={() => console.log("test")} />
-              <MyClassroom children={state[0].children} />
-            </Route>
-            <Route path="/homeworkViewer">
-              <HomeworkViewer />
-            </Route>
-            <Route path="/">
-              <NewsFeed homeworkList={state} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </div>
-  );
+  function clickToHomeworkViewer(homeworkIndex){
+    dispatch({type: actions.GOTOHOMEWORK, payload: homeworkIndex});
+  }
+
+  if (state.page === pages.FEED) {
+    return (
+      <div className={css.Test}>
+        <NewsFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
+      </div >
+    );
+  }
+  else if (state.page === pages.CLASSROOM) {
+    return (
+
+
+
+      <div className={css.Test}>
+        <MyClassroom studentClick={clickToHomeworkViewer} children={state.homework[0].children} backClick={backToFeed} />
+      </div >
+    );
+  }
+  else // Viewer
+  {
+    return (
+
+
+
+      <div className={css.Test}>
+        <HomeworkViewer clickToClassroom={clickToClassroom}/>
+      </div >
+    );
+  }
 }
 
 export default AppContent;

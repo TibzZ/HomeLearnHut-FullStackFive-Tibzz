@@ -5,8 +5,9 @@ This is accessed through clicking on a student within the "MyClassroom" componen
 
 import CanvasTool from "./CanvasTool";
 import css from "../HomeworkViewer/HomeworkViewer.module.css";
+import logo from "./CanvasTool/logo.png";
 
-function HomeworkViewer() {
+function HomeworkViewer({ clickToClassroom }) {
   const name = "Lucas";
   const setDate = "Yesterday";
   const dueDate = "Tommorow";
@@ -15,7 +16,7 @@ function HomeworkViewer() {
 
   return (
     <>
-    <CanvasTool/>
+      <CanvasTool />
       {name}
       <br />
       Homework: {homeworkTitle}
@@ -27,12 +28,12 @@ function HomeworkViewer() {
       submitted: = {submissionDate}
       <br />
       <br />
-        {/* CSS test HomeworkViewer module only: */}
-        {/* <p className={css.Test}> test Css</p> */}
-      <img
-        src="https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png"
+      {/* CSS test HomeworkViewer module only: */}
+      {/* <p className={css.Test}> test Css</p> */}
+      {/* <img
+        src={logo}
         alt=""
-      />
+      /> */}
       <br />
       Homework annotation controls
       <br />
@@ -42,8 +43,7 @@ function HomeworkViewer() {
       <button>Accept</button>
       <button>Reject</button>
       <br />
-      <button>Back</button>
-
+      <button onClick={clickToClassroom}>Back</button>
     </>
   );
 }

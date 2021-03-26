@@ -36,4 +36,4 @@ export const children =
             homeworkStatus: 'not done',
             individualHomeworkImage: null
         }
-    ]
+    ];

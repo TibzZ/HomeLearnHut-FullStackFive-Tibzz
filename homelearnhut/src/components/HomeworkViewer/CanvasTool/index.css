@@ -1,53 +1,52 @@
-.App {
-    font-family: sans-serif;
-    text-align: center;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .tools {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 15px;
-  }
-  
-  .tools .color-field {
-    height: 40px;
-    width: 40px;
-    min-height: 40px;
-    min-width: 40px;
-    cursor: pointer;
-    display: inline-block;
-    cursor: pointer;
-    box-sizing: border-box;
-    border-radius: 50%;
-    border: 2px solid black;
-    align-self: center;
-    margin: 0 10px;
-  }
-  
-  .color-field {
-    margin-bottom: 100px;
-  }
-  
-  .tools .button {
-    align-self: center;
-    width: 100px;
-    height: 40px;
-    border: 2px solid white;
-    cursor: pointer;
-    color: white;
-    background: #222;
-    font-weight: bold;
-    margin: 0 10px;
-  }
-  
-  .color-picker {
-    align-self: center;
-    margin: 10px 10px;
-    height: 50px;
-  }
+.myCanvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  cursor: pointer;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.tools .color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid black;
+  align-self: center;
+  margin: 0 10px;
+}
+
+.color-field {
+  margin-bottom: 100px;
+}
+
+.tools .button {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  background: #222;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.color-picker {
+  align-self: center;
+  margin: 10px 10px;
+  height: 50px;
+  cursor: pointer;
+}

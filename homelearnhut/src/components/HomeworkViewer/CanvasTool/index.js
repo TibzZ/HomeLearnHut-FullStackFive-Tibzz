@@ -1,13 +1,14 @@
 import React, { useState, useRef } from "react";
 import CanvasDraw from "react-canvas-draw";
 import "./index.css";
+import logo from "./logo.png";
 
 function CanvasTool() {
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
-  //const [locations, setLocations] = useState([]);
+
   const saveableCanvas = useRef(null);
-  const loadableCanvas = useRef(null);
+  //const loadableCanvas = useRef(null);
 
   function handleClear() {
     saveableCanvas.current.clear();
@@ -17,75 +18,80 @@ function CanvasTool() {
     saveableCanvas.current.undo();
   }
 
-  //   function handleSave() {
-  //       saveableCanvas.current
-  //   }
+  function handleSave() {
+    localStorage.setItem("savedDrawing", saveableCanvas.current.getSaveData());
+  }
+
+  // function handleLoad() {
+  //   loadableCanvas.current.loadSaveData(localStorage.getItem("savedDrawing"));
+  // }
 
   return (
-    <div className="tools">
-      <input
-        onChange={(e) => setCustomColor(e.target.value)}
-        type="color"
-        className="color-picker"
-      />
-      <button onClick={handleUndo} type="button" className="button">
-        Undo
-      </button>
-      <button onClick={handleClear} type="button" className="button">
-        Clear
-      </button>
-      <button
+    <body>
+      <div className="tools">
+        <div
+          onClick={(e) => setCustomColor("#FF00FF")}
+          className="color-field"
+          style={{ backgroundColor: "magenta" }}
+        ></div>
+
+        <div
+          onClick={(e) => setCustomColor("#66ff00")}
+          className="color-field"
+          style={{ backgroundColor: "rgb(75, 235, 65)" }}
+        ></div>
+
+        <input
+          onChange={(e) => setCustomColor(e.target.value)}
+          type="color"
+          className="color-picker"
+        />
+        <button onClick={handleUndo} type="button" className="button">
+          Undo
+        </button>
+        <button onClick={handleClear} type="button" className="button">
+          Clear
+        </button>
+        <button onClick={handleSave} type="button" className="button">
+          Save
+        </button>
+        {/* <button
         type="button"
         className="button"
         onClick={() => {
-          localStorage.setItem(
-            "savedDrawing",
-            saveableCanvas.current.getSaveData()
-          );
-        }}
-      >
-        Save
-      </button>
-      <button
-        type="button"
-        className="button"
-        onClick={() => {
-          loadableCanvas.current.loadSaveData(
-            localStorage.getItem("savedDrawing")
-          );
+            localStorage.getItem("savedDrawing");
         }}
       >
         Load Saved
-      </button>
+      </button> */}
 
-      <div
-        onClick={(e) => setCustomColor("#FF00FF")}
-        className="color-field"
-        style={{ backgroundColor: "magenta" }}
-      ></div>
-
-      <div
-        onClick={(e) => setCustomColor("#66ff00")}
-        className="color-field"
-        style={{ backgroundColor: "rgb(75, 235, 65)" }}
-      ></div>
-
+        <br />
+      </div>
       <CanvasDraw
-        className="App"
+        className="myCanvas"
         ref={saveableCanvas}
+        //ref2={loadableCanvas}
         brushColor={customColor}
-        brushRadius={3}
-        imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg"
-      />
-      <CanvasDraw
-        className="App"
-        ref={loadableCanvas}
-        brushColor={customColor}
-        brushRadius={3}
-        imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg"
+        brushRadius={2}
+        imgSrc={logo}
+        //img from database will need to be passed at this level
+        canvasWidth={300}
+        canvasHeight={500}
         saveData={localStorage.getItem("savedDrawing")}
       />
-    </div>
+
+      {/* <CanvasDraw
+        className="App"
+        //ref={saveableCanvas}
+        ref={loadableCanvas}
+        brushColor={customColor}
+        brushRadius={2}
+        imgSrc={logo}
+        canvasWidth={300}
+        canvasHeight={500}
+        saveData={localStorage.getItem("savedDrawing")}
+      /> */}
+    </body>
   );
 }
 
