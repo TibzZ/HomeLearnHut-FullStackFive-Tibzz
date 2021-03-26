@@ -2,6 +2,7 @@
 Views a piece of homework for an individual student.
 This is accessed through clicking on a student within the "MyClassroom" component
 */
+import css from "../HomeworkViewer/HomeworkViewer.module.css";
 
 function HomeworkViewer() {
     const name = "Lucas";
@@ -17,8 +18,9 @@ function HomeworkViewer() {
         set: {setDate}<br />
         due: {dueDate}<br />
         submitted: = {submissionDate}<br />
-
         <br />
+        {/* CSS test HomeworkViewer module only: */}
+        {/* <p className={css.Test}> test Css</p> */}
         <img src="https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png" alt="" />
         <br />
         Homework annotation controls
