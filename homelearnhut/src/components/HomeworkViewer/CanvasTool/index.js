@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import CanvasDraw from "react-canvas-draw";
 import "./index.css";
 
-function HomeworkViewer() {
+function CanvasTool() {
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
   //const [locations, setLocations] = useState([]);
@@ -77,7 +77,7 @@ function HomeworkViewer() {
         brushRadius={3}
         imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg"
       />
-       <CanvasDraw
+      <CanvasDraw
         className="App"
         ref={loadableCanvas}
         brushColor={customColor}
@@ -89,7 +89,7 @@ function HomeworkViewer() {
   );
 }
 
-export default HomeworkViewer;
+export default CanvasTool;
 
 // Useful functions that you can call, e.g. when having a reference to this component:
 
@@ -97,3 +97,21 @@ export default HomeworkViewer;
 // loadSaveData(saveData: String, immediate: Boolean) loads a previously saved drawing using the saveData string, as well as an optional boolean flag to load it immediately, instead of live-drawing it.
 // clear() clears the canvas completely
 // undo() removes the latest change to the drawing. This includes everything drawn since the last MouseDown event.
+
+// static defaultProps = {
+//     onChange: null
+//     loadTimeOffset: 5,
+//     lazyRadius: 30,
+//     brushRadius: 12,
+//     brushColor: "#444",
+//     catenaryColor: "#0a0302",
+//     gridColor: "rgba(150,150,150,0.17)",
+//     hideGrid: false,
+//     canvasWidth: 400,
+//     canvasHeight: 400,
+//     disabled: false,
+//     imgSrc: "",
+//     saveData: null,
+//     immediateLoading: false,
+//     hideInterface: false
+//   };

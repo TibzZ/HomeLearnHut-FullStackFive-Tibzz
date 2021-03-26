@@ -2,6 +2,7 @@
 Views a piece of homework for an individual student.
 This is accessed through clicking on a student within the "MyClassroom" component
 */
+import CanvasTool from "./CanvasTool";
 
 function HomeworkViewer() {
   const name = "Lucas";
@@ -12,6 +13,7 @@ function HomeworkViewer() {
 
   return (
     <>
+    <CanvasTool/>
       {name}
       <br />
       Homework: {homeworkTitle}

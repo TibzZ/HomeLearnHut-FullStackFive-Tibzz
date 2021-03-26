@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-
+// import PropTypes from "prop-types";
+// import { LazyBrush } from "lazy-brush";
+// import Catenary from "catenary-curve";
+// import drawImage from "./drawImg";
+// import ResizeObserver from "resize-observer-polyfill";
 import "./App.css";
 
 // ...draw function
@@ -18,6 +22,29 @@ function draw(ctx, location) {
   ctx.fill(HOOK_PATH);
   ctx.restore();
 }
+
+// drawImage = () => {
+//   if (imgSrc) return;
+
+//   // Load the image
+//   let image = new Image();
+
+//   // Prevent SecurityError "Tainted canvases may not be exported." #70
+//   image.crossOrigin = "anonymous";
+
+//   // Draw the image once loaded
+//   image.onload = () =>
+//     drawImage({ ctx: ctx.grid, img: image });
+//   image.src = imgSrc;
+// };
+// let lazy = new LazyBrush({
+//   radius: lazyRadius * window.devicePixelRatio,
+//   enabled: true,
+//   initialPoint: {
+//     x: window.innerWidth / 2,
+//     y: window.innerHeight / 2
+//   }
+// });
 
 // our first custom hook
 function usePersistentState(init) {
@@ -45,8 +72,10 @@ function usePersistentCanvas() {
   return [locations, setLocations, canvasRef];
 }
 
-function AnotherOne() {
+function CanvasTool() {
   const [locations, setLocations, canvasRef] = usePersistentCanvas();
+  const [customColor, setCustomColor] = useState("blue");
+  console.log(customColor);
 
   function handleCanvasClick(e) {
     const newLocation = { x: e.clientX, y: e.clientY };
@@ -63,18 +92,41 @@ function AnotherOne() {
 
   return (
     <>
-      <div className="controls">
-        <button onClick={handleClear}>Clear</button>
-        <button onClick={handleUndo}>Undo</button>
+      <div className="tools">
+        <button type="button" className="button" onClick={handleClear}>
+          Clear
+        </button>
+        <button type="button" className="button" onClick={handleUndo}>
+          Undo
+        </button>
+
+        <input
+          onChange={(e) => setCustomColor(e.target.value)}
+          type="color"
+          className="color-picker"
+        />
+
+        <div
+          onClick={(e) => setCustomColor("#FF00FF")}
+          className="color-field"
+          style={{ backgroundColor: "magenta" }}
+        ></div>
+
+        <div
+          onClick={(e) => setCustomColor("#66ff00")}
+          className="color-field"
+          style={{ backgroundColor: "rgb(75, 235, 65)" }}
+        ></div>
+        <canvas
+          className="App"
+          ref={canvasRef}
+          width={window.innerWidth}
+          height={window.innerHeight}
+          onClick={handleCanvasClick}
+        />
       </div>
-      <canvas
-        ref={canvasRef}
-        width={window.innerWidth}
-        height={window.innerHeight}
-        onClick={handleCanvasClick}
-      />
     </>
   );
 }
 
-export default AnotherOne;
+export default CanvasTool;

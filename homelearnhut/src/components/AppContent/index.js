@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "../App/App.css";
-import HomeworkViewer from "../HomeworkViewer/CanvasTool";
+import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
 import AuthButton from "../AuthButton";
