@@ -9,6 +9,7 @@ import React, { useReducer } from "react";
 import Database from "../Database";
 import Button from "../Button";
 import InputField from "../InputField";
+import TopBar from "../TopBar";
 
 function AppContent() {
   const [state, dispatch] = Database();
@@ -20,6 +21,8 @@ function AppContent() {
       {/* <Button/> */}
        {/* CSS Input component test only: */}
       {/* <InputField/> */}
+      {/* CSS TopBar component test only: */}
+      {/* <TopBar/> */}
       <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
       <Router>

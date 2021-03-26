@@ -11,6 +11,7 @@ c) submitted the homework and it has been approved ( e.g. a tick icon )
 
 import React from 'react';
 import Student from './Student';
+import css from "../MyClassroom/MyClassroom.module.css";
 
 function MyClassroom({ children }) {
 
@@ -21,7 +22,8 @@ function MyClassroom({ children }) {
             {console.log(children)}
 
             <h1>My Classroom</h1>
-
+            {/* For CSS test purpose only: */}
+            {/* <h2 className={css.Test}>Css Test |</h2> */}
             <ul>
 
                 {children.map((child, index) => [

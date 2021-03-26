@@ -7,10 +7,13 @@ It also has a button that opens the upload box...
 
 It says who is logged in, (perhaps even an avatar), and has a logout button
 */
+import css from "../TopBar/TopBar.module.css";
 const TopBar = () => {
     return (
         <>
             HomeWork Hut (Logo)<button onClick={console.log("need to implement upload functionality")}>Upload</button><button>Logout</button>
+            {/* CSS test Topbar only: */}
+            <h2 className={css.Test}>Css Test |</h2>
         </>
     );
 }
