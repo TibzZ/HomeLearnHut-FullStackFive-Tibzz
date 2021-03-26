@@ -10,7 +10,7 @@ export function reducer(state, action) {
             return { ...state, homework: [...state.homework, action.payload] };
         case actions.BACKTOFEED:
             return { ...state, page: pages.FEED };
-        case action.DOWNTOCLASSROOM:
+        case actions.DOWNTOCLASSROOM:
             return { ...state, page: pages.CLASSROOM, homeworkIndex: state.homeworkIndex };
         case actions.MARK:
             // addHomework(action.payload.name, action.payload.imageUrl, action.payload.dateSet, action.payload.dateDue, children)
@@ -20,15 +20,7 @@ export function reducer(state, action) {
             throw new Error("MARK - not implemented yet");
 
         default:
-            console.log("DEFAULT RETURN but " + action.type);
-
-            console.log(
-                `${action.type} === ${actions.DOWNTOCLASSROOM}
-                ${action.type === action.DOWNTOCLASSROOM}`);
-
-            return state;
-        //throw new Error("default");
-        // return state;
+            throw new Error("invalid action");
     }
 }
 
