@@ -21,12 +21,13 @@ function AppContent({ state, dispatch }) {
     dispatch({ type: actions.BACKTOFEED });
   }
 
-
   function clickToClassroom(classroomIndex) {
-    dispatch({ type: actions.DOWNTOCLASSROOM, payload: classroomIndex });
+    dispatch({ type: actions.GOTOCLASSROOM, payload: classroomIndex });
   }
 
-
+  function clickToHomeworkViewer(homeworkIndex){
+    dispatch({type: actions.GOTOHOMEWORK, payload: homeworkIndex});
+  }
 
   if (state.page === pages.FEED) {
     return (
@@ -41,7 +42,7 @@ function AppContent({ state, dispatch }) {
 
 
       <div className={css.Test}>
-        <MyClassroom children={state.homework[0].children} backClick={backToFeed} />
+        <MyClassroom studentClick={clickToHomeworkViewer} children={state.homework[0].children} backClick={backToFeed} />
       </div >
     );
   }
@@ -52,7 +53,7 @@ function AppContent({ state, dispatch }) {
 
 
       <div className={css.Test}>
-        <HomeworkViewer />
+        <HomeworkViewer clickToClassroom={clickToClassroom}/>
       </div >
     );
   }

@@ -13,7 +13,7 @@ import React from 'react';
 import Student from './Student';
 import css from "../MyClassroom/MyClassroom.module.css";
 
-function MyClassroom({ children, backClick }) {
+function MyClassroom({ studentClick, children, backClick }) {
 
 
     return (
@@ -27,7 +27,7 @@ function MyClassroom({ children, backClick }) {
             <ul>
 
                 {children.map((child, index) => [
-                    <li><Student name={child.name} avatar={child.avatar} age={5} /></li>,
+                    <li><Student handleClick={studentClick} name={child.name} avatar={child.avatar} age={5} /></li>,
                 ])}
             </ul>
             <br />

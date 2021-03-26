@@ -10,8 +10,10 @@ export function reducer(state, action) {
             return { ...state, homework: [...state.homework, action.payload] };
         case actions.BACKTOFEED:
             return { ...state, page: pages.FEED };
-        case actions.DOWNTOCLASSROOM:
+        case actions.GOTOCLASSROOM:
             return { ...state, page: pages.CLASSROOM, homeworkIndex: state.homeworkIndex };
+        case actions.GOTOHOMEWORK:
+            return { ...state, page: pages.VIEWER, homeworkIndex: state.homeworkIndex };
         case actions.MARK:
             // addHomework(action.payload.name, action.payload.imageUrl, action.payload.dateSet, action.payload.dateDue, children)
             //addHomework(action.payload, tempHomeworkUrl, "week ago", "next week", children);

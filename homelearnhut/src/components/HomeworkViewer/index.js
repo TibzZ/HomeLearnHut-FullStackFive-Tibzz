@@ -6,7 +6,7 @@ This is accessed through clicking on a student within the "MyClassroom" componen
 import CanvasTool from "./CanvasTool";
 import css from "../HomeworkViewer/HomeworkViewer.module.css";
 
-function HomeworkViewer() {
+function HomeworkViewer({clickToClassroom}) {
   const name = "Lucas";
   const setDate = "Yesterday";
   const dueDate = "Tommorow";
@@ -42,7 +42,7 @@ function HomeworkViewer() {
       <button>Accept</button>
       <button>Reject</button>
       <br />
-      <button>Back</button>
+      <button onClick={clickToClassroom}>Back</button>
 
     </>
   );

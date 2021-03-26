@@ -3,21 +3,22 @@ const Post
         return (
 
             <>
-                {homework.name}
-                <br />
-                {homework.imageUrl}
-                <img src={homework.image} />
-                <br />
-                date set<br />
-                {homework.dateSet}
-                <br />
-                date due<br />
-                {homework.dateDue}
+                <div>
+                    {homework.name}
+                    <br />
+                    {homework.imageUrl}
+                    <br />
+                    date set<br />
+                    {homework.dateSet}
+                    <br />
+                    date due<br />
+                    {homework.dateDue}
+                    <br />
+                </div>
+                <button onClick={(index) => clickToClassroom(index)}><img src={homework.image} alt="homework"/></button>
                 <br />
                 Comment:
-                <br />
                 {homework.comment}<br />
-                <button onClick={(index) => clickToClassroom(index)}>Inspect</button>
 
             </>
         );

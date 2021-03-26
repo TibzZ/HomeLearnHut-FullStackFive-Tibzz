@@ -1,12 +1,12 @@
 import React from 'react';
 //import avatar from './avatar.PNG'
 
-function Student({ name, avatar, age = 5 }) {
+function Student({ handleClick, name, avatar, age = 5 }) {
     return (
         <>
             <p>Name:{name} </p>
             <p>Age: {age}</p>
-            <img src={avatar} alt="avatar"></img>
+            <button onClick={handleClick}><img src={avatar} alt="avatar"></img></button>
             <input type="checkbox"></input>
         </>
     );
