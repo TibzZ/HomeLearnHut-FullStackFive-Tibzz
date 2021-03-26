@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import css from "./app.module.css";
+//import "./App.css";
 import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -17,7 +18,7 @@ function App() {
   const { isAuthenticated } = useAuth0();
   if (isAuthenticated) {
     return (
-      <div className="App">
+      <div className={css.AppStyle}>
         <AppContent />
       </div>
     );
@@ -28,7 +29,7 @@ function App() {
     // <>
     //   <HomeworkViewer />
     // </>
-    <div className="App">
+    <div className={css.AppStyle}>
           <Landing />
     </div>
   );

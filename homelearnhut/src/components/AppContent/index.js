@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "../App/App.css";
+import css from "../App/app.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import NewsFeed from "../NewsFeed";
@@ -14,7 +14,7 @@ function AppContent() {
   return (
     <div className="App">
       <h1 data-testid="heading">HomeLearn Hut</h1>
-      <p>LOGO</p>
+      <div className="App-logo">LOGO</div>
       {/* <AuthProvider> */}
       <Router>
         <div>
