@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-// import css from "../src/components/Index.module.css";
+// import "./index.css";
+import css from "../src/Index.module.css";
 import App from "./components/App/App";
 import AppTest from "./components/AppTest";
 import reportWebVitals from "./reportWebVitals";
@@ -13,6 +13,8 @@ ReactDOM.render(
     clientId={process.env.REACT_APP_clientCode}
     redirectUri={window.location.origin}
   >
+    {/* CSS Test */}
+    {/* <p className={css.Test}>Hey </p> */}
     <App />
   </Auth0Provider>,
   document.getElementById("root")

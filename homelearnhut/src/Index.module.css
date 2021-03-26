@@ -10,4 +10,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    color:blueviolet
+}
+
+.Test {
+
+  font-weight: bold;
+  color: rgb(190, 29, 8);
+
+
 }
