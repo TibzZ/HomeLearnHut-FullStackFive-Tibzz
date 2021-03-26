@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./app.module.css";
+import css from "./App.module.css";
 //import "./App.css";
 import Landing from "../Landing";
 import AppContent from "../AppContent";
