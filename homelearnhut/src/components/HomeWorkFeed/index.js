@@ -7,9 +7,9 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 */
 
 import Post from "./Post";
-import css from "../NewsFeed/NewsFeed.module.css";
+import css from "./NewsFeed.module.css";
 
-const NewsFeed = ({ homeworkList, clickToClassroom }) => {
+const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
 
     return (
@@ -28,4 +28,4 @@ const NewsFeed = ({ homeworkList, clickToClassroom }) => {
     );
 }
 
-export default NewsFeed;
+export default HomeWorkFeed;

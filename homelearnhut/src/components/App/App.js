@@ -5,6 +5,7 @@ import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import TopBar from "../TopBar";
+import DropDown from "../DropDown";
 /*
 initial idea: Top level app has 4 states ( or routes)
 (- Landing pagedrills down to)
@@ -32,6 +33,7 @@ function App() {
     return (
       <div className={css.AppStyle}>
         <AuthButton />
+        <DropDown/>
         <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD, payload: dummyAdd })} />
         <AppContent state={state} dispatch={dispatch} />
       </div>

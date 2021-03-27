@@ -1,7 +1,7 @@
 import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
-import NewsFeed from "../NewsFeed";
+import HomeWorkFeed from "../HomeWorkFeed";
 
 import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
@@ -23,7 +23,7 @@ function AppContent({ state, dispatch }) {
   if (state.page === pages.FEED) {
     return (
       <div className={css.Test}>
-        <NewsFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
+        <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
       </div >
     );
   }
