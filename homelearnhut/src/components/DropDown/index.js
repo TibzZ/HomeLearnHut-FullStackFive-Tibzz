@@ -18,8 +18,8 @@ function DropDown() {
       <NavItem icon={<BellIcon />}>
         <DropdownNotif />
       </NavItem>
-      <NavItem icon={<MessengerIcon />} >
-      <DropdownMsg />
+      <NavItem icon={<MessengerIcon />}>
+        <DropdownMsg />
       </NavItem>
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
@@ -28,35 +28,35 @@ function DropDown() {
   );
 }
 
-function Navbar(props) {
+function Navbar({ children }) {
   return (
     <nav className="navbar">
-      <ul className="navbar-nav">{props.children}</ul>
+      <ul className="navbar-nav">{children}</ul>
     </nav>
   );
 }
 
-function NavItem(props) {
+function NavItem({ icon, children }) {
   const [open, setOpen] = useState(false);
 
   return (
     <li className="nav-item">
       <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
-        {props.icon}
+        {icon}
       </a>
 
-      {open && props.children}
+      {open && children}
     </li>
   );
 }
 
 function DropdownNotif() {
-  const [activeMenu, setActiveMenu] = useState("main");
+  const [activeNotif, setActiveNotif] = useState("");
   const dropdownRef = useRef(null);
 
   function DropdownItem({ goToMenu, children }) {
     return (
-      <div onClick={() => goToMenu && setActiveMenu(goToMenu)}> {children}</div>
+      <div onClick={() => goToMenu && setActiveNotif(goToMenu)}> {children}</div>
     );
   }
 
@@ -70,12 +70,12 @@ function DropdownNotif() {
 }
 
 function DropdownMsg() {
-  const [activeMenu, setActiveMenu] = useState("main");
+  const [activeMsg, setActiveMsg] = useState("");
   const dropdownRef = useRef(null);
 
   function DropdownItem({ goToMenu, children }) {
     return (
-      <div onClick={() => goToMenu && setActiveMenu(goToMenu)}> {children}</div>
+      <div onClick={() => goToMenu && setActiveMsg(goToMenu)}> {children}</div>
     );
   }
 
@@ -102,16 +102,16 @@ function DropdownMenu() {
     setMenuHeight(height);
   }
 
-  function DropdownItem(props) {
+  function DropdownItem({ goToMenu, leftIcon, rightIcon, children }) {
     return (
       <a
         href="#"
         className="menu-item"
-        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+        onClick={() => goToMenu && setActiveMenu(goToMenu)}
       >
-        <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
+        <span className="icon-button">{leftIcon}</span>
+        {children}
+        <span className="icon-right">{rightIcon}</span>
       </a>
     );
   }
