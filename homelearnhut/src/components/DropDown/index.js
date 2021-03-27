@@ -9,9 +9,10 @@ import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-//import useComponentVisible from "./hook/index";
+import { ClickAwayListener } from "@material-ui/core";
 
 function DropDown() {
+  
   return (
     <Navbar>
       <NavItem icon={<PlusIcon />} />
@@ -24,7 +25,7 @@ function DropDown() {
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
-    </Navbar>
+    </Navbar> 
   );
 }
 
@@ -39,7 +40,12 @@ function Navbar({ children }) {
 function NavItem({ icon, children }) {
   const [open, setOpen] = useState(false);
 
+  const handleClickAway = () => {
+    setOpen(false);
+  };
+
   return (
+    <ClickAwayListener onClickAway={handleClickAway}>
     <li className="nav-item">
       <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
         {icon}
@@ -47,6 +53,7 @@ function NavItem({ icon, children }) {
 
       {open && children}
     </li>
+    </ClickAwayListener>
   );
 }
 
