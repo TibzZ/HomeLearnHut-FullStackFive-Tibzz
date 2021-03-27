@@ -5,17 +5,22 @@ import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 import { ReactComponent as CogIcon } from "./icons/cog.svg";
 import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
 import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
+import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+//import useComponentVisible from "./hook/index";
 
 function DropDown() {
   return (
     <Navbar>
       <NavItem icon={<PlusIcon />} />
-      <NavItem icon={<BellIcon />} />
-      <NavItem icon={<MessengerIcon />} />
-
+      <NavItem icon={<BellIcon />}>
+        <DropdownNotif />
+      </NavItem>
+      <NavItem icon={<MessengerIcon />} >
+      <DropdownMsg />
+      </NavItem>
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
@@ -42,6 +47,44 @@ function NavItem(props) {
 
       {open && props.children}
     </li>
+  );
+}
+
+function DropdownNotif() {
+  const [activeMenu, setActiveMenu] = useState("main");
+  const dropdownRef = useRef(null);
+
+  function DropdownItem({ goToMenu, children }) {
+    return (
+      <div onClick={() => goToMenu && setActiveMenu(goToMenu)}> {children}</div>
+    );
+  }
+
+  return (
+    <div className="dropdownNotif" ref={dropdownRef}>
+      <DropdownItem>
+        <p style={{ color: "white" }}>No recent notifications</p>
+      </DropdownItem>
+    </div>
+  );
+}
+
+function DropdownMsg() {
+  const [activeMenu, setActiveMenu] = useState("main");
+  const dropdownRef = useRef(null);
+
+  function DropdownItem({ goToMenu, children }) {
+    return (
+      <div onClick={() => goToMenu && setActiveMenu(goToMenu)}> {children}</div>
+    );
+  }
+
+  return (
+    <div className="dropdownMsg" ref={dropdownRef}>
+      <DropdownItem>
+        <p style={{ color: "white" }}>You have no messages</p>
+      </DropdownItem>
+    </div>
   );
 }
 
@@ -84,7 +127,7 @@ function DropdownMenu() {
       >
         <div className="menu">
           <DropdownItem
-            leftIcon="👩"
+            leftIcon={<UserIcon />}
             rightIcon={<ChevronIcon />}
             goToMenu="profile"
           >
