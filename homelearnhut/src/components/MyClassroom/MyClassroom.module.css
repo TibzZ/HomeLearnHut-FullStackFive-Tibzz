@@ -6,10 +6,39 @@
 
   }
 
+  .profilebtn{
+     height:100px;
+     width:100px;
+     background-repeat: no-repeat;
+     background-size: cover;  
+     background-image: url("./Student/avatar.PNG");
+  }
+
+  .myClassroom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: 50% 50%;
+    grid-column-gap: 1em; */
+  }
+
+  .studentList {
+    width: 150px;
+    margin: 5px 5px;
+    border: 1px solid;
+    padding: 5px;
+    
+  }
+
+
+
+
+/* 
   .flipcard {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     perspective: 1000px;
   }
   
@@ -45,3 +74,5 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+   */

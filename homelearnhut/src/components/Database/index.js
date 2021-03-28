@@ -63,8 +63,7 @@ const Database = () => {
         addChild("Rupert");
         addChild("Janice");
         addChild("Fifi");
-
-
+        
         // create homework
         addHomework("Maths week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
         addHomework("English week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
