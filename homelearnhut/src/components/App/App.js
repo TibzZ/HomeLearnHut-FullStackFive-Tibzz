@@ -19,7 +19,7 @@ import { initialState } from "../../libs/initialState";
 import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
-
+import { ChakraProvider } from "@chakra-ui/react"
 
 
 function App() {
@@ -31,12 +31,14 @@ function App() {
 
   if (isAuthenticated) {
     return (
+     
       <div className={css.AppStyle}>
         <AuthButton />
         <DropDown/>
         <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD, payload: dummyAdd })} />
         <AppContent state={state} dispatch={dispatch} />
       </div>
+      
     );
   }
 
