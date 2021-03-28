@@ -11,11 +11,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ClickAwayListener } from "@material-ui/core";
 
-function DropDown() {
+function DropDown({uploadClick}) {
   
   return (
     <Navbar>
-      <NavItem icon={<PlusIcon />} />
+      <NavLoad icon={<PlusIcon />} uploadClick={uploadClick}  />
       <NavItem icon={<BellIcon />}>
         <DropdownNotif />
       </NavItem>
@@ -25,7 +25,7 @@ function DropDown() {
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
-    </Navbar> 
+    </Navbar>
   );
 }
 
@@ -34,6 +34,20 @@ function Navbar({ children }) {
     <nav className="navbar">
       <ul className="navbar-nav">{children}</ul>
     </nav>
+  );
+}
+
+function NavLoad({ icon, uploadClick }) {
+  return (
+    <li className="nav-item">
+      <a
+        href="#"
+        className="icon-button"
+        onClick={uploadClick}
+      >
+        {icon}
+      </a>
+    </li>
   );
 }
 
@@ -46,13 +60,12 @@ function NavItem({ icon, children }) {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
-        {icon}
-      </a>
-
-      {open && children}
-    </li>
+      <li className="nav-item">
+        <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+          {icon}
+        </a>
+        {open && children}
+      </li>
     </ClickAwayListener>
   );
 }
@@ -63,7 +76,10 @@ function DropdownNotif() {
 
   function DropdownItem({ goToMenu, children }) {
     return (
-      <div onClick={() => goToMenu && setActiveNotif(goToMenu)}> {children}</div>
+      <div onClick={() => goToMenu && setActiveNotif(goToMenu)}>
+        {" "}
+        {children}
+      </div>
     );
   }
 

@@ -20,28 +20,31 @@ import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
 
-
-
 function App() {
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { isAuthenticated } = useAuth0();
-
 
   if (isAuthenticated) {
     return (
       <div className={css.AppStyle}>
         <AuthButton />
-        <DropDown/>
-        <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD, payload: dummyAdd })} />
+        <TopBar
+          uploadClick={() =>
+            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+          }
+        />
+        <DropDown
+          uploadClick={() =>
+            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+          }
+        />
         <AppContent state={state} dispatch={dispatch} />
       </div>
     );
   }
 
   return (
-
     // <>
     //   <HomeworkViewer />
     // </>

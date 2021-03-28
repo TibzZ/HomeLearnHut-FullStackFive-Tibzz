@@ -75,7 +75,7 @@ a {
 
 .dropdown {
   position: absolute;
-  top: 130px;
+  top: 145px;
   width: 250px;
   transform: translateX(-45%);
   background-color: #242526;
@@ -88,7 +88,7 @@ a {
 
 .dropdownNotif {
   position: absolute;
-  top: 130px;
+  top: 145px;
   width: 250px;
   transform: translateX(11%);
   background-color: #242526;
@@ -101,7 +101,7 @@ a {
 
 .dropdownMsg {
   position: absolute;
-  top: 130px;
+  top: 145px;
   width: 250px;
   transform: translateX(-17%);
   background-color: #242526;

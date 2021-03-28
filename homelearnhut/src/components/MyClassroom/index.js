@@ -24,6 +24,8 @@ function MyClassroom({ studentClick, children, backClick }) {
             <h1>My Classroom</h1>
             {/* For CSS test purpose only: */}
             {/* <h2 className={css.Test}>Css Test |</h2> */}
+            <button onClick={backClick}>Back</button>
+            <br/>
             <ul>
 
                 {children.map((child, index) => [
@@ -31,7 +33,7 @@ function MyClassroom({ studentClick, children, backClick }) {
                 ])}
             </ul>
             <br />
-            <button onClick={backClick}>Back</button>
+            
 
 
         </>
