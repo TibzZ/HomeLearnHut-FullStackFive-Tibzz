@@ -7,7 +7,7 @@
   .Title1{
     font-family: "Sofia", sans-serif;
     color: #ff5757;
-    font-size: 50px;
+    font-size: 45px;
   }
   
   .Text1{
@@ -27,7 +27,7 @@
     display: block;
     margin: auto;
     font-family: 'Lato', sans-serif;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
     background: url("../ImagesLogo/Background1.jpg") no-repeat fixed center;
     background-size: auto;
     color: rgb(255, 255, 255);
@@ -35,13 +35,13 @@
   }
 
   .AppLogo {
-    padding-top: 100px;
-    height: 30vmin;
+    padding-top: 30px;
+    height: 40vmin;
     pointer-events: none;
     background:url('../ImagesLogo/LogoHHDynamic2.gif');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 400px 400px;
+    background-size: 350px 350px;
   
   }
 

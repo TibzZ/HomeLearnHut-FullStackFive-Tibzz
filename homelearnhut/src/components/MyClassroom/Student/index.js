@@ -1,5 +1,6 @@
 import React from 'react';
 //import avatar from './avatar.PNG'
+import css from "../Student/Student.module.css";
 
 function Student({ handleClick, name, avatar, age = 5 }) {
     return (
