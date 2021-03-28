@@ -13,7 +13,7 @@ const Landing = () => {
         <h1 className="heading">HomeLearn Hut</h1>
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test</h2> */}
-        <p>LOGO</p>
+        <p className={css.AppLogo}>LOGO</p>
         <AuthButton />
         <p>If you haven't got an account, click the Sign up button below</p>
         <button>Sign Up</button>

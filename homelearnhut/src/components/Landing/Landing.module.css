@@ -3,5 +3,14 @@
     font-weight: bold;
     color: rgb(190, 29, 8);
 
+  }
 
+  .AppLogo {
+    height: 40vmin;
+    pointer-events: none;
+    background:url('../ImagesLogo/logoHH.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+  
   }
