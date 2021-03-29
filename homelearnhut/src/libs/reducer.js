@@ -3,7 +3,6 @@ import * as pages from "./pages";
 import { dummyAdd } from "./dummyAdd";
 import { homework } from "./homework";
 
-
 export function reducer(state, action) {
     switch (action.type) {
         case actions.UPLOAD:
@@ -28,23 +27,3 @@ export function reducer(state, action) {
             throw new Error("invalid action");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

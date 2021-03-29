@@ -12,6 +12,7 @@ import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
 
 function MyClassroom({ studentClick, children, backClick }) {
+
   return (
     <>
       <h1>My Classroom</h1>

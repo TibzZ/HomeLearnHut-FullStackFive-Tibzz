@@ -20,6 +20,7 @@ const config = {
 
 
 const Upload = () => {
+
     const [selectedFile, setSelectedFile] = useState();
 
 

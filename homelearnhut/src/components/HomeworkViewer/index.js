@@ -17,6 +17,8 @@ function HomeworkViewer({ clickToClassroom }) {
   return (
     <>
       <CanvasTool />
+      <button onClick={clickToClassroom}>Back</button>
+      <br/>
       {name}
       <br />
       Homework: {homeworkTitle}
@@ -43,7 +45,6 @@ function HomeworkViewer({ clickToClassroom }) {
       <button>Accept</button>
       <button>Reject</button>
       <br />
-      <button onClick={clickToClassroom}>Back</button>
     </>
   );
 }

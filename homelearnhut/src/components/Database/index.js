@@ -1,43 +1,45 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
 const Database = () => {
+  // Variables
 
-    // Variables
+  const defaultAvatarUrl =
+    "https://static.thenounproject.com/png/363640-200.png";
+  const tempHomeworkUrl =
+    "https://st.depositphotos.com/2075661/2156/v/600/depositphotos_21567881-stock-illustration-homework.jpg";
 
-    const defaultAvatarUrl = "https://static.thenounproject.com/png/363640-200.png";
-    const tempHomeworkUrl = "https://www.cdn.geeksforgeeks.org/wp-content/uploads/jobassignment.png";
+  let aux;
 
-    let aux;
+  const children = [];
 
-    const children = [];
+  // goes in the Homework Feed ( NewsFeed )
+  const homework = [];
 
-    // goes in the Homework Feed ( NewsFeed )
-    const homework = [];
+  const initialHomeworkState = createData();
 
+  // UseReducer hook
+  const [homeworkState, dispatch] = useReducer(reducer, initialHomeworkState);
 
-    const initialHomeworkState = createData();
-
-    // UseReducer hook
-    const [homeworkState, dispatch] = useReducer(reducer, initialHomeworkState);
-
-    function reducer(state, action) {
-        action = { type: 'uploadHomework' };
-        switch (action.type) {
-            case 'uploadHomework':
-                // addHomework(action.payload.name, action.payload.imageUrl, action.payload.dateSet, action.payload.dateDue, children)
-                addHomework(action.payload, tempHomeworkUrl, "week ago", "next week", children);
-                break;
-            case 'uploadMarkedHomework':
-
-                break;
-            default:
-                console.log("fix the reducer");
-                break;
-            //throw new Error();
-        }
+  function reducer(state, action) {
+    action = { type: "uploadHomework" };
+    switch (action.type) {
+      case "uploadHomework":
+        // addHomework(action.payload.name, action.payload.imageUrl, action.payload.dateSet, action.payload.dateDue, children)
+        addHomework(
+          action.payload,
+          tempHomeworkUrl,
+          "week ago",
+          "next week",
+          children
+        );
+        break;
+      case "uploadMarkedHomework":
+        break;
+      default:
+        console.log("fix the reducer");
+        break;
+      //throw new Error();
     }
-
-
 
     // Functions to create and update data
 
@@ -56,19 +58,17 @@ const Database = () => {
 
 
     function createData() {
-        // create children
-        addChild("Cindy");
-        addChild("Mitch");
-        addChild("Elaine");
-        addChild("Rupert");
-        addChild("Janice");
-        addChild("Fifi");
-        
-        // create homework
-        addHomework("Maths week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
-        addHomework("English week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
-        addHomework("Art week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
-        addHomework("Art week 1", "https://static.thenounproject.com/png/363640-200.png", "yesterday", "tommorow", "");
+    // create children
+    addChild("Cassian");
+    addChild("Maya");
+    addChild("Elsie");
+    addChild("Raff");
+    addChild("Fifi");
+
+    // create homework
+    addHomework("Maths week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
+    addHomework("English week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
+    addHomework("Art week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
 
         return homework;
     }
@@ -77,5 +77,4 @@ const Database = () => {
     return [homeworkState, dispatch];
 }
 
-export default Database
-    ;
+export default Database;

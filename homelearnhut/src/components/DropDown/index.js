@@ -5,17 +5,23 @@ import { ReactComponent as PlusIcon } from "./icons/plus.svg";
 import { ReactComponent as CogIcon } from "./icons/cog.svg";
 import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
 import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
+import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import { ClickAwayListener } from "@material-ui/core";
 
-function DropDown() {
+function DropDown({uploadClick}) {
+  
   return (
     <Navbar>
-      <NavItem icon={<PlusIcon />} />
-      <NavItem icon={<BellIcon />} />
-      <NavItem icon={<MessengerIcon />} />
-
+      <NavLoad icon={<PlusIcon />} uploadClick={uploadClick}  />
+      <NavItem icon={<BellIcon />}>
+        <DropdownNotif />
+      </NavItem>
+      <NavItem icon={<MessengerIcon />}>
+        <DropdownMsg />
+      </NavItem>
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
@@ -23,25 +29,85 @@ function DropDown() {
   );
 }
 
-function Navbar(props) {
+function Navbar({ children }) {
   return (
     <nav className="navbar">
-      <ul className="navbar-nav">{props.children}</ul>
+      <ul className="navbar-nav">{children}</ul>
     </nav>
   );
 }
 
-function NavItem(props) {
-  const [open, setOpen] = useState(false);
-
+function NavLoad({ icon, uploadClick }) {
   return (
     <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
-        {props.icon}
+      <a
+        href="#"
+        className="icon-button"
+        onClick={uploadClick}
+      >
+        {icon}
       </a>
-
-      {open && props.children}
     </li>
+  );
+}
+
+function NavItem({ icon, children }) {
+  const [open, setOpen] = useState(false);
+
+  const handleClickAway = () => {
+    setOpen(false);
+  };
+
+  return (
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <li className="nav-item">
+        <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+          {icon}
+        </a>
+        {open && children}
+      </li>
+    </ClickAwayListener>
+  );
+}
+
+function DropdownNotif() {
+  const [activeNotif, setActiveNotif] = useState("");
+  const dropdownRef = useRef(null);
+
+  function DropdownItem({ goToMenu, children }) {
+    return (
+      <div onClick={() => goToMenu && setActiveNotif(goToMenu)}>
+        {" "}
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <div className="dropdownNotif" ref={dropdownRef}>
+      <DropdownItem>
+        <p style={{ color: "white" }}>No recent notifications</p>
+      </DropdownItem>
+    </div>
+  );
+}
+
+function DropdownMsg() {
+  const [activeMsg, setActiveMsg] = useState("");
+  const dropdownRef = useRef(null);
+
+  function DropdownItem({ goToMenu, children }) {
+    return (
+      <div onClick={() => goToMenu && setActiveMsg(goToMenu)}> {children}</div>
+    );
+  }
+
+  return (
+    <div className="dropdownMsg" ref={dropdownRef}>
+      <DropdownItem>
+        <p style={{ color: "white" }}>You have no messages</p>
+      </DropdownItem>
+    </div>
   );
 }
 
@@ -59,16 +125,16 @@ function DropdownMenu() {
     setMenuHeight(height);
   }
 
-  function DropdownItem(props) {
+  function DropdownItem({ goToMenu, leftIcon, rightIcon, children }) {
     return (
       <a
         href="#"
         className="menu-item"
-        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+        onClick={() => goToMenu && setActiveMenu(goToMenu)}
       >
-        <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
+        <span className="icon-button">{leftIcon}</span>
+        {children}
+        <span className="icon-right">{rightIcon}</span>
       </a>
     );
   }
@@ -84,7 +150,7 @@ function DropdownMenu() {
       >
         <div className="menu">
           <DropdownItem
-            leftIcon="👩"
+            leftIcon={<UserIcon />}
             rightIcon={<ChevronIcon />}
             goToMenu="profile"
           >

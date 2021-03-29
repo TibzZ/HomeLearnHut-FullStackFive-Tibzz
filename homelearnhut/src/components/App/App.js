@@ -19,11 +19,12 @@ import { initialState } from "../../libs/initialState";
 import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
+
 // import { ChakraProvider } from "@chakra-ui/react";
 import logo from "./homelearnhut Logo.gif"
 
-function App() {
 
+function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { isAuthenticated } = useAuth0();
@@ -52,8 +53,13 @@ function App() {
               dispatch({ type: actions.UPLOAD, payload: dummyAdd })
             }
           />
+ <DropDown
+          uploadClick={() =>
+            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+          }
           <AppContent state={state} dispatch={dispatch} />
        </div>  
+
       </div>
       </>
     );
