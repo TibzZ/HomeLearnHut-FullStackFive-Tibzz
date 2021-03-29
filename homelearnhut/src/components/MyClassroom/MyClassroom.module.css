@@ -1,7 +1,84 @@
 .Test {
-
     font-weight: bold;
     color: rgb(190, 29, 8);
-
-
   }
+
+  .profilebtn{
+     height:100px;
+     width:100px;
+     background-repeat: no-repeat;
+     background-size: cover;  
+     background-image: url("./Student/avatar.PNG");
+     border: 1px solid;
+     box-shadow: 2px 2px 5px  gray;
+  }
+
+  /* .profilebtn:hover {
+    background: rgb(245, 251, 253);
+   
+  } */
+
+  .myClassroom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: 50% 50%;
+    grid-column-gap: 1em; */
+  }
+
+  .studentList {
+    width: 100px;
+    height: 170px;
+    margin: 5px 5px;
+    border: 1px solid;
+    padding: 15px;
+    box-shadow: 2px 2px 5px  gray;
+    
+  }
+
+
+
+
+
+  .flipcard {
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+  }
+  
+  .flipcardinner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flipcard:hover .flipcardinner {
+    transform: rotateY(180deg);
+  }
+  
+  .flipcardfront, .flipcardback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flipcardfront {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flipcardback {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+   
