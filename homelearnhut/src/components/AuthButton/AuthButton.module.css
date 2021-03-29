@@ -1,7 +1,9 @@
-.Test {
-
-    font-weight: bold;
-    color: rgb(190, 29, 8);
-
-
-  }
+.authbtn{
+  background-color: #4E89AE;
+  font-weight: 600;
+  width: 100%;
+  padding: 1px 1px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.5rem;
+}
