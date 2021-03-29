@@ -12,7 +12,14 @@
      background-repeat: no-repeat;
      background-size: cover;  
      background-image: url("./Student/avatar.PNG");
+     border: 1px solid;
+     box-shadow: 2px 2px 5px  gray;
   }
+
+  /* .profilebtn:hover {
+    background: rgb(245, 251, 253);
+   
+  } */
 
   .myClassroom{
     display: flex;
@@ -24,17 +31,19 @@
   }
 
   .studentList {
-    width: 150px;
+    width: 100px;
+    height: 170px;
     margin: 5px 5px;
     border: 1px solid;
-    padding: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px  gray;
     
   }
 
 
 
+{/*  ////////////////////////////////////////////////  */}
 
-/* 
   .flipcard {
     background-color: transparent;
     width: 100px;
@@ -75,4 +84,4 @@
     transform: rotateY(180deg);
   }
 
-   */
+   

@@ -29,8 +29,9 @@ function App() {
 
   if (isAuthenticated) {
     return (
-      <div className={css.AppStyle}>
-        <div className={css.header}>
+      <>
+     <div className={css.AppStyle}>
+       <div className={css.header}>
           <div className={css.logo}>
             <img src={logo} alt="logo" />
           </div>
@@ -42,7 +43,7 @@ function App() {
           </div>
         </div>
         <div className={css.dropdown}>
-          <DropDown />  
+         <DropDown /> 
         </div>
         <div className={css.content}>
           <TopBar
@@ -51,8 +52,9 @@ function App() {
             }
           />
           <AppContent state={state} dispatch={dispatch} />
-        </div>
+       </div>
       </div>
+      </>
     );
   }
 

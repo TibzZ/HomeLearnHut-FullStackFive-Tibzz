@@ -75,7 +75,7 @@ a {
 
 .dropdown {
   position: absolute;
-  top: 130px;
+  top: 65px;
   width: 250px;
   transform: translateX(-30%);
   background-color: #242526;
