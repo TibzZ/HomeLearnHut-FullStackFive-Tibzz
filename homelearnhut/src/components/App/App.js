@@ -45,7 +45,6 @@ function App() {
           </div>
         </div>
         <div className={css.dropdown}>
-         <DropDown /> 
         </div>
         <div className={css.content}>
           <TopBar
@@ -56,7 +55,7 @@ function App() {
  <DropDown
           uploadClick={() =>
             dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-          }
+          }/>
           <AppContent state={state} dispatch={dispatch} />
        </div>  
 
