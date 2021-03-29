@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-homelearnhut-dev-184808-authRole",
+      "UnauthRoleArn": "arn:aws:iam::008702079632:role/amplify-homelearnhut-dev-184808-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::008702079632:role/amplify-homelearnhut-dev-184808-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-homelearnhut-dev-184808-deployment",
+      "UnauthRoleName": "amplify-homelearnhut-dev-184808-unauthRole",
+      "StackName": "amplify-homelearnhut-dev-184808",
+      "StackId": "arn:aws:cloudformation:eu-west-2:008702079632:stack/amplify-homelearnhut-dev-184808/cfc0d600-8e63-11eb-b828-06f4fa5b3ecc",
+      "AmplifyAppId": "d3ih9o4p3h7ev5"
+    }
+  }
+}

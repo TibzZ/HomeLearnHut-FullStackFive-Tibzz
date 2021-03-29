@@ -1,0 +1,7 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/roxy/.amplify/awscloudformation/HDBe6L4mDj"
+  }
+}

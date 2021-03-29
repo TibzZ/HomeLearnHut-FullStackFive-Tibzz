@@ -40,37 +40,24 @@ const Database = () => {
         break;
       //throw new Error();
     }
-  }
 
-  // Functions to create and update data
+    // Functions to create and update data
 
-  function addChild(
-    name,
-    avatarUrl = defaultAvatarUrl,
-    homeworkStatus = "not done",
-    individualHomeworkImage = null
-  ) {
-    children.push({
-      name: name,
-      avatar: avatarUrl,
-      homeworkStatus: homeworkStatus,
-      individualHomeworkImage: individualHomeworkImage,
-    });
-  }
 
-  // at present homework is just assigned to all children
-  function addHomework(name, imageUrl, dateSet, dateDue, comment) {
-    homework.push({
-      name: name,
-      image: imageUrl,
-      dateSet: dateSet,
-      dateDue: dateDue,
-      comment: comment,
-      children: JSON.parse(JSON.stringify(children)),
-    });
-  }
+    function addChild(name, avatarUrl = defaultAvatarUrl, homeworkStatus = "not done", individualHomeworkImage = null) {
+        children.push({ name: name, avatar: avatarUrl, homeworkStatus: homeworkStatus, individualHomeworkImage: individualHomeworkImage })
+    }
 
-  function createData() {
+    // at present homework is just assigned to all children
+    function addHomework(name, imageUrl, dateSet, dateDue, comment) {
+        homework.push({
+            name: name, image: imageUrl, dateSet: dateSet, dateDue: dateDue, comment: comment, children: JSON.parse(JSON.stringify(children))
+        })
+
+    }
+
+
+    function createData() {
     // create children
     addChild("Cassian");
     addChild("Maya");
@@ -83,11 +70,11 @@ const Database = () => {
     addHomework("English week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
     addHomework("Art week 1", tempHomeworkUrl, "yesterday", "tommorow", "");
 
-    return homework;
-  }
+        return homework;
+    }
 
-  // return the useReducer hook
-  return [homeworkState, dispatch];
-};
+    // return the useReducer hook
+    return [homeworkState, dispatch];
+}
 
 export default Database;

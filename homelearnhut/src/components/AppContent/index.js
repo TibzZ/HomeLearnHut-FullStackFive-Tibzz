@@ -5,19 +5,28 @@ import HomeWorkFeed from "../HomeWorkFeed";
 
 import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
+import { useEffect } from "react";
 
 
 function AppContent({ state, dispatch }) {
-  function backToFeed() {
-    dispatch({ type: actions.BACKTOFEED });
+
+  // Go to feed on startup ( which loads initial data )
+  useEffect(() => {
+    goToFeed();
+  }, []);
+
+
+
+  function goToFeed() {
+    dispatch({ type: actions.GOTOFEED });
   }
 
   function clickToClassroom(classroomIndex) {
     dispatch({ type: actions.GOTOCLASSROOM, payload: classroomIndex });
   }
 
-  function clickToHomeworkViewer(homeworkIndex){
-    dispatch({type: actions.GOTOHOMEWORK, payload: homeworkIndex});
+  function clickToHomeworkViewer(homeworkIndex) {
+    dispatch({ type: actions.GOTOHOMEWORK, payload: homeworkIndex });
   }
 
   if (state.page === pages.FEED) {
@@ -33,20 +42,22 @@ function AppContent({ state, dispatch }) {
 
 
       <div className={css.Test}>
-        <MyClassroom studentClick={clickToHomeworkViewer} children={state.homework[0].children} backClick={backToFeed} />
+        <MyClassroom studentClick={clickToHomeworkViewer} children={state.homework[0].children} backClick={goToFeed} />
       </div >
     );
   }
-  else // Viewer
-  {
+  else if (state.page === pages.VIEWER) {
     return (
 
 
 
       <div className={css.Test}>
-        <HomeworkViewer clickToClassroom={clickToClassroom}/>
+        <HomeworkViewer clickToClassroom={clickToClassroom} />
       </div >
     );
+  }
+  else { // blank page
+    return null;
   }
 }
 
