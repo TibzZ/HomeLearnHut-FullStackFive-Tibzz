@@ -52,6 +52,19 @@ const Upload = () => {
         // close popup
         console.log("close popup");
 
+        // dispatch UPLOAD, with the data from the form and the upload URL as payload
+        // date set is a timestamp
+        // default children added
+        // {
+        //     name: '',
+        //     image: '',
+        //     dateSet: '',
+        //     dateDue: '',
+        //     comment: '',
+        //     children:
+        //         [...children]
+        // }
+
     }
 
 

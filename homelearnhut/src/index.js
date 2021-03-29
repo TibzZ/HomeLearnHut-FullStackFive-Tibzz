@@ -15,8 +15,8 @@ ReactDOM.render(
   >
     {/* CSS Test */}
     {/* <p className={css.Test}>Hey </p> */}
-    {/* <App /> */}
-    <AppTest />
+    <App />
+    {/* <AppTest /> */}
   </Auth0Provider>,
   document.getElementById("root")
 );
