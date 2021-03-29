@@ -41,21 +41,21 @@ function App() {
             <h1>HomeLearn Hut</h1>
           </div>
           <div className={css.login}>
+            <DropDown
+                   uploadClick={() =>
+                    dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+                  }/>
             <AuthButton />
           </div>
         </div>
         <div className={css.dropdown}>
         </div>
         <div className={css.content}>
-          <TopBar
+          {/* <TopBar
             uploadClick={() =>
               dispatch({ type: actions.UPLOAD, payload: dummyAdd })
             }
-          />
- <DropDown
-          uploadClick={() =>
-            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-          }/>
+          /> */}
           <AppContent state={state} dispatch={dispatch} />
        </div>  
 
