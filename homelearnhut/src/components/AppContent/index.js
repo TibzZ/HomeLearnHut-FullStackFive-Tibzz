@@ -2,6 +2,7 @@ import css from "../AppContent/AppContent.module.css";
 import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import HomeWorkFeed from "../HomeWorkFeed";
+import Upload from "../Upload";
 
 import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
@@ -29,10 +30,16 @@ function AppContent({ state, dispatch }) {
     dispatch({ type: actions.GOTOHOMEWORK, payload: homeworkIndex });
   }
 
+  function upload(payload) {
+    dispatch({ type: actions.UPLOAD, payload: payload })
+  }
+
   if (state.page === pages.FEED) {
     return (
       <div className={css.Test}>
         <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
+
+        <Upload upload={upload} />
       </div >
     );
   }

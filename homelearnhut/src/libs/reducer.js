@@ -6,8 +6,13 @@ import { homework } from "./homework";
 export function reducer(state, action) {
     switch (action.type) {
         case actions.UPLOAD:
+
+            // Upload real data
+            //return { ...state, homework: [...state.homework, action.payload] };
             return { ...state, homework: [...state.homework, action.payload] };
-        //  return { ...state, homework: [...state.homework, dummyAdd] };
+
+        // Dummy data add
+        //return { ...state, homework: [...state.homework, dummyAdd] };
         case actions.GOTOFEED:
             // back to feed gets the data fresh from the database each time
             // Do a GET request

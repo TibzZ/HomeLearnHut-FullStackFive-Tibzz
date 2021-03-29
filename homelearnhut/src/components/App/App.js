@@ -30,9 +30,7 @@ function App() {
 
   const { isAuthenticated } = useAuth0();
 
-  function upload(payload) {
-    dispatch({ type: actions.UPLOAD, payload: payload })
-  }
+
 
   if (isAuthenticated) {
     return (
@@ -61,8 +59,8 @@ function App() {
               uploadClick={() =>
                 dispatch({ type: actions.UPLOAD, payload: dummyAdd })
               } />
-            {/* <AppContent state={state} dispatch={dispatch} /> */}
-            <AppTest upload={upload} />
+            <AppContent state={state} dispatch={dispatch} />
+            {/* <AppTest upload={upload} /> */}
           </div>
 
         </div>
