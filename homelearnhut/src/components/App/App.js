@@ -24,16 +24,18 @@ import { dummyAdd } from "../../libs/dummyAdd";
 
 function App() {
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+
 
   const { isAuthenticated } = useAuth0();
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
 
   if (isAuthenticated) {
     return (
       <div className={css.AppStyle}>
         <AuthButton />
-        <DropDown/>
+        <DropDown />
         <TopBar uploadClick={() => dispatch({ type: actions.UPLOAD, payload: dummyAdd })} />
         <AppContent state={state} dispatch={dispatch} />
       </div>

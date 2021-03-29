@@ -6,3 +6,5 @@ export const CLASSROOM = "Classroom";
 
 // Homework viewer
 export const VIEWER = "Viewer";
+
+export const LOADING = "Loading";
