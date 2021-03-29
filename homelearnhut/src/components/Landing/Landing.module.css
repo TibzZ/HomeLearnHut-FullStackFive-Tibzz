@@ -1,7 +1,70 @@
-.Test {
+/* "Open Sans" (Open+Sans) is the font that is imported. To replace with related name. If the font's name has multiple words, URL-encode it by adding a + sign between each word */
 
-    font-weight: bold;
-    color: rgb(190, 29, 8);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sofia&display=swap');
+
+  
+  .Title1{
+    font-family: "Sofia", sans-serif;
+    color: #ff5757;
+    font-size: 45px;
+  }
+  
+  .Text1{
+    font-family: "Sofia", sans-serif;
+    color: #080808;
+    font-size: 20px;
+  }
+  
+/* Not working */
+  /* .Box1 {
+    background-color: darkgoldenrod;
+
+  } */
+  
+  .BackgroundLanding {
+    /* border: 10px solid black; */
+    display: block;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 100px;
+    background: url("../ImagesLogo/Background2.jpg") no-repeat fixed center;
+    background-size: auto;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+  }
+
+  .AppLogo {
+    padding-top: 30px;
+    height: 40vmin;
+    pointer-events: none;
+    background:url('../ImagesLogo/LogoHHDynamic2.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 350px 350px;
+  
+  }
 
 
+  .BackgroundBase {
+    /* border: 10px solid black; */
+    display: block;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 100px;
+    background: url("../ImagesLogo/Background1.jpg") no-repeat fixed center;
+    background-size: cover;
+    color: azure;
+  }
+
+
+  .AppLogoBase {
+    padding-top: 100px;
+    height: 30vmin;
+    pointer-events: none;
+    background:url('../ImagesLogo/LogoHHDynamic2.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 400px;
+  
   }
