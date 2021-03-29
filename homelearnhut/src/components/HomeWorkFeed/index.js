@@ -8,24 +8,29 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
+import DropDownTerm from "../NavFilter";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
+  return (
+    <div>
+      <DropDownTerm />
+      <ul>
+        {console.log(homeworkList)}
 
-
-    return (
-
-        <ul>
-            {console.log(homeworkList)}
-
-            {/* For CSS test purpose only: */}
-            {/* <h2 className={css.Test}>Css Test ||</h2> */}
-            {homeworkList.map((homework, index) => [
-
-                <li><Post homework={homework} index={index} clickToClassroom={clickToClassroom} /></li>,
-
-            ])}
-        </ul>
-    );
-}
+        {/* For CSS test purpose only: */}
+        {/* <h2 className={css.Test}>Css Test ||</h2> */}
+        {homeworkList.map((homework, index) => [
+          <li>
+            <Post
+              homework={homework}
+              index={index}
+              clickToClassroom={clickToClassroom}
+            />
+          </li>,
+        ])}
+      </ul>
+    </div>
+  );
+};
 
 export default HomeWorkFeed;

@@ -1,7 +1,68 @@
-.Test {
+.myButton {
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffa372;
+  background-color: #ed6663;
+  box-shadow: 0px 10px 14px -7px #4e89ae;
+  background: linear-gradient(to bottom, #ed6663 5%, #ffa372 100%);
+  border-radius: 8px;
+}
 
-    font-weight: bold;
-    color: rgb(190, 29, 8);
+.myButton:hover {
+  background: linear-gradient(to bottom, #ffa372 5%, #ed6663 100%);
+  background-color: #ffa372;
+}
 
+.backButton {
+  position: absolute;
+  top: 165px;
+  left: 20px;
+  background-color: #ed6663;
+  box-shadow: 0px 10px 14px -7px #4e89ae;
+  background: linear-gradient(to bottom, #ed6663 5%, #ffa372 100%);
+  border-radius: 8px;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffa372;
+}
 
-  }
+.backButton:hover {
+  background: linear-gradient(to bottom, #ffa372 5%, #ed6663 100%);
+  background-color: #ffa372;
+}
+
+/* .icon {
+  fill: #dadce1;
+  width: 30px;
+  height: 30px;
+  transform: scaleX(-1);
+} */
+/* .icon {
+  width: calc(60px * 0.5);
+  height: calc(60px * 0.5);
+  background-color: #ed6663;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: row;
+  justify-content: center;
+  transition: filter 300ms;
+  transform: scaleX(-1);
+  fill: white;
+}
+
+.icon:hover {
+  filter: brightness(1.2);
+} */

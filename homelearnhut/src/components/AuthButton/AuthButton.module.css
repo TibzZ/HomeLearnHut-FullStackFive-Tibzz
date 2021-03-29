@@ -3,54 +3,63 @@
 #ED6663 (CORAL)
 #FFA372 (ORANGE) */
 .button {
-	background-color: #4caf50; /* Green */
-	border: none;
-	color: white;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	transition-duration: 0.4s;
-	cursor: pointer;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: #dadce1;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .button1 {
-	background-color: white;
-	color: black;
-	border: 2px solid #008cba;
+  background-color: #dadce1;
+  color: black;
+  border: 2px solid #008cba;
 }
 
 .button1:hover {
-	background-color: #008cba;
-	color: white;
+  background-color: #008cba;
+  color: #dadce1;
 }
 
 .authbtn {
-	background-color: #ED6663;
-  box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #ED6663 5%, #FFA372 100%);
-	border-radius:8px;
-	/* display:inline-block; */
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:5px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #FFA372;
+  background-color: #ed6663;
+  box-shadow: 0px 10px 14px -7px #4E89AE;
+  background: linear-gradient(to bottom, #ed6663 5%, #ffa372 100%);
+  border-radius: 8px;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffa372;
   /* display:flex;
   justify-content: flex-end; */
   /* margin-top:35px;
   margin-left: 50px; */
 }
-.authbtn:hover{
-	background:linear-gradient(to bottom, #FFA372 5%, #ED6663 100%);
-	background-color:#FFA372;
+.authbtn:hover {
+  background: linear-gradient(to bottom, #ffa372 5%, #ed6663 100%);
+  background-color: #ffa372;
 }
-.authbtn:active{
-  /* position:relative;
-	top:1px; */
+/* .authbtn:active {
+  position:relative;
+	top:1px;} */
+
+
+.authLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+  margin-right: 50px;
+  color: #dadce1;
 }
