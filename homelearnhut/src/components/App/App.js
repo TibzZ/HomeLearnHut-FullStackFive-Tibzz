@@ -23,6 +23,7 @@ import { dummyAdd } from "../../libs/dummyAdd";
 import logo from "./homelearnhut Logo.gif"
 
 function App() {
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { isAuthenticated } = useAuth0();
@@ -52,7 +53,7 @@ function App() {
             }
           />
           <AppContent state={state} dispatch={dispatch} />
-       </div>
+       </div>  
       </div>
       </>
     );
