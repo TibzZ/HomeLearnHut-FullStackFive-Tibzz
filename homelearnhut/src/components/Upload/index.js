@@ -6,6 +6,8 @@ See wireframe for details of this component
 import React, { useState } from 'react';
 import { uploadFile } from 'react-s3';
 import css from "../Upload/Upload.module.css";
+import { children } from "../../libs/children";
+
 
 const { REACT_APP_BUCKETNAME, REACT_APP_REGION, REACT_APP_ACCESS_KEY_ID, REACT_APP_SECRET_ACCESS_KEY } = process.env;
 
@@ -19,9 +21,14 @@ const config = {
 
 
 
-const Upload = () => {
+const Upload = ({ upload }) => {
 
     const [selectedFile, setSelectedFile] = useState();
+
+    // Controlled components
+    const [title, setTitle] = useState('');
+    const [comment, setComment] = useState('');
+    const [dateDue, setDateDue] = useState('');
 
 
     // upload functionality
@@ -37,34 +44,23 @@ const Upload = () => {
 
         uploadFile(selectedFile, config)
             .then((data) => {
-
-                //   console.log(`https://${config.bucketName}.s3.${config.region}.amazonaws.com/${e.target.files[0].name}`);
-
                 console.log(`https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`);
+
+
+                // Testing
+                console.log(title);
+                console.log(comment);
+                console.log(dateDue);
+
+                upload({
+                    name: title, image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/homework/${config.dirName}/${selectedFile.name}`
+                    , dateSet: Date.now(), dateDue: dateDue, comment: comment, children: [...children]
+                });
 
             })
             .catch(
                 (err) => { alert(err) }
             )
-
-        //setIsSelected(false);
-        setSelectedFile();
-
-        // close popup
-        console.log("close popup");
-
-        // dispatch UPLOAD, with the data from the form and the upload URL as payload
-        // date set is a timestamp
-        // default children added
-        // {
-        //     name: '',
-        //     image: '',
-        //     dateSet: '',
-        //     dateDue: '',
-        //     comment: '',
-        //     children:
-        //         [...children]
-        // }
 
     }
 
@@ -77,15 +73,18 @@ const Upload = () => {
             <h2 className={css.Test}>Upload</h2>
             Enter title
             <br />
-            <input></input>
+            <input value={title} onChange={(event) =>
+                setTitle(event.target.value)}></input>
             <br />
             Comment:
             <br />
-            <input></input>
+            <input value={comment} onChange={(event) =>
+                setComment(event.target.value)}></input>
             <br />
             Due date:
             <br />
-            <input></input>
+            <input value={dateDue} onChange={(event) =>
+                setDateDue(event.target.value)}></input>
             <br />
             <input type="file" name="file" onChange={browseClick} title="" />
             <br />

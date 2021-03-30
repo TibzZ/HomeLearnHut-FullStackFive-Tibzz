@@ -4,8 +4,8 @@ import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
-import TopBar from "../TopBar";
 import DropDown from "../DropDown";
+import AppTest from "../AppTest";
 /*
 initial idea: Top level app has 4 states ( or routes)
 (- Landing pagedrills down to)
@@ -29,37 +29,38 @@ function App() {
 
   const { isAuthenticated } = useAuth0();
 
+  function upload(payload) {
+    dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
+
+
   if (isAuthenticated) {
     return (
       <>
-     <div className={css.AppStyle}>
-       <div className={css.header}>
-          <div className={css.logo}>
-            <img src={logo} alt="logo" />
+        <div className={css.AppStyle}>
+          <div className={css.header}>
+            <div className={css.logo}>
+              <img src={logo} alt="logo" />
+            </div>
+            <div className={css.title}>
+              <h1>HomeLearn Hut</h1>
+            </div>
+            <div className={css.login}>
+              <AuthButton />
+            </div>
           </div>
-          <div className={css.title}>
-            <h1>HomeLearn Hut</h1>
+          <div className={css.dropdown}>
           </div>
-          <div className={css.login}>
-            <AuthButton />
+          <div className={css.content}>
+            <DropDown
+              uploadClick={upload
+              } />
+            <AppContent state={state} dispatch={dispatch} />
+            {/* <AppTest upload={upload} /> */}
           </div>
-        </div>
-        <div className={css.dropdown}>
-        </div>
-        <div className={css.content}>
-          <TopBar
-            uploadClick={() =>
-              dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-            }
-          />
- <DropDown
-          uploadClick={() =>
-            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-          }/>
-          <AppContent state={state} dispatch={dispatch} />
-       </div>  
 
-      </div>
+        </div>
       </>
     );
   }
