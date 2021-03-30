@@ -38,8 +38,7 @@ function AppContent({ state, dispatch }) {
     return (
       <div className={css.Test}>
         <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
-
-        <Upload upload={upload} />
+        {/* <Upload upload={upload} /> */}
       </div >
     );
   }

@@ -10,12 +10,24 @@ import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ClickAwayListener } from "@material-ui/core";
+import ReactModal from "react-modal";
+import { useModal } from "react-modal-hook";
+import Upload from "../Upload";
 
-function DropDown({uploadClick}) {
-  
+
+function DropDown({ uploadClick }) {
+
+  const [showModal, hideModal] = useModal(() => (
+    <ReactModal isOpen>
+      <p><Upload uploadClick={uploadClick} /></p>
+      <button onClick={hideModal}>X</button>
+    </ReactModal>
+  ));
+
+
   return (
     <Navbar>
-      <NavLoad icon={<PlusIcon />} uploadClick={uploadClick}  />
+      <NavLoad icon={<PlusIcon />} popupClick={showModal} />
       <NavItem icon={<BellIcon />}>
         <DropdownNotif />
       </NavItem>
@@ -37,13 +49,13 @@ function Navbar({ children }) {
   );
 }
 
-function NavLoad({ icon, uploadClick }) {
+function NavLoad({ icon, popupClick }) {
   return (
     <li className="nav-item">
       <a
         href="#"
         className="icon-button"
-        onClick={uploadClick}
+        onClick={popupClick}
       >
         {icon}
       </a>

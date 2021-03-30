@@ -30,6 +30,10 @@ function App() {
 
   const { isAuthenticated } = useAuth0();
 
+  function upload(payload) {
+    dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
 
 
   if (isAuthenticated) {
@@ -50,14 +54,8 @@ function App() {
           <div className={css.dropdown}>
           </div>
           <div className={css.content}>
-            <TopBar
-              uploadClick={() =>
-                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-              }
-            />
             <DropDown
-              uploadClick={() =>
-                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+              uploadClick={upload
               } />
             <AppContent state={state} dispatch={dispatch} />
             {/* <AppTest upload={upload} /> */}
