@@ -13,13 +13,13 @@ export function reducer(state, action) {
 
         // Dummy data add
         //return { ...state, homework: [...state.homework, dummyAdd] };
-        case actions.GOTOFEED:
+        case actions.GO_TO_FEED:
             // back to feed gets the data fresh from the database each time
             // Do a GET request
             return { ...state, page: pages.FEED };
-        case actions.GOTOCLASSROOM:
+        case actions.GO_TO_CLASSROOM:
             return { ...state, page: pages.CLASSROOM, homeworkIndex: state.homeworkIndex };
-        case actions.GOTOHOMEWORK:
+        case actions.GO_TO_HOMEWORK:
             return { ...state, page: pages.VIEWER, homeworkIndex: state.homeworkIndex };
         case actions.MARK:
             // accept the homework

@@ -19,15 +19,15 @@ function AppContent({ state, dispatch }) {
 
 
   function goToFeed() {
-    dispatch({ type: actions.GOTOFEED });
+    dispatch({ type: actions.GO_TO_FEED });
   }
 
   function clickToClassroom(classroomIndex) {
-    dispatch({ type: actions.GOTOCLASSROOM, payload: classroomIndex });
+    dispatch({ type: actions.GO_TO_CLASSROOM, payload: classroomIndex });
   }
 
   function clickToHomeworkViewer(homeworkIndex) {
-    dispatch({ type: actions.GOTOHOMEWORK, payload: homeworkIndex });
+    dispatch({ type: actions.GO_TO_HOMEWORK, payload: homeworkIndex });
   }
 
   function upload(payload) {
