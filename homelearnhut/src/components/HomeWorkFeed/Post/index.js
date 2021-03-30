@@ -1,10 +1,12 @@
+import css from "./Post.module.css";
+
 const Post = ({ homework, index, clickToClassroom }) => {
   return (
     <>
       <button onClick={(index) => clickToClassroom(index)}>
         <img src={homework.image} alt="homework" />
       </button>
-      <div>
+      <div classNam={css.container} >
         {homework.name}
         <br />
         {homework.imageUrl}
