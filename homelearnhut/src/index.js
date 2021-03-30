@@ -6,6 +6,7 @@ import App from "./components/App/App";
 import AppTest from "./components/AppTest";
 import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { ModalProvider } from "react-modal-hook";
 
 ReactDOM.render(
   <Auth0Provider
@@ -15,7 +16,10 @@ ReactDOM.render(
   >
     {/* CSS Test */}
     {/* <p className={css.Test}>Hey </p> */}
-    <App />
+
+    <ModalProvider>
+      <App />
+    </ModalProvider>
     {/* <AppTest /> */}
   </Auth0Provider>,
   document.getElementById("root")

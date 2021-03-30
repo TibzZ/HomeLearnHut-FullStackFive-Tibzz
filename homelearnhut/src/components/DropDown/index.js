@@ -10,12 +10,49 @@ import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ClickAwayListener } from "@material-ui/core";
+import ReactModal from "react-modal";
+import { useModal } from "react-modal-hook";
+import Upload from "../Upload";
 
-function DropDown({uploadClick}) {
-  
+
+function DropDown({ uploadClick }) {
+
+  const [showModal, hideModal] = useModal(() => (
+    <ReactModal style={{
+      overlay: {
+        // position: 'fixed',
+        // top: 0,
+        // left: 0,
+        // right: 0,
+        // bottom: 0,
+        // backgroundColor: 'white'
+      },
+      content: {
+        position: 'absolute',
+        backgroundColor:'#9692AF',
+        top: '300px',
+        left: '100px',
+        right: '100px',
+        bottom: '300px',
+        border: '1px solid #ccc',
+        background: '#fff',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '4px',
+        outline: 'none',
+        padding: '20px',
+        color:'white'
+      }
+    }} isOpen>
+      <p><Upload uploadClick={uploadClick} /></p>
+      <button onClick={hideModal}>X</button>
+    </ReactModal>
+  ));
+
+
   return (
     <Navbar>
-      <NavLoad icon={<PlusIcon />} uploadClick={uploadClick}  />
+      <NavLoad icon={<PlusIcon />} popupClick={showModal} />
       <NavItem icon={<BellIcon />}>
         <DropdownNotif />
       </NavItem>
@@ -37,13 +74,13 @@ function Navbar({ children }) {
   );
 }
 
-function NavLoad({ icon, uploadClick }) {
+function NavLoad({ icon, popupClick }) {
   return (
     <li className="nav-item">
       <a
         href="#"
         className="icon-button"
-        onClick={uploadClick}
+        onClick={popupClick}
       >
         {icon}
       </a>

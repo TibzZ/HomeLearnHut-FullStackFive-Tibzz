@@ -10,8 +10,11 @@ c) submitted the homework and it has been approved ( e.g. a tick icon )
 import React from "react";
 import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
+import cx from "classnames";
 
-function MyClassroom({ studentClick, children, backClick }) {
+function MyClassroom({ studentClick, children, backClick, avatar }) {
+
+
 
   return (
     <>
@@ -36,6 +39,7 @@ function MyClassroom({ studentClick, children, backClick }) {
         <br />
       </div>
       <button onClick={backClick}>Back</button>
+     
     </>
   );
 }

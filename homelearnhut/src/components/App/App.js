@@ -4,8 +4,8 @@ import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
-//import TopBar from "../TopBar";
 import DropDown from "../DropDown";
+import AppTest from "../AppTest";
 
 /*
 initial idea: Top level app has 4 states ( or routes)
@@ -29,12 +29,17 @@ function App() {
 
   const { isAuthenticated } = useAuth0();
 
+  function upload(payload) {
+    dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
+
+
   if (isAuthenticated) {
     return (
       <>
         <div className={css.AppStyle}>
-          <div className={css.header}>
-           
+          <div className={css.header}>        
             <div className={css.title}>
               <h1>HomeLearn Hut</h1>
             </div> 
