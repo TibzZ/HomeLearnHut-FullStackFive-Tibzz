@@ -202,13 +202,7 @@ function DropdownMenu() {
             Settings
           </DropdownItem>
 
-          <DropdownItem
-            leftIcon="📙"
-            rightIcon={<ChevronIcon />}
-            goToMenu="work set"
-          >
-            Work Set
-          </DropdownItem>
+         
         </div>
       </CSSTransition>
 
@@ -244,26 +238,6 @@ function DropdownMenu() {
           <DropdownItem leftIcon={<CogIcon />}>Account Details</DropdownItem>
           <DropdownItem leftIcon={<CogIcon />}>Privacy Details</DropdownItem>
           <DropdownItem leftIcon={<CogIcon />}>Helpdesk</DropdownItem>
-        </div>
-      </CSSTransition>
-
-      <CSSTransition
-        in={activeMenu === "work set"}
-        timeout={500}
-        classNames="menu-secondary"
-        unmountOnExit
-        onEnter={calcHeight}
-      >
-        <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2> School Term</h2>
-          </DropdownItem>
-          <DropdownItem leftIcon="🍂">Autumn Pt I</DropdownItem>
-          <DropdownItem leftIcon="🦔">Autumn Pt II</DropdownItem>
-          <DropdownItem leftIcon="🌷">Spring Pt I</DropdownItem>
-          <DropdownItem leftIcon="🐇">Spring Pt II</DropdownItem>
-          <DropdownItem leftIcon="🌞">Summer Pt I</DropdownItem>
-          <DropdownItem leftIcon="👙">Summer Pt II</DropdownItem>
         </div>
       </CSSTransition>
     </div>

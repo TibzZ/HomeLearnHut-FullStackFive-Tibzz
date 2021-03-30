@@ -6,6 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import DropDown from "../DropDown";
 import AppTest from "../AppTest";
+
 /*
 initial idea: Top level app has 4 states ( or routes)
 (- Landing pagedrills down to)
@@ -38,25 +39,32 @@ function App() {
     return (
       <>
         <div className={css.AppStyle}>
-          <div className={css.header}>
+          <div className={css.header}>        
+            <div className={css.title}>
+              <h1>HomeLearn Hut</h1>
+            </div> 
             <div className={css.logo}>
               <img src={logo} alt="logo" />
             </div>
-            <div className={css.title}>
-              <h1>HomeLearn Hut</h1>
-            </div>
-            <div className={css.login}>
+            <div>
               <AuthButton />
             </div>
           </div>
           <div className={css.dropdown}>
+            <DropDown
+              uploadClick={() =>
+                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+              }
+            />
           </div>
           <div className={css.content}>
-            <DropDown
-              uploadClick={upload
-              } />
+            {/* <TopBar
+            uploadClick={() =>
+              dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+            }
+          /> */}
+
             <AppContent state={state} dispatch={dispatch} />
-            {/* <AppTest upload={upload} /> */}
           </div>
         </div>
       </>
