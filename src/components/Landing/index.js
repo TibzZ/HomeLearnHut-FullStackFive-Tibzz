@@ -25,8 +25,8 @@ const Landing = () => {
 
 
     <div className={css.BackgroundLanding}>
-        <h1 className={css.Title1}>Welcome</h1>
         <p className={css.AppLogo}/>
+        <h1 className={css.Title1}>Welcome</h1>
         <AuthButton />
         <p className={css.Text1}>No account yet? Click the Sign up button! </p>
         <button>Sign Up</button>

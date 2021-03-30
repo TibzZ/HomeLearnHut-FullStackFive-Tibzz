@@ -3,16 +3,27 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sofia&display=swap');
 
+/* font-family: 'Biryani', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Fira Sans Condensed', sans-serif;
+font-family: 'Heebo', sans-serif;     TITLE
+font-family: 'Nunito Sans', sans-serif; TEXT
+font-family: 'Overpass', sans-serif;
+font-family: 'Proza Libre', sans-serif; LOGO
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Rokkitt', serif;         TEXT?
+font-family: 'Sorts Mill Goudy', serif; */
+
   
   .Title1{
-    font-family: "Sofia", sans-serif;
-    color: #ff5757;
+    font-family: "Proza Libre", sans-serif;
+    color: #080808;
     font-size: 45px;
      /* z-index: -1; */
   }
   
   .Text1{
-    font-family: "Sofia", sans-serif;
+    font-family: "Proza Libre", sans-serif;
     color: #080808;
     font-size: 20px;
   }
