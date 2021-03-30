@@ -5,7 +5,8 @@ This is accessed through clicking on a student within the "MyClassroom" componen
 
 import CanvasTool from "./CanvasTool";
 import css from "../HomeworkViewer/HomeworkViewer.module.css";
-import logo from "./CanvasTool/logo.png";
+//import logo from "./CanvasTool/logo.png";
+import { ReactComponent as ChevronIcon } from "./chevron.svg";
 
 function HomeworkViewer({ clickToClassroom }) {
   const name = "Lucas";
@@ -17,8 +18,11 @@ function HomeworkViewer({ clickToClassroom }) {
   return (
     <>
       <CanvasTool />
-      <button onClick={clickToClassroom}>Back</button>
-      <br/>
+      <button className={css.backButton} onClick={clickToClassroom}>
+        {/* <ChevronIcon className={css.icon}/> */}
+        Back
+      </button>
+      <br />
       {name}
       <br />
       Homework: {homeworkTitle}
@@ -42,8 +46,8 @@ function HomeworkViewer({ clickToClassroom }) {
       Comment
       <input></input>
       <br />
-      <button>Accept</button>
-      <button>Reject</button>
+      <button className={css.myButton}>Accept</button>
+      <button className={css.myButton}>Reject</button>
       <br />
     </>
   );
