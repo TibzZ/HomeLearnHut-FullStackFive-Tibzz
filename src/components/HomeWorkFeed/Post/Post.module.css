@@ -1,3 +1,23 @@
-/* .container {
-    color: red;
-  }   */
+.container {
+  display: flex;
+  max-width: 50%;
+  margin: 75px auto;
+}
+
+.image {
+  border-radius: 10%;
+}
+
+.textbox {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: auto 30px;
+  border: 1px solid #69779b;
+  padding: 30px;
+  border-radius: 8px;
+  color: #69779b;
+  width: 300px;
+  text-align: center;
+  margin-top: 350px;
+  font-family: "Reem Kufi", sans-serif;
+}

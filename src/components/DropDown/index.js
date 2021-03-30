@@ -13,42 +13,46 @@ import { ClickAwayListener } from "@material-ui/core";
 import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
-
+import { flexbox } from "@material-ui/system";
 
 function DropDown({ uploadClick }) {
-
   const [showModal, hideModal] = useModal(() => (
-    <ReactModal style={{
-      overlay: {
-        // position: 'fixed',
-        // top: 0,
-        // left: 0,
-        // right: 0,
-        // bottom: 0,
-        // backgroundColor: 'white'
-      },
-      content: {
-        position: 'absolute',
-        backgroundColor:'#9692AF',
-        top: '300px',
-        left: '100px',
-        right: '100px',
-        bottom: '300px',
-        border: '1px solid #ccc',
-        background: '#fff',
-        overflow: 'auto',
-        WebkitOverflowScrolling: 'touch',
-        borderRadius: '4px',
-        outline: 'none',
-        padding: '20px',
-        color:'white'
-      }
-    }} isOpen>
-      <p><Upload uploadClick={uploadClick} /></p>
+    <ReactModal
+      style={{
+        overlay: {
+          // position: 'fixed',
+          // top: 0,
+          // left: 0,
+          // right: 0,
+          // bottom: 0,
+          // backgroundColor: 'white'
+        },
+        content: {
+          position: "absolute",
+          backgroundColor: "#69779b",
+          top: "30%",
+          left: "30%",
+          width: "50%",
+          height: "50%",
+          border: "1px solid #ccc",
+          background: "#fff",
+          overflow: "auto",
+          WebkitOverflowScrolling: "touch",
+          borderRadius: "8px",
+          outline: "none",
+          padding: "10px",
+          color: "white",
+          alignItems: "center",
+        },
+      }}
+      isOpen
+    >
+      <p>
+        <Upload uploadClick={uploadClick} />
+      </p>
       <button onClick={hideModal}>X</button>
     </ReactModal>
   ));
-
 
   return (
     <Navbar>
@@ -77,11 +81,7 @@ function Navbar({ children }) {
 function NavLoad({ icon, popupClick }) {
   return (
     <li className="nav-item">
-      <a
-        href="#"
-        className="icon-button"
-        onClick={popupClick}
-      >
+      <a href="#" className="icon-button" onClick={popupClick}>
         {icon}
       </a>
     </li>
@@ -201,8 +201,6 @@ function DropdownMenu() {
           >
             Settings
           </DropdownItem>
-
-         
         </div>
       </CSSTransition>
 

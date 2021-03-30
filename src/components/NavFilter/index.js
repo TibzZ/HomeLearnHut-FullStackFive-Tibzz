@@ -55,7 +55,7 @@ function DropdownWork() {
             rightIcon={<ChevronIcon />}
             goToMenu="work set"
           >
-            Filter Previous Work
+            Filter HomeWork
           </DropdownItem>
         </div>
       </CSSTransition>
