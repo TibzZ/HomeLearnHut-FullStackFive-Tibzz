@@ -21,8 +21,7 @@ import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
 
 // import { ChakraProvider } from "@chakra-ui/react";
-import logo from "./homelearnhut Logo.gif"
-
+import logo from "./homelearnhut Logo.gif";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,34 +31,33 @@ function App() {
   if (isAuthenticated) {
     return (
       <>
-     <div className={css.AppStyle}>
-       <div className={css.header}>
-          <div className={css.logo}>
-            <img src={logo} alt="logo" />
+        <div className={css.AppStyle}>
+          <div className={css.header}>
+            <div className={css.logo}>
+              <img src={logo} alt="logo" />
+            </div>
+            <div className={css.title}>
+              <h1>HomeLearn Hut</h1>
+            </div>
+            <div className={css.login}>
+              <AuthButton />
+            </div>
           </div>
-          <div className={css.title}>
-            <h1>HomeLearn Hut</h1>
-          </div>
-          <div className={css.login}>
-            <AuthButton />
+          <div className={css.dropdown}></div>
+          <div className={css.content}>
+            <TopBar
+              uploadClick={() =>
+                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+              }
+            />
+            <DropDown
+              uploadClick={() =>
+                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
+              }
+            />
+            <AppContent state={state} dispatch={dispatch} />
           </div>
         </div>
-        <div className={css.dropdown}>
-        </div>
-        <div className={css.content}>
-          <TopBar
-            uploadClick={() =>
-              dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-            }
-          />
- <DropDown
-          uploadClick={() =>
-            dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-          }/>
-          <AppContent state={state} dispatch={dispatch} />
-       </div>  
-
-      </div>
       </>
     );
   }
