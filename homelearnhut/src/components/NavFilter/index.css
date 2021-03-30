@@ -29,7 +29,7 @@ a {
 .icon-button2 {
   width: calc(50px * 0.5);
   height: calc(50px * 0.5);
-  background-color: #43658b;
+  background-color: #69779b;
   border-radius: 50%;
   padding: 5px;
   margin: 2px;
@@ -56,8 +56,8 @@ a {
   top: 170px;
   width: 265px;
   transform: translateX(8%);
-  background-color: #43658b;
-  border: 1px solid #43658b;
+  background-color: #69779b;
+  border: 1px solid #9692af;
   border-radius: 8px;
   padding: 1rem;
   overflow: hidden;
@@ -69,7 +69,7 @@ a {
 }
 
 .menu-item2 {
-  background-color: #43658b;
+  background-color: #69779b;
   height: 50px;
   display: flex;
   align-items: center;
@@ -87,7 +87,7 @@ a {
 }
 
 .menu-item2:hover {
-  background-color: #4e89ae;
+  background-color: #9692af;
 }
 
 .icon-right2 {
