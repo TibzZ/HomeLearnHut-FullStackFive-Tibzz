@@ -30,22 +30,6 @@ const Upload = ({ upload }) => {
     const [comment, setComment] = useState('');
     const [dateDue, setDateDue] = useState('');
 
-    // const updateText = (event) => {
-    //     setTitle(event.target.value);
-    //     console.log(title);
-    // };
-
-    // const updateComment = (event) => {
-    //     setText(event.target.value);
-    //     console.log(text);
-    // };
-
-    // const updateDateDue = (event) => {
-    //     setText(event.target.value);
-    //     console.log(text);
-    // };
-
-
 
     // upload functionality
     const browseClick = (event) => {
@@ -62,10 +46,9 @@ const Upload = ({ upload }) => {
             .then((data) => {
                 console.log(`https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`);
 
-                // setUrl(`https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`);
 
+                // Testing
                 console.log(title);
-
                 console.log(comment);
                 console.log(dateDue);
 
@@ -78,37 +61,6 @@ const Upload = ({ upload }) => {
             .catch(
                 (err) => { alert(err) }
             )
-
-        // uploadFile(selectedFile, config).catch((err) => { alert(err) })
-
-        //setIsSelected(false);
-        // setSelectedFile();
-
-        // close popup
-
-
-        // upload({
-        //     name: title, image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
-        //     , dateSet: Date.now(), dateDue: dateDue, comment: comment, children: [...children]
-        // });
-
-        // upload({
-        //     name: title, image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
-        //     , dateSet: 'yesterday', dateDue: dateDue, comment: comment, children: [...children]
-        // });
-
-        // upload(
-        //     {
-        //         name: 'Added homework',
-        //         image: url,
-        //         dateSet: 'yesterday',
-        //         dateDue: 'tommorow',
-        //         comment: '',
-        //         children:
-        //             [...children]
-        //     }
-        // );
-
 
     }
 
