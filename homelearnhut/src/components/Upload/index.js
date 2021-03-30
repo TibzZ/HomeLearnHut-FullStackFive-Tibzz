@@ -70,7 +70,7 @@ const Upload = ({ upload }) => {
                 console.log(dateDue);
 
                 upload({
-                    name: title, image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
+                    name: title, image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/homework/${config.dirName}/${selectedFile.name}`
                     , dateSet: Date.now(), dateDue: dateDue, comment: comment, children: [...children]
                 });
 
