@@ -21,8 +21,7 @@ import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
 
 // import { ChakraProvider } from "@chakra-ui/react";
-import logo from "./homelearnhut Logo.gif"
-
+import logo from "./homelearnhut Logo.gif";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -59,7 +58,6 @@ function App() {
             <AppContent state={state} dispatch={dispatch} />
             {/* <AppTest upload={upload} /> */}
           </div>
-
         </div>
       </>
     );
