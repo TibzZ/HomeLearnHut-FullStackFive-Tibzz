@@ -4,7 +4,6 @@ import Landing from "../Landing";
 import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
-import TopBar from "../TopBar";
 import DropDown from "../DropDown";
 import AppTest from "../AppTest";
 /*

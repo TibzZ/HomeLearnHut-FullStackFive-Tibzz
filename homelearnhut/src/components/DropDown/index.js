@@ -18,7 +18,32 @@ import Upload from "../Upload";
 function DropDown({ uploadClick }) {
 
   const [showModal, hideModal] = useModal(() => (
-    <ReactModal isOpen>
+    <ReactModal style={{
+      overlay: {
+        // position: 'fixed',
+        // top: 0,
+        // left: 0,
+        // right: 0,
+        // bottom: 0,
+        // backgroundColor: 'white'
+      },
+      content: {
+        position: 'absolute',
+        backgroundColor:'#9692AF',
+        top: '300px',
+        left: '100px',
+        right: '100px',
+        bottom: '300px',
+        border: '1px solid #ccc',
+        background: '#fff',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '4px',
+        outline: 'none',
+        padding: '20px',
+        color:'white'
+      }
+    }} isOpen>
       <p><Upload uploadClick={uploadClick} /></p>
       <button onClick={hideModal}>X</button>
     </ReactModal>
