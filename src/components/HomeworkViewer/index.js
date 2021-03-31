@@ -8,7 +8,7 @@ import css from "../HomeworkViewer/HomeworkViewer.module.css";
 //import logo from "./CanvasTool/logo.png";
 import { ReactComponent as ChevronIcon } from "./chevron.svg";
 
-function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle }) {
+function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle, homework }) {
   // const name = "Lucas";
   // const setDate = "Yesterday";
   // const dueDate = "Tommorow";
@@ -17,7 +17,7 @@ function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle }) {
 
   return (
     <>
-      <CanvasTool />
+      <CanvasTool homeworkImage={homework.image} />
       <button className={css.backButton} onClick={clickToClassroom}>
         {/* <ChevronIcon className={css.icon}/> */}
         Back

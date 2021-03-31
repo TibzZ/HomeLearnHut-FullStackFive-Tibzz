@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import CanvasDraw from "react-canvas-draw";
 import "./index.css";
-import logo from "./logo.png";
+//import logo from "./logo.png";
 
-function CanvasTool() {
+
+
+function CanvasTool({ homeworkImage }) {
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
@@ -73,7 +75,7 @@ function CanvasTool() {
         //ref2={loadableCanvas}
         brushColor={customColor}
         brushRadius={2}
-        imgSrc={logo}
+        imgSrc={homeworkImage}
         //img from database will need to be passed at this level
         canvasWidth={300}
         canvasHeight={500}
