@@ -5,13 +5,16 @@ const Post = ({ homework, index, clickToClassroom }) => {
     <div className={css.container}>
       <div className={css.textbox}>
         {homework.name}
-        <br />
-        Date Set:  {homework.dateSet}
-        <br />
+        <p className={css.dateSet}>
+          <span> Date Set: {homework.dateSet} </span>
+        </p>
       </div>
-      <div className={css.image}>
-        <button onClick={(index) => clickToClassroom(index)}>
-          <img src={homework.image} alt="homework" />
+      <div>
+        <button
+          className={css.button}
+          onClick={(index) => clickToClassroom(index)}
+        >
+          <img className={css.image} src={homework.image} alt="homework" />
         </button>
       </div>
       <div className={css.textbox2}>
