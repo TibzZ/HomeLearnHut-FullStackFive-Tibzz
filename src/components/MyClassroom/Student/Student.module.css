@@ -1,7 +1,5 @@
-
 .profilebtn {
-  
-  margin-left: -10px;
+  margin-left: -15px;
   height: 100px;
   width: 100px;
   background-repeat: no-repeat;
@@ -11,6 +9,14 @@
   box-shadow: 2px 2px 5px gray;
   border-radius: 100%;
   outline: none;
-  
 }
 
+.name {
+  margin-top: 0;
+}
+
+.tickBox {
+  color: lightgrey;
+  font-size: 40px;
+  margin-top: -10px;
+}
