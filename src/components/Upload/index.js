@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { uploadFile } from "react-s3";
 import css from "../Upload/Upload.module.css";
 import { children } from "../../libs/children";
+import dateFormat from "dateformat";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -41,6 +42,9 @@ const Upload = ({ upload }) => {
     // number for a folder so files cannot overwrite each other with the same name
     config.dirName = Date.now();
 
+    let day = new Date(Date.now());
+    let formattedDate = dateFormat(day.toJSON(), "mmmm dS, yyyy");
+
     uploadFile(selectedFile, config)
       .then((data) => {
         console.log(
@@ -55,7 +59,7 @@ const Upload = ({ upload }) => {
         upload({
           name: title,
           image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
-          dateSet: Date.now(),
+          dateSet: formattedDate,
           dateDue: dateDue,
           comment: comment,
           children: [...children],
