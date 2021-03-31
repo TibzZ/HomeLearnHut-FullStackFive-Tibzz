@@ -1,9 +1,11 @@
+/* @import url(//db.onlinewebfonts.com/c/00710fca992abacb1342069968a6997d?family=Sassoon); */
+
 .container {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 35%;
   /* align-self: center; */
-  margin: 75px auto;
+  margin: 65px auto -30px auto;
 }
 
 .image {
@@ -24,7 +26,7 @@
   font-weight: 300;
   border-radius: 4px;
   color: #69779b;
-  display:flex;
+  display: flex;
   flex-direction: column;
   font-family: "Reem Kufi", sans-serif;
 }
@@ -36,7 +38,15 @@
   margin-bottom: 3px;
 }
 
-.dateTitle{
+.dateTitle {
+  align-self: flex-start;
+  font-family: "Reem Kufi", sans-serif;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.dateComment {
   align-self: flex-start;
   font-family: "Reem Kufi", sans-serif;
   margin-top: 0px;
@@ -57,7 +67,7 @@
   padding: 0.5rem;
   border-radius: 4px;
   color: #69779b;
-  display:flex;
+  display: flex;
   flex-direction: column;
   font-family: "Reem Kufi", sans-serif;
 }

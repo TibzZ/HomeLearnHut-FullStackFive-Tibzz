@@ -33,29 +33,25 @@ function App() {
     dispatch({ type: actions.UPLOAD, payload: payload });
   }
 
-
-
   if (isAuthenticated) {
     return (
       <>
         <div className={css.AppStyle}>
-          <div className={css.header}> 
-            <div className={css.leftHeader} >
+          <div className={css.header}>
+            <div className={css.leftHeader}>
               <div className={css.logo}>
                 <img src={logo} alt="logo" />
               </div>
               <div className={css.title}>
                 <h1>HomeLearn Hut</h1>
-              </div> 
-            </div>      
+              </div>
+            </div>
             <div>
               <AuthButton />
             </div>
           </div>
           <div className={css.dropdown}>
-            <DropDown
-              upload={upload}
-            />
+            <DropDown upload={upload} />
           </div>
           <div className={css.content}>
             {/* <TopBar

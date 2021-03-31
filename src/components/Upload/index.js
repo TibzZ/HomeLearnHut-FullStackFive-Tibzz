@@ -71,9 +71,11 @@ const Upload = ({ upload }) => {
   };
 
   return (
-    <>
+    <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
-      <h2 className={css.Test}>Upload</h2>
+      <h2 style={{ color: "#dadce1" }} className={css.Test}>
+        Upload
+      </h2>
       Enter title
       <br />
       <input
@@ -97,8 +99,10 @@ const Upload = ({ upload }) => {
       <br />
       <input type="file" name="file" onChange={browseClick} title="" />
       <br />
-      <button onClick={uploadClick}>Submit</button>
-    </>
+      <button className={css.submitBtn} onClick={uploadClick}>
+        Submit
+      </button>
+    </div>
   );
 };
 

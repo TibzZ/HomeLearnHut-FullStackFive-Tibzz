@@ -5,7 +5,7 @@ import CanvasDraw from "react-canvas-draw";
 import { uploadFile } from "react-s3";
 
 // import { children } from "../../libs/children";
-import css from "./HomeworkViewer.module.css"
+import css from "./HomeworkViewer.module.css";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -22,14 +22,15 @@ const config = {
   secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
 };
 
-
-
-
-
-function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name, avatar }) {
-
+function HomeworkViewer({
+  mark,
+  clickToClassroom,
+  homework,
+  childHomework,
+  name,
+  avatar,
+}) {
   const [selectedFile, setSelectedFile] = useState();
-
 
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
@@ -61,13 +62,12 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
           `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
         );
 
-
         mark({
           name: name,
           avatar: avatar,
           individualHomeworkImage: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
           homeworkMarked: true,
-          comment: ""
+          comment: "",
         });
       })
       .catch((err) => {
@@ -75,11 +75,8 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
       });
   };
 
-
-
   return (
     <body>
-      <br /><br /><br />
       <div className={css.tools}>
         <div
           onClick={(e) => setCustomColor("#FF00FF")}
@@ -108,9 +105,8 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
           Save
         </button>
 
-
         <br />
-      </div>
+      </div><div className={css.containCanvas}>
       <CanvasDraw
         className={css.myCanvas}
         ref={saveableCanvas}
@@ -119,47 +115,40 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
         brushRadius={2}
         imgSrc={homework.image}
         //img from database will need to be passed at this level
-        canvasWidth={300}
+        canvasWidth={400}
         canvasHeight={500}
         saveData={localStorage.getItem("savedDrawing")}
-      />
+      /></div>
       {console.log("homework image is " + homework.image)}
       <div>
         <button className={css.backButton} onClick={clickToClassroom}>
-
           Back
-      </button>
-        <br />
-        {childHomework.name}
-        <br />
-       Homework: {homework.name}
-        <br />
-      set: {childHomework.dateSet}
-        <br />
-      due: {childHomework.dateSet}
-        <br />
-        {/* submitted: = {submissionDate} */}
-        <br />
-        <br />
-        {/* CSS test HomeworkViewer module only: */}
-        {/* <p className={css.Test}> test Css</p> */}
-        {/* <img
+        </button>
+        <div className={css.contain}>
+          <p className={css.childName}>{childHomework.name}</p>
+          <p>Homework: {homework.name}</p>
+          Set: {childHomework.dateSet}
+          <br />
+          Due: {childHomework.dateSet}
+          <br />
+          {/* submitted: = {submissionDate} */}
+          {/* CSS test HomeworkViewer module only: */}
+          {/* <p className={css.Test}> test Css</p> */}
+          {/* <img
         src={logo}
         alt=""
       /> */}
-        <br />
-      Homework annotation controls
-      <br />
-      Comment
-      <input></input>
-        <br />
-        <button className={css.myButton} onClick={uploadClick
-        }>Mark</button>
+          <span>Comment:</span>
+          <input></input>
+        </div>
+        <button className={css.myButton} onClick={uploadClick}>
+          Mark
+        </button>
         {/* // reject just goes back for now */}
-        <button className={css.myButton} onClick={clickToClassroom}>Reject</button>
-        <br />
+        <button className={css.myButton} onClick={clickToClassroom}>
+          Reject
+        </button>
       </div>
-
     </body>
   );
 }

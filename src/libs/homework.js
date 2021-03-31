@@ -2,205 +2,172 @@ import { children } from "./children";
 
 //https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/
 
-
 export const homework = [
   {
-    name: "RE",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/RE.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    name: "English - Conjunctions",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/eng.PNG",
+    dateSet: "September 14th, 2020",
+    dateDue: "Wednesday",
+    comment:
+      "Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.",
     children: [...children],
   },
   {
-    name: "English",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/eng.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "English 2",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/eng2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Geography",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Geography 1",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo1.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Geography 2",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Geography 3",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo3.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Maths 3",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/math3.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  },
-  {
-    name: "Maths",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  }
-  ,
-
-
-  {
-    name: "Maths 1",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths1.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  }
-  ,
-
-
-
-  {
-    name: "Maths 2",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  }
-  ,
-  {
-    name: "Maths 4",
+    name: "Maths - Missing Numbers",
     image:
       "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths4.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    dateSet: "September 20th, 2020",
+    dateDue: "Monday",
+    comment:
+      "Count carefully to find the missing numbers. They are missing from a hundred square and a number line.",
     children: [...children],
-  }
-  ,
+  },
   {
-    name: "Maths 5",
+    name: "Phonics",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phon2.PNG",
+    dateSet: "June 4th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.",
+    children: [...children],
+  },
+  {
+    name: "Geography - Identify UK countries and bodies of water",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo2.PNG",
+    dateSet: "January 11th, 2021",
+    dateDue: "Wednesday",
+    comment: "Look carefully at the map and use the word bank to help you.",
+    children: [...children],
+  },
+  {
+    name: "Maths - Tens and Ones",
     image:
       "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths5.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    dateSet: "May 7th, 2021",
+    dateDue: "Tuesday",
+    comment:
+      "Count carefully and think about your number formation when answering each question.",
     children: [...children],
-  }
-  ,
-
-
+  },
   {
-    name: "Phonetics 2",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phon2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    name: "Religious Education - Diwali",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/RE.PNG",
+    dateSet: "November 13th, 2020",
+    dateDue: "Monday",
+    comment:
+      "Tell your family and friends what you have learned about each word you find.",
     children: [...children],
-  }
-  ,
+  },
   {
-    name: "Phonetics",
+    name: "Maths - Arrays",
     image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phonics.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths2.PNG",
+    dateSet: "April 19th, 2021",
+    dateDue: "Friday",
+    comment:
+      "Try to remember all the different vocabulary learned in class to complete all fluency questions.",
     children: [...children],
-  }
-  ,
-  {
-    name: "Phonics 2",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phonics2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
-    children: [...children],
-  }
-  ,
+  },
   {
     name: "Reading",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read1.PNG",
+    dateSet: "December 18th, 2020",
+    dateDue: "First Day Back",
+    comment:
+      "Read the Peter Harris Biography again, make sure you read it carefully and underline any key words you think might be important. Then answer the questions.",
     children: [...children],
-  }
-  ,
+  },
   {
-    name: "Reading 1",
+    name: "Maths - Division",
     image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read1.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths1.PNG",
+    dateSet: "January 8th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Use objects around your home to help you share equally and answer the fluency questions.",
     children: [...children],
-  }
-  ,
+  },
   {
-    name: "Reading 2",
+    name: "Phonics",
     image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read2.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phonics.PNG",
+    dateSet: "June 11th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.",
     children: [...children],
-  }
-  ,
+  },
   {
-    name: "Words",
-    image:
-      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/words.PNG",
-    dateSet: "yesterday",
-    dateDue: "tommorow",
-    comment: "",
+    name: "Reading - Comprehension",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read.PNG",
+    dateSet: "February 12th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Answer each question using the text from Giraffes Can't Dance. Remember to identify the key words that are going to help you the most.",
     children: [...children],
-  }
-
+  },
+  {
+    name: "Geography - Identify continents and oceans",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo.PNG",
+    dateSet: "February 28th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Go to youtube and listen to the songs from class to help with remember.",
+    children: [...children],
+  },
+  {
+    name: "Maths - Multiplication and Division",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/math3.PNG",
+    dateSet: "November 6th, 2020",
+    dateDue: "Monday",
+    comment:
+      "Read each problem carefully, sing the songs from class to help you solve the problems.",
+    children: [...children],
+  },
+  {
+    name: "Reading - Comprehension",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/read2.PNG",
+    dateSet: "March 5th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Each sentence is from the text, The Tiger Who Came To Tea.  Identify the correct word that completes the sentence.",
+    children: [...children],
+  },
+  {
+    name: "English - Verbs and Nouns",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/eng2.PNG",
+    dateSet: "March 22nd, 2021",
+    dateDue: "Friday",
+    comment:
+      "Remind yourself what is a verb and what is a noun. Read the instructions carefully.",
+    children: [...children],
+  },
+  {
+    name: "Phonics",
+    image:
+      "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/phonics2.PNG",
+    dateSet: "June 14th, 2021",
+    dateDue: "Wednesday",
+    comment:
+      "Read each word carefully, what sounds can you hear? Match the word to the correct picture.",
+    children: [...children],
+  },
+  {
+    name: "Maths - Five Times Table",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/maths.PNG",
+    dateSet: "October 16th, 2020",
+    dateDue: "Wednesday",
+    comment:
+      "Start with part A of the varied fluency before moving on to part B.",
+    children: [...children],
+  },
+  {
+    name: "Phonics",
+    image: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/words.PNG",
+    dateSet: "July 9th, 2021",
+    dateDue: "Monday",
+    comment:
+      "Practice reading words that end in 'el' and 'il'. Once you find them in the wordsearch use them in a sentence.",
+    children: [...children],
+  },
 ];

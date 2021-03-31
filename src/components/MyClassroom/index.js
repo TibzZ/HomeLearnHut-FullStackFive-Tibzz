@@ -13,13 +13,10 @@ import css from "../MyClassroom/MyClassroom.module.css";
 import cx from "classnames";
 
 function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
-
-
-
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
-      <div >
+      <div classname={css.childContain}>
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test |</h2> */}
         <ul className={css.myClassroom}>
@@ -31,13 +28,14 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
                 avatar={child.avatar}
                 age={5}
               />
-            </li>
+            </li>,
           ])}
         </ul>
         <br />
       </div>
-      <button className={css.goBack} onClick={backClick}>Back</button>
-
+      <button className={css.goBack} onClick={backClick}>
+        Back
+      </button>
     </>
   );
 }

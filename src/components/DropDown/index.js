@@ -9,7 +9,7 @@ import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-import { ClickAwayListener } from "@material-ui/core";
+import { ClickAwayListener, CssBaseline } from "@material-ui/core";
 import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
@@ -17,40 +17,13 @@ import { flexbox } from "@material-ui/system";
 
 function DropDown({ upload }) {
   const [showModal, hideModal] = useModal(() => (
-    <ReactModal
-      style={{
-        overlay: {
-          // position: 'fixed',
-          // top: 0,
-          // left: 0,
-          // right: 0,
-          // bottom: 0,
-          // backgroundColor: 'white'
-        },
-        content: {
-          position: "absolute",
-          backgroundColor: "#69779b",
-          top: "30%",
-          left: "30%",
-          width: "50%",
-          height: "50%",
-          border: "1px solid #ccc",
-          background: "#fff",
-          overflow: "auto",
-          WebkitOverflowScrolling: "touch",
-          borderRadius: "8px",
-          outline: "none",
-          padding: "10px",
-          color: "white",
-          alignItems: "center",
-        },
-      }}
-      isOpen
-    >
+    <ReactModal className="modalBox" isOpen>
       <p>
         <Upload upload={upload} />
       </p>
-      <button onClick={hideModal}>X</button>
+      <button className="cornerBtn" onClick={hideModal}>
+        X
+      </button>
     </ReactModal>
   ));
 

@@ -23,7 +23,7 @@ a {
 }
 
 .container {
-  position:fixed;
+  position: fixed;
   z-index: -1;
 }
 
@@ -31,7 +31,7 @@ a {
 .icon-button2 {
   width: calc(50px * 0.5);
   height: calc(50px * 0.5);
-  background-color: #9692af;
+  background-color: #d7eaea;
   border-radius: 50%;
   padding: 3px;
   margin: 2px;
@@ -43,11 +43,11 @@ a {
 
 .icon-button2:hover {
   filter: brightness(1.2);
-  background-color: #9692af;
+  /* background-color: #9692af; */
 }
 
 .icon-button2 svg {
-  fill: #dadce1;
+  fill: rgb(66, 66, 66);
   width: 20px;
   height: 20px;
 }
@@ -56,17 +56,28 @@ a {
 
 .dropdown2 {
   position: fixed;
-  top: 170px;
-  width: 15%;
+  top: 160px;
+  width: 14%;
   transform: translateX(8%);
-  background-color: #9692af;
-  border: 1px solid #9692af;
-  border-radius: 8px;
-  padding: 1rem;
+  background-color: #d7eaea;
+  border: 1px solid #d7eaea;
+  border-radius: 4px;
+  padding: 0.5rem;
   overflow: hidden;
   transition: height 500ms ease;
   font-family: "Reem Kufi", sans-serif;
   font-size: 1.3rem;
+}
+
+/* .menu2:hover {
+  filter: brightness(1.2);
+  background-color: #dadce1;
+} */
+
+@media all and (max-width: 800px) {
+  .filter {
+    display: none;
+  }
 }
 
 .menu2 {
@@ -74,8 +85,8 @@ a {
 }
 
 .menu-item2 {
-  background-color: #9692af;
-  height: 50px;
+  background-color: #d7eaea;
+  height: 40px;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -89,14 +100,14 @@ a {
 
 /* .menu-item2 .icon-button2:hover {
   filter: none;
-}
-
-.menu-item2:hover {
-  background-color: #9692af;
 } */
 
+/* .menu-item2:hover {
+  background-color: #dadce1;
+}  */
+
 .icon-right2 {
-  fill: #dadce1;
+  fill: rgb(66, 66, 66);
   margin-left: auto;
   width: 15px;
   height: 15px;

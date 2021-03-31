@@ -8,15 +8,11 @@ import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
 import { useEffect } from "react";
 
-
 function AppContent({ state, dispatch }) {
-
   // Go to feed on startup ( which loads initial data )
   useEffect(() => {
     goToFeed();
   }, []);
-
-
 
   function goToFeed() {
     dispatch({ type: actions.GO_TO_FEED });
@@ -29,7 +25,6 @@ function AppContent({ state, dispatch }) {
   function clickUpToClassroom(classroomIndex) {
     dispatch({ type: actions.UP_TO_CLASSROOM, payload: classroomIndex });
   }
-
 
   function clickToHomeworkViewer(homeworkIndex) {
     dispatch({ type: actions.GO_TO_HOMEWORK, payload: homeworkIndex });
@@ -46,33 +41,40 @@ function AppContent({ state, dispatch }) {
   if (state.page === pages.FEED) {
     return (
       <div className={css.Test}>
-        <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickDownToClassroom} />
+        <HomeWorkFeed
+          homeworkList={state.homework}
+          clickToClassroom={clickDownToClassroom}
+        />
         {/* <Upload upload={upload} /> */}
-      </div >
+      </div>
     );
-  }
-  else if (state.page === pages.CLASSROOM) {
+  } else if (state.page === pages.CLASSROOM) {
     return (
-
-
-
       <div className={css.Test}>
-        <MyClassroom studentClick={clickToHomeworkViewer}
-          homeworkTitle={state.homework[state.homeworkIndex].name} children={state.homework[state.homeworkIndex].children} backClick={goToFeed} />
-      </div >
+        <MyClassroom
+          studentClick={clickToHomeworkViewer}
+          homeworkTitle={state.homework[state.homeworkIndex].name}
+          children={state.homework[state.homeworkIndex].children}
+          backClick={goToFeed}
+        />
+      </div>
     );
-  }
-  else if (state.page === pages.VIEWER) {
+  } else if (state.page === pages.VIEWER) {
     return (
-
-
       <div className={css.Test}>
-        <HomeworkViewer clickToClassroom={clickUpToClassroom} mark={mark} childHomework={state.homework[state.homeworkIndex].children[state.childIndex]}
-          homework={state.homework[state.homeworkIndex]} homeworkTitle={state.homework[0].name} />
-      </div >
+        <HomeworkViewer
+          clickToClassroom={clickUpToClassroom}
+          mark={mark}
+          childHomework={
+            state.homework[state.homeworkIndex].children[state.childIndex]
+          }
+          homework={state.homework[state.homeworkIndex]}
+          homeworkTitle={state.homework[0].name}
+        />
+      </div>
     );
-  }
-  else { // blank page
+  } else {
+    // blank page
     return null;
   }
 }

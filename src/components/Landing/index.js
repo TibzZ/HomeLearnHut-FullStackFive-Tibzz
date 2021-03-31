@@ -8,10 +8,9 @@ import AuthButton from "../AuthButton";
 import css from "../Landing/Landing.module.css";
 
 const Landing = () => {
-    return (
+  return (
     <div className={css.container}>
-
-        {/* <div className="item">1
+      {/* <div className="item">1
         
         </div>
         
@@ -23,17 +22,19 @@ const Landing = () => {
          
         <div className="item">5</div> */}
 
-
-    <div className={css.BackgroundImg}>
-        <p className={css.AppLogo}/>
-        <h1 className={css.Title1}>Welcome</h1>
-        <AuthButton />
-        <p className={css.Text1}>No account yet? Click the Sign up button! </p>
-        <button className={css.button}>Sign Up</button>
+      <div className={css.BackgroundImg}>
+        <div className={css.containLogo}>
+          <p className={css.AppLogo} />
+          <h1 className={css.Title1}>Welcome</h1>
+          <AuthButton />
+          <p className={css.Text1}>
+            No account yet? Click the Sign up button!{" "}
+          </p>
+          <button className={css.button}>Sign Up</button>
+        </div>
+      </div>
     </div>
-
-    </div>
-    );
-}
+  );
+};
 
 export default Landing;

@@ -78,9 +78,9 @@ a {
 
 .dropdown {
   position: fixed;
-  top: 145px;
+  top: 138px;
   width: 250px;
-  transform: translateX(-45%);
+  transform: translateX(-40%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -92,9 +92,9 @@ a {
 
 .dropdownNotif {
   position: fixed;
-  top: 145px;
+  top: 138px;
   width: 250px;
-  transform: translateX(11%);
+  transform: translateX(15%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -106,9 +106,9 @@ a {
 
 .dropdownMsg {
   position: fixed;
-  top: 145px;
+  top: 138px;
   width: 250px;
-  transform: translateX(-17%);
+  transform: translateX(-13%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -183,4 +183,37 @@ a {
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all 500ms ease;
+}
+
+.modalBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: #dadce1;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  border: 1px solid #ccc;
+  background: #69779b;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.cornerBtn {
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 4px;
+  border: 2px solid #d7eaea;
+  color: rgb(66, 66, 66);
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }

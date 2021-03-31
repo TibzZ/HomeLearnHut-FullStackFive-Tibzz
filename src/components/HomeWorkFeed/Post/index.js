@@ -20,7 +20,7 @@ const Post = ({ homework, index, clickToClassroom }) => {
         </button>
       </div>
       <div className={css.textbox2}>
-          <p className={css.dateTitle}>
+          <p className={css.dateComment}>
             <span>Comment: {homework.comment}</span>
           </p>
           <p className={css.dateSet}>

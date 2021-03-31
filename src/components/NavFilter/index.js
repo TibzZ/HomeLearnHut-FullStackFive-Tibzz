@@ -29,6 +29,7 @@ function DropdownWork() {
   function DropdownItem({ goToMenu, leftIcon, rightIcon, children }) {
     return (
       <a
+      style={{color: "rgb(66, 66, 66)"}}
         href="#"
         className="menu-item2"
         onClick={() => goToMenu && setActiveMenu(goToMenu)}
@@ -55,7 +56,7 @@ function DropdownWork() {
             rightIcon={<ChevronIcon />}
             goToMenu="work set"
           >
-            Filter HomeWork
+            <span className="filter">Filter Work</span>
           </DropdownItem>
         </div>
       </CSSTransition>
@@ -69,14 +70,29 @@ function DropdownWork() {
       >
         <div className="menu2">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2> School Term</h2>
+            <h2>
+              {" "}
+              <span className="filter">Term</span>
+            </h2>
           </DropdownItem>
-          <DropdownItem leftIcon="🍂">Autumn Pt I</DropdownItem>
-          <DropdownItem leftIcon="🦔">Autumn Pt II</DropdownItem>
-          <DropdownItem leftIcon="🌷">Spring Pt I</DropdownItem>
-          <DropdownItem leftIcon="🐇">Spring Pt II</DropdownItem>
-          <DropdownItem leftIcon="🌞">Summer Pt I</DropdownItem>
-          <DropdownItem leftIcon="👙">Summer Pt II</DropdownItem>
+          <DropdownItem leftIcon="🍂">
+            <span className="filter">Autumn Pt I</span>
+          </DropdownItem>
+          <DropdownItem leftIcon="🦔">
+          <span className="filter">Autumn Pt II</span>
+          </DropdownItem>
+          <DropdownItem leftIcon="🌷">
+            <span className="filter">Spring Pt I</span>
+          </DropdownItem>
+          <DropdownItem leftIcon="🐇">
+          <span className="filter">Spring Pt II</span>
+          </DropdownItem>
+          <DropdownItem leftIcon="🌞">
+            <span className="filter">Summer Pt I</span>
+          </DropdownItem>
+          <DropdownItem leftIcon="👙">
+            <span className="filter">Summer Pt II</span>
+          </DropdownItem>
         </div>
       </CSSTransition>
     </div>
