@@ -23,6 +23,7 @@ a {
 }
 
 .container {
+  position:fixed;
   z-index: -1;
 }
 
@@ -54,9 +55,9 @@ a {
 /* Dropdown Menu */
 
 .dropdown2 {
-  position: absolute;
+  position: fixed;
   top: 170px;
-  width: 240px;
+  width: 15%;
   transform: translateX(8%);
   background-color: #9692af;
   border: 1px solid #9692af;

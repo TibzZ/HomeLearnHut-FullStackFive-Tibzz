@@ -29,7 +29,10 @@ body {
   justify-content: space-between;
   z-index: 300;
 }
-
+.leftHeader{
+  display:flex;
+  flex-direction: row;
+}
 .logo > img {
   display: flex;
   height: 160px;
@@ -42,7 +45,7 @@ body {
   font-size: 25px;
   align-items: flex-start;
   margin-top: -10px;
-  margin-left: 20px;
+  margin-left: -10px;
   color: #dadce1;
 }
 
@@ -66,7 +69,7 @@ body {
 	bottom: 0px;
 } */
 
-.content {
+/* .content {
   overflow-y: scroll;
   height: 100%;
-}
+} */
