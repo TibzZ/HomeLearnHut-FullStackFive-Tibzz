@@ -17,10 +17,14 @@ export function reducer(state, action) {
             // back to feed gets the data fresh from the database each time
             // Do a GET request
             return { ...state, page: pages.FEED };
-        case actions.GO_TO_CLASSROOM:
-            return { ...state, page: pages.CLASSROOM, homeworkIndex: state.homeworkIndex };
+        case actions.DOWN_TO_CLASSROOM:
+            console.log(`payload for go to classroom ${action.payload}`);
+            return { ...state, page: pages.CLASSROOM, homeworkIndex: action.payload };
+        case actions.UP_TO_CLASSROOM:
+            return { ...state, page: pages.CLASSROOM };
         case actions.GO_TO_HOMEWORK:
-            return { ...state, page: pages.VIEWER, homeworkIndex: state.homeworkIndex };
+            console.log(`payload for go to homeworkviewer ${action.payload}`);
+            return { ...state, page: pages.VIEWER, childIndex: action.payload };
         case actions.MARK:
             // accept the homework
             // change the image url of the homework on the database

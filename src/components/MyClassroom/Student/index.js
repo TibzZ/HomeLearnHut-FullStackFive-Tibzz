@@ -8,19 +8,22 @@ import { TiInputChecked } from "react-icons/ti";
 function Student({ handleClick, name, avatar }) {
   return (
 
-    
-           <>       
-          <button className={css.profilebtn} onClick={handleClick}>
-          </button>
-          <p>Name:{name} </p>
-          <TiInputChecked
-            color="lightgrey"
-            size="40px"
-            style={{ marginTop: "-10px" }}
-          />          
-      
-</>
-        
+
+    <>
+      <button className={css.profilebtn} onClick={handleClick}>
+      </button>
+      <p>Name:{name} </p>
+      <br />
+      <img src={avatar} />
+
+      <TiInputChecked
+        color="lightgrey"
+        size="40px"
+        style={{ marginTop: "-10px" }}
+      />
+
+    </>
+
   );
 }
 

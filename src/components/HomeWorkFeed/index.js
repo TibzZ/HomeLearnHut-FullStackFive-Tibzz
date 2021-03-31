@@ -24,7 +24,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
             <Post
               homework={homework}
               index={index}
-              clickToClassroom={clickToClassroom}
+              clickToClassroom={() => clickToClassroom(index)}
             />
           </li>,
         ])}

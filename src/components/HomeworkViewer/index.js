@@ -8,12 +8,12 @@ import css from "../HomeworkViewer/HomeworkViewer.module.css";
 //import logo from "./CanvasTool/logo.png";
 import { ReactComponent as ChevronIcon } from "./chevron.svg";
 
-function HomeworkViewer({ clickToClassroom }) {
-  const name = "Lucas";
-  const setDate = "Yesterday";
-  const dueDate = "Tommorow";
-  const submissionDate = "Next week";
-  const homeworkTitle = "Maths - basic number games";
+function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle }) {
+  // const name = "Lucas";
+  // const setDate = "Yesterday";
+  // const dueDate = "Tommorow";
+  // const submissionDate = "Next week";
+  // const homeworkTitle = "Maths - basic number games";
 
   return (
     <>
@@ -23,15 +23,15 @@ function HomeworkViewer({ clickToClassroom }) {
         Back
       </button>
       <br />
-      {name}
+      {childHomework.name}
       <br />
-      Homework: {homeworkTitle}
+       Homework: {homeworkTitle}
       <br />
-      set: {setDate}
+      set: {childHomework.dateSet}
       <br />
-      due: {dueDate}
+      due: {childHomework.dateSet}
       <br />
-      submitted: = {submissionDate}
+      {/* submitted: = {submissionDate} */}
       <br />
       <br />
       {/* CSS test HomeworkViewer module only: */}
