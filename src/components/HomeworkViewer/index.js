@@ -34,7 +34,11 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
-  const saveableCanvas = useRef(null);
+  const saveableCanvas = useRef(`${homework.name}-${childHomework.name}`);
+
+
+
+
   //const loadableCanvas = useRef(null);
 
   function handleClear() {
@@ -46,7 +50,25 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
   }
 
   function handleSave() {
-    localStorage.setItem("savedDrawing", saveableCanvas.current.getSaveData());
+    localStorage.setItem(`${homework.name}-${childHomework.name}`, saveableCanvas.current.getSaveData());
+
+    // a series of lines and strokes in a file...
+    console.log(localStorage.getItem(`${homework.name}-${childHomework.name}`));
+
+    let mylines = localStorage.getItem("dummy");
+    console.log("dummy");
+    console.log(mylines);
+
+    let mylines2 = localStorage.getItem(`${homework.name}-${name}`);
+    console.log("actual");
+    console.log(mylines2);
+
+
+    setSelectedFile(localStorage.getItem(`${homework.name}-${name}`));
+    // "savedDrawing"
+    uploadClick();
+
+
     // ???
     // setSelectedFile();
   }
@@ -121,9 +143,10 @@ function HomeworkViewer({ mark, clickToClassroom, homework, childHomework, name,
         //img from database will need to be passed at this level
         canvasWidth={300}
         canvasHeight={500}
-        saveData={localStorage.getItem("savedDrawing")}
+        saveData={localStorage.getItem(`${homework.name}-${name}`)}
       />
       {console.log("homework image is " + homework.image)}
+      {console.log(saveableCanvas)}
       <div>
         <button className={css.backButton} onClick={clickToClassroom}>
 
