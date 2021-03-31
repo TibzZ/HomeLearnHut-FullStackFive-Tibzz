@@ -35,7 +35,8 @@ function HomeworkViewer({
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
-  const saveableCanvas = useRef(null);
+  const saveableCanvas = useRef(`${homework.name}-${childHomework.name}`);
+
   //const loadableCanvas = useRef(null);
 
   function handleClear() {
@@ -47,7 +48,26 @@ function HomeworkViewer({
   }
 
   function handleSave() {
-    localStorage.setItem("savedDrawing", saveableCanvas.current.getSaveData());
+    localStorage.setItem(
+      `${homework.name}-${childHomework.name}`,
+      saveableCanvas.current.getSaveData()
+    );
+
+    // a series of lines and strokes in a file...
+    console.log(localStorage.getItem(`${homework.name}-${childHomework.name}`));
+
+    let mylines = localStorage.getItem("dummy");
+    console.log("dummy");
+    console.log(mylines);
+
+    let mylines2 = localStorage.getItem(`${homework.name}-${name}`);
+    console.log("actual");
+    console.log(mylines2);
+
+    setSelectedFile(localStorage.getItem(`${homework.name}-${name}`));
+    // "savedDrawing"
+    uploadClick();
+
     // ???
     // setSelectedFile();
   }
@@ -106,48 +126,51 @@ function HomeworkViewer({
         </button>
 
         <br />
-      </div><div className={css.containCanvas}>
-      <CanvasDraw
-        className={css.myCanvas}
-        ref={saveableCanvas}
-        //ref2={loadableCanvas}
-        brushColor={customColor}
-        brushRadius={2}
-        imgSrc={homework.image}
-        //img from database will need to be passed at this level
-        canvasWidth={400}
-        canvasHeight={500}
-        saveData={localStorage.getItem("savedDrawing")}
-      /></div>
-      {console.log("homework image is " + homework.image)}
-      <div>
-        <button className={css.backButton} onClick={clickToClassroom}>
-          Back
-        </button>
-        <div className={css.contain}>
-          <p className={css.childName}>{childHomework.name}</p>
-          <p>Homework: {homework.name}</p>
-          Set: {childHomework.dateSet}
-          <br />
-          Due: {childHomework.dateSet}
-          <br />
-          {/* submitted: = {submissionDate} */}
-          {/* CSS test HomeworkViewer module only: */}
-          {/* <p className={css.Test}> test Css</p> */}
-          {/* <img
+      </div>
+      <div className={css.containCanvas}>
+        <CanvasDraw
+          className={css.myCanvas}
+          ref={saveableCanvas}
+          //ref2={loadableCanvas}
+          brushColor={customColor}
+          brushRadius={2}
+          imgSrc={homework.image}
+          //img from database will need to be passed at this level
+          canvasWidth={400}
+          canvasHeight={500}
+          saveData={localStorage.getItem(`${homework.name}-${name}`)}
+        />
+        {console.log("homework image is " + homework.image)}
+        {console.log(saveableCanvas)}
+        <div>
+          <button className={css.backButton} onClick={clickToClassroom}>
+            Back
+          </button>
+          <div className={css.contain}>
+            <p className={css.childName}>{childHomework.name}</p>
+            <p>Homework: {homework.name}</p>
+            Set: {childHomework.dateSet}
+            <br />
+            Due: {childHomework.dateSet}
+            <br />
+            {/* submitted: = {submissionDate} */}
+            {/* CSS test HomeworkViewer module only: */}
+            {/* <p className={css.Test}> test Css</p> */}
+            {/* <img
         src={logo}
         alt=""
       /> */}
-          <span>Comment:</span>
-          <input></input>
+            <span>Comment:</span>
+            <input></input>
+          </div>
+          <button className={css.myButton} onClick={uploadClick}>
+            Mark
+          </button>
+          {/* // reject just goes back for now */}
+          <button className={css.myButton} onClick={clickToClassroom}>
+            Reject
+          </button>
         </div>
-        <button className={css.myButton} onClick={uploadClick}>
-          Mark
-        </button>
-        {/* // reject just goes back for now */}
-        <button className={css.myButton} onClick={clickToClassroom}>
-          Reject
-        </button>
       </div>
     </body>
   );
