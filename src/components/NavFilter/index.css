@@ -17,8 +17,9 @@ ul {
 }
 
 a {
-  color: #dadce1;
+  color: white;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .container {
@@ -29,9 +30,9 @@ a {
 .icon-button2 {
   width: calc(50px * 0.5);
   height: calc(50px * 0.5);
-  background-color: #69779b;
+  background-color: #9692af;
   border-radius: 50%;
-  padding: 5px;
+  padding: 3px;
   margin: 2px;
   display: flex;
   align-items: center;
@@ -41,6 +42,7 @@ a {
 
 .icon-button2:hover {
   filter: brightness(1.2);
+  background-color: #9692af;
 }
 
 .icon-button2 svg {
@@ -52,16 +54,18 @@ a {
 /* Dropdown Menu */
 
 .dropdown2 {
-  position: fixed;
+  position: absolute;
   top: 170px;
-  width: 265px;
+  width: 240px;
   transform: translateX(8%);
-  background-color: #69779b;
+  background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
   padding: 1rem;
   overflow: hidden;
   transition: height 500ms ease;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.3rem;
 }
 
 .menu2 {
@@ -69,7 +73,7 @@ a {
 }
 
 .menu-item2 {
-  background-color: #69779b;
+  background-color: #9692af;
   height: 50px;
   display: flex;
   align-items: center;
@@ -82,13 +86,13 @@ a {
   margin-left: 0.5rem;
 }
 
-.menu-item2 .icon-button2:hover {
+/* .menu-item2 .icon-button2:hover {
   filter: none;
 }
 
 .menu-item2:hover {
   background-color: #9692af;
-}
+} */
 
 .icon-right2 {
   fill: #dadce1;

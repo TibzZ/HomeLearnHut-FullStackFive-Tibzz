@@ -1,3 +1,38 @@
-/* .container {
-    color: red;
-  }   */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin: 75px auto;
+  align-content: center;
+}
+
+.image {
+  border-radius: 10%;
+}
+
+.textbox {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: auto;
+  border: 3px solid #69779b;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #69779b;
+  width: 38%;
+  text-align: center;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.textbox2 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: auto;
+  border: 1px solid #69779b;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: #69779b;
+  width: 38%;
+  text-align: center;
+  font-family: "Reem Kufi", sans-serif;
+}
+

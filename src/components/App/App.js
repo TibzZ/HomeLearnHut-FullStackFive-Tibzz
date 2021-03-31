@@ -22,7 +22,7 @@ import * as actions from "../../libs/actions";
 import { dummyAdd } from "../../libs/dummyAdd";
 
 // import { ChakraProvider } from "@chakra-ui/react";
-import logo from "./homelearnhut Logo.gif";
+import logo from "../../assets/LogoApp.gif";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -52,9 +52,7 @@ function App() {
           </div>
           <div className={css.dropdown}>
             <DropDown
-              uploadClick={() =>
-                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-              }
+              upload={upload}
             />
           </div>
           <div className={css.content}>

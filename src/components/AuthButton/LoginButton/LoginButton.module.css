@@ -23,3 +23,23 @@
     color: white;
   }
   
+.Button1 {
+  background-color: #69779b;
+  box-shadow: 0px 10px 14px -7px #69779b;
+  border-radius: 8px;
+  border: 2px solid #9692af;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9692af;
+}
+
+.Button1:hover {
+  background: linear-gradient(to bottom, #9692af 5%, #69779b 100%);
+  background-color: #9692af;
+}

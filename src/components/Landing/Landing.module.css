@@ -1,71 +1,102 @@
 /* "Open Sans" (Open+Sans) is the font that is imported. To replace with related name. If the font's name has multiple words, URL-encode it by adding a + sign between each word */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Sofia&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sofia&display=swap");
 
-  
-  .Title1{
-    font-family: "Sofia", sans-serif;
-    color: #ff5757;
-    font-size: 45px;
-     /* z-index: -1; */
-  }
-  
-  .Text1{
-    font-family: "Sofia", sans-serif;
-    color: #080808;
-    font-size: 20px;
-  }
-  
-/* Not working */
-  /* .Box1 {
-    background-color: darkgoldenrod;
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Here you should set what size you want your div to be 
+when viewed on smartphone */
+/* Styles */
+}
 
-  } */
-  
-  .BackgroundLanding {
-    /* border: 10px solid black; */
-    display: block;
-    margin: auto;
-    font-family: 'Lato', sans-serif;
-    padding-bottom: 100px;
-    background: url("../ImagesLogo/Background2.jpg") no-repeat fixed center;
-    background-size: auto;
-    color: rgb(255, 255, 255);
-    opacity: 1;
-  }
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
 
-  .AppLogo {
-    padding-top: 30px;
-    height: 40vmin;
-    pointer-events: none;
-    background:url('../ImagesLogo/LogoHHDynamic2.gif');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 350px 350px;
-  
-  }
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
 
+/* font-family: 'Biryani', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Fira Sans Condensed', sans-serif;
+font-family: 'Heebo', sans-serif;     TITLE
+font-family: 'Nunito Sans', sans-serif; TEXT
+font-family: 'Overpass', sans-serif;
+font-family: 'Proza Libre', sans-serif; LOGO
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Rokkitt', serif;         TEXT?
+font-family: 'Sorts Mill Goudy', serif; */
 
-  .BackgroundBase {
-    /* border: 10px solid black; */
-    display: block;
-    margin: auto;
-    font-family: 'Lato', sans-serif;
-    padding-bottom: 100px;
-    background: url("../ImagesLogo/Background1.jpg") no-repeat fixed center;
-    background-size: cover;
-    color: azure;
-  }
+.Title1 {
+  font-family: "Proza Libre", sans-serif;
+  color: rgb(54, 53, 53);
+  font-size: 25px;
+  min-width: 100%;
+  min-height: 100%;
+}
 
+.Text1 {
+  font-family: "Proza Libre", sans-serif;
+  color: rgb(54, 53, 53);
+  font-size: 20px;
+  min-width: 100%;
+  min-height: 100%;
+}
 
-  .AppLogoBase {
-    padding-top: 100px;
-    height: 30vmin;
-    pointer-events: none;
-    background:url('../ImagesLogo/LogoHHDynamic2.gif');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 400px 400px;
-  
-  }
+.container {
+}
+
+.BackgroundImg {
+  /* border: 10px solid black; */
+  display: block;
+  margin: auto;
+  background: url("../ImagesLogo/Background2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.AppLogo {
+  display: block;
+  margin: auto;
+  padding-top: 400px;
+  min-width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  background: url("../../assets/LogoLand.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px 500px;
+}
+
+.button {
+  background-color: #69779b;
+  box-shadow: 0px 10px 14px -7px #69779b;
+  border-radius: 8px;
+  border: 2px solid #9692af;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9692af;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #9692af 5%, #69779b 100%);
+  background-color: #9692af;
+}

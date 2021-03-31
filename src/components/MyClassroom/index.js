@@ -18,7 +18,7 @@ function MyClassroom({ studentClick, children, backClick, avatar }) {
 
   return (
     <>
-      <h1>My Classroom</h1>
+      <h1 className={css.pageTitle}>My Classroom</h1>
       <div >
         {console.log(children)}
 
@@ -38,7 +38,7 @@ function MyClassroom({ studentClick, children, backClick, avatar }) {
         </ul>
         <br />
       </div>
-      <button onClick={backClick}>Back</button>
+      <button className={css.goBack} onClick={backClick}>Back</button>
      
     </>
   );
