@@ -36,7 +36,11 @@ function AppContent({ state, dispatch }) {
   }
 
   function upload(payload) {
-    dispatch({ type: actions.UPLOAD, payload: payload })
+    dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
+  function mark(payload) {
+    dispatch({ type: actions.MARK, payload: payload });
   }
 
   if (state.page === pages.FEED) {
@@ -63,7 +67,7 @@ function AppContent({ state, dispatch }) {
 
 
       <div className={css.Test}>
-        <HomeworkViewer clickToClassroom={clickUpToClassroom} childHomework={state.homework[state.homeworkIndex].children[state.childIndex]}
+        <HomeworkViewer clickToClassroom={clickUpToClassroom} mark={mark} childHomework={state.homework[state.homeworkIndex].children[state.childIndex]}
           homework={state.homework[state.homeworkIndex]} homeworkTitle={state.homework[0].name} />
       </div >
     );

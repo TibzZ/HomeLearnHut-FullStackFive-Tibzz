@@ -5,7 +5,7 @@ import "./index.css";
 
 import { uploadFile } from "react-s3";
 
-import { children } from "../../libs/children";
+// import { children } from "../../libs/children";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -26,11 +26,11 @@ const config = {
 
 
 
-function CanvasTool({ homeworkImage })
+function CanvasTool({ mark, homeworkImage, name, avatar }) {
 
-const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState();
 
-{
+
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
@@ -53,7 +53,7 @@ const [selectedFile, setSelectedFile] = useState();
 
   const uploadClick = () => {
     // number for a folder so files cannot overwrite each other with the same name
-    config.dirName = Date.now();
+    config.dirName = `marked/${Date.now()}`;
 
     uploadFile(selectedFile, config)
       .then((data) => {
@@ -61,18 +61,12 @@ const [selectedFile, setSelectedFile] = useState();
           `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
         );
 
-        // Testing
-        console.log(title);
-        console.log(comment);
-        console.log(dateDue);
 
-        upload({
-          name: title,
-          image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
-          dateSet: Date.now(),
-          dateDue: dateDue,
-          comment: comment,
-          children: [...children],
+        mark({
+          name: name,
+          avatar: avatar,
+          individualHomeworkImage: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
+          homeworkMarked: true,
         });
       })
       .catch((err) => {
