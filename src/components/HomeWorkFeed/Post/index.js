@@ -4,9 +4,11 @@ const Post = ({ homework, index, clickToClassroom }) => {
   return (
     <div className={css.container}>
       <div className={css.textbox}>
-        {homework.name}
+        <p className={css.dateTitle}>
+          <span>{homework.name}</span>
+        </p>
         <p className={css.dateSet}>
-          <span> Date Set: {homework.dateSet} </span>
+          <span> Date Set: </span>{homework.dateSet} 
         </p>
       </div>
       <div>
@@ -18,10 +20,12 @@ const Post = ({ homework, index, clickToClassroom }) => {
         </button>
       </div>
       <div className={css.textbox2}>
-        Comment: {homework.comment}
-        <br />
-        Date Due: {homework.dateDue}
-        <br />
+          <p className={css.dateTitle}>
+            <span>Comment: {homework.comment}</span>
+          </p>
+          <p className={css.dateSet}>
+            <span> Date Due: </span>{homework.dateDue}
+          </p>
       </div>
     </div>
   );
