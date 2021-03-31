@@ -64,7 +64,7 @@ function AppContent({ state, dispatch }) {
 
       <div className={css.Test}>
         <HomeworkViewer clickToClassroom={clickUpToClassroom} childHomework={state.homework[state.homeworkIndex].children[state.childIndex]}
-          homeworkTitle={state.homework[0].name} />
+          homework={state.homework[state.homeworkIndex]} homeworkTitle={state.homework[0].name} />
       </div >
     );
   }
