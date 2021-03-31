@@ -6,7 +6,7 @@ const Post = ({ homework, index, clickToClassroom }) => {
       <div className={css.textbox}>
         {homework.name}
         <br />
-        date set:  {homework.dateSet}
+        Date Set:  {homework.dateSet}
         <br />
       </div>
       <div className={css.image}>
@@ -15,10 +15,9 @@ const Post = ({ homework, index, clickToClassroom }) => {
         </button>
       </div>
       <div className={css.textbox2}>
-        Comment:
-        {homework.comment}
+        Comment: {homework.comment}
         <br />
-        date due: {homework.dateDue}
+        Date Due: {homework.dateDue}
         <br />
       </div>
     </div>
