@@ -9,11 +9,7 @@ import css from "../HomeworkViewer/HomeworkViewer.module.css";
 import { ReactComponent as ChevronIcon } from "./chevron.svg";
 
 function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle, homework }) {
-  // const name = "Lucas";
-  // const setDate = "Yesterday";
-  // const dueDate = "Tommorow";
-  // const submissionDate = "Next week";
-  // const homeworkTitle = "Maths - basic number games";
+
 
   return (
     <>
@@ -25,7 +21,7 @@ function HomeworkViewer({ clickToClassroom, childHomework, homeworkTitle, homewo
       <br />
       {childHomework.name}
       <br />
-       Homework: {homeworkTitle}
+       Homework: {homework.name}
       <br />
       set: {childHomework.dateSet}
       <br />

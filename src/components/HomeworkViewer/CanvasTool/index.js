@@ -3,9 +3,34 @@ import CanvasDraw from "react-canvas-draw";
 import "./index.css";
 //import logo from "./logo.png";
 
+import { uploadFile } from "react-s3";
+
+import { children } from "../../libs/children";
+
+const {
+  REACT_APP_BUCKETNAME,
+  REACT_APP_REGION,
+  REACT_APP_ACCESS_KEY_ID,
+  REACT_APP_SECRET_ACCESS_KEY,
+} = process.env;
+
+const config = {
+  bucketName: REACT_APP_BUCKETNAME,
+  dirName: "placeholder",
+  region: REACT_APP_REGION,
+  accessKeyId: REACT_APP_ACCESS_KEY_ID,
+  secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
+};
 
 
-function CanvasTool({ homeworkImage }) {
+
+
+
+function CanvasTool({ homeworkImage })
+
+const [selectedFile, setSelectedFile] = useState();
+
+{
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
@@ -22,7 +47,40 @@ function CanvasTool({ homeworkImage }) {
 
   function handleSave() {
     localStorage.setItem("savedDrawing", saveableCanvas.current.getSaveData());
+    // ???
+    // setSelectedFile();
   }
+
+  const uploadClick = () => {
+    // number for a folder so files cannot overwrite each other with the same name
+    config.dirName = Date.now();
+
+    uploadFile(selectedFile, config)
+      .then((data) => {
+        console.log(
+          `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
+        );
+
+        // Testing
+        console.log(title);
+        console.log(comment);
+        console.log(dateDue);
+
+        upload({
+          name: title,
+          image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
+          dateSet: Date.now(),
+          dateDue: dateDue,
+          comment: comment,
+          children: [...children],
+        });
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+
 
   // function handleLoad() {
   //   loadableCanvas.current.loadSaveData(localStorage.getItem("savedDrawing"));
