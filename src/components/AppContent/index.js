@@ -22,22 +22,31 @@ function AppContent({ state, dispatch }) {
     dispatch({ type: actions.GO_TO_FEED });
   }
 
-  function clickToClassroom(classroomIndex) {
-    dispatch({ type: actions.GO_TO_CLASSROOM, payload: classroomIndex });
+  function clickDownToClassroom(classroomIndex) {
+    dispatch({ type: actions.DOWN_TO_CLASSROOM, payload: classroomIndex });
   }
+
+  function clickUpToClassroom(classroomIndex) {
+    dispatch({ type: actions.UP_TO_CLASSROOM, payload: classroomIndex });
+  }
+
 
   function clickToHomeworkViewer(homeworkIndex) {
     dispatch({ type: actions.GO_TO_HOMEWORK, payload: homeworkIndex });
   }
 
   function upload(payload) {
-    dispatch({ type: actions.UPLOAD, payload: payload })
+    dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
+  function mark(payload) {
+    dispatch({ type: actions.MARK, payload: payload });
   }
 
   if (state.page === pages.FEED) {
     return (
       <div className={css.Test}>
-        <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickToClassroom} />
+        <HomeWorkFeed homeworkList={state.homework} clickToClassroom={clickDownToClassroom} />
         {/* <Upload upload={upload} /> */}
       </div >
     );
@@ -48,7 +57,8 @@ function AppContent({ state, dispatch }) {
 
 
       <div className={css.Test}>
-        <MyClassroom studentClick={clickToHomeworkViewer} children={state.homework[0].children} backClick={goToFeed} />
+        <MyClassroom studentClick={clickToHomeworkViewer}
+          homeworkTitle={state.homework[state.homeworkIndex].name} children={state.homework[state.homeworkIndex].children} backClick={goToFeed} />
       </div >
     );
   }
@@ -56,9 +66,9 @@ function AppContent({ state, dispatch }) {
     return (
 
 
-
       <div className={css.Test}>
-        <HomeworkViewer clickToClassroom={clickToClassroom} />
+        <HomeworkViewer clickToClassroom={clickUpToClassroom} mark={mark} childHomework={state.homework[state.homeworkIndex].children[state.childIndex]}
+          homework={state.homework[state.homeworkIndex]} homeworkTitle={state.homework[0].name} />
       </div >
     );
   }

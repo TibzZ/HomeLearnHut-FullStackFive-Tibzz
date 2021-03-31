@@ -12,23 +12,21 @@ import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
 import cx from "classnames";
 
-function MyClassroom({ studentClick, children, backClick, avatar }) {
+function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
 
 
 
   return (
     <>
-      <h1 className={css.pageTitle}>My Classroom</h1>
+      <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
       <div >
-        {console.log(children)}
-
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test |</h2> */}
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
             <li className={css.studentList}>
               <Student
-                handleClick={studentClick}
+                handleClick={() => studentClick(index)}
                 name={child.name}
                 avatar={child.avatar}
                 age={5}
@@ -39,7 +37,7 @@ function MyClassroom({ studentClick, children, backClick, avatar }) {
         <br />
       </div>
       <button className={css.goBack} onClick={backClick}>Back</button>
-     
+
     </>
   );
 }

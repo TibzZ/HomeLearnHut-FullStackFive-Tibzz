@@ -4,6 +4,7 @@
   } */
 
 .myClassroom {
+  font-family: "Reem Kufi", sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,8 +14,8 @@
 }
 
 .studentList {
-  width: 80px;
-  height: 170px;
+  width: 70px;
+  height: 150px;
   margin: 15px 15px;
   border: 1px solid;
   padding: 25px;
@@ -53,7 +54,6 @@
 
 .pageTitle {
   margin-top: 60px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 20px;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 30px;
 }
