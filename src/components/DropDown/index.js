@@ -15,7 +15,7 @@ import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
 import { flexbox } from "@material-ui/system";
 
-function DropDown({ uploadClick }) {
+function DropDown({ upload }) {
   const [showModal, hideModal] = useModal(() => (
     <ReactModal
       style={{
@@ -48,7 +48,7 @@ function DropDown({ uploadClick }) {
       isOpen
     >
       <p>
-        <Upload uploadClick={uploadClick} />
+        <Upload upload={upload} />
       </p>
       <button onClick={hideModal}>X</button>
     </ReactModal>

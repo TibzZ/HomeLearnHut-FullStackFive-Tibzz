@@ -52,9 +52,7 @@ function App() {
           </div>
           <div className={css.dropdown}>
             <DropDown
-              uploadClick={() =>
-                dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-              }
+              upload={upload}
             />
           </div>
           <div className={css.content}>
