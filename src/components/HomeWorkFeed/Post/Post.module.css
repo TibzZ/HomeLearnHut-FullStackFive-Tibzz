@@ -3,6 +3,7 @@
   flex-direction: column;
   max-width: 50%;
   margin: 75px auto;
+  align-content: center;
 }
 
 .image {
@@ -17,7 +18,7 @@
   padding: 0.5rem;
   border-radius: 8px;
   color: #69779b;
-  width: 57%;
+  width: 38%;
   text-align: center;
   font-family: "Reem Kufi", sans-serif;
 }
@@ -30,7 +31,7 @@
   padding: 0.5rem;
   border-radius: 8px;
   color: #69779b;
-  width: 58%;
+  width: 38%;
   text-align: center;
   font-family: "Reem Kufi", sans-serif;
 }
