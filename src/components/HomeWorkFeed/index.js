@@ -9,21 +9,29 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
+import React, {useState} from "react";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
+  const [hwkState, setHwkState] = useState(homeworkList)
+  function handleClick(selection){
+    setHwkState(selection);
+  }
+  function showAllHwks(){
+    setHwkState(homeworkList);
+  }
+
   return (
     <div>
-      <DropDownTerm />
+      <DropDownTerm hwkState={hwkState} handleClick={handleClick}/>
+      <button className={css.resetBtn} onClick={showAllHwks}>Show all</button>
       <ul className={css.post}>
 
-
+        {console.log(homeworkList)}
+        {console.log(hwkState)}
 
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test ||</h2> */}
-
-
-        {/* revese the rendering of the array, a reducer */}
-        {homeworkList.map((homework, index) => [
+        {hwkState.map((homework, index) => [
           <li>
             <Post
               homework={homework}
