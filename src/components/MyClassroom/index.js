@@ -29,7 +29,7 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
                 handleClick={() => studentClick(index)}
                 name={child.name}
                 avatar={child.avatar}
-                children={children} // added prop for tickbox functionality
+                isHomeworkSubmitted={child.individualHomeworkImage} // added prop for tickbox functionality
                 age={5}
               />
             </li>,
