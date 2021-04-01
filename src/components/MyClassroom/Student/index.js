@@ -12,7 +12,10 @@ function Student({ handleClick, name, avatar, isHomeworkSubmitted }) {
       <button className={css.profilebtn} style={{ backgroundImage: `url(${avatar})` }} onClick={handleClick}>
       </button>
       <p className={css.name}>{name}</p>
-      <TiInputChecked style={ (isHomeworkSubmitted === null) ? { colour:"gray"} : {color:"green" } } className={css.tickBox} />    
+      <TiInputChecked style={ (isHomeworkSubmitted === null) ? {color: "green"} : {color: "lightgray" } } className={css.tickBox} />   
+      {console.log(css.tickBox)}
+      
+    
     </>
   );
 }
