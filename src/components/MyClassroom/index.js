@@ -25,6 +25,7 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
           {children.map((child, index) => [
             <li className={css.studentList}>
               <Student
+                key={index}
                 handleClick={() => studentClick(index)}
                 name={child.name}
                 avatar={child.avatar}
