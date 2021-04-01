@@ -20,6 +20,9 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test ||</h2> */}
+
+
+        {/* revese the rendering of the array, a reducer */}
         {homeworkList.map((homework, index) => [
           <li>
             <Post
@@ -28,7 +31,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
               clickToClassroom={() => clickToClassroom(index)}
             />
           </li>,
-        ])}
+        ]).reverse()}
       </ul>
     </div>
   );
