@@ -55,6 +55,8 @@ function App() {
               <AuthButton />
             </div>
           </div>
+          <button className={css.homeBtn}>Home</button>
+          <button className={css.classroomBtn}>Classroom</button>
           <div className={css.dropdown}>
             <a name="topOfPage"></a>
             <DropDown className={css.topOfPageLabel} upload={upload} />
