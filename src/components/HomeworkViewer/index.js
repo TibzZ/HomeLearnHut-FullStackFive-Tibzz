@@ -149,9 +149,9 @@ function HomeworkViewer({
           <div className={css.contain}>
             <p className={css.childName}>{childHomework.name}</p>
             <p>Homework: {homework.name}</p>
-            Set: {childHomework.dateSet}
+            Set: {homework.dateSet}
             <br />
-            Due: {childHomework.dateSet}
+            Due: {homework.dateSet}
             <br />
             {/* submitted: = {submissionDate} */}
             {/* CSS test HomeworkViewer module only: */}
