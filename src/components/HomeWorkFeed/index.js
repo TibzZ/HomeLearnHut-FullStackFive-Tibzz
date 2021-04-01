@@ -1,18 +1,12 @@
-/*
-NewsFeed contains a list of "Posts" which are essentially.
-
-A piece of homework.
-
-A piece of homework in this list can be clicked to lead to the "MyClassroom" page (state/route)
-*/
-
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
 import React, {useState} from "react";
+import {IoIosArrowDropup} from "react-icons/io";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   const [hwkState, setHwkState] = useState(homeworkList)
+
   function handleClick(selection){
     setHwkState(selection);
   }
@@ -42,6 +36,10 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           </li>,
         ]).reverse()}
       </ul>
+      <br></br>
+      <a className={css.goToTop} href="#topOfPage">
+        <IoIosArrowDropup/>
+      </a>
     </div>
   );
 };

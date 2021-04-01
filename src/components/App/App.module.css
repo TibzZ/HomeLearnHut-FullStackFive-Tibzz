@@ -48,6 +48,11 @@ body {
   margin-left: -10px;
   color: #dadce1;
 }
+.titleBtn{
+  background-color: transparent;
+  border: none;
+  outline:none;
+}
 
 .login {
   width: 25%;
@@ -62,12 +67,28 @@ body {
   /* padding: 5px 5px; */
 }
 
-/* .dropdown {
-	position: fixed; 
-	width: 100%;
-	top: 100px; 
-	bottom: 0px;
-} */
+.goToTop{
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0.5em 0.5em 0;
+	border-radius: 50%;
+  color:#69779b;
+  font-size: 50px;
+}
+.goToTop:hover{
+  background: #69779b;
+  color:#d7eaea;
+}
+
+.dropdown {
+  position:relative;
+}
 
 /* .content {
   overflow-y: scroll;
