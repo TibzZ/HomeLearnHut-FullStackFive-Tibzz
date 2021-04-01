@@ -192,14 +192,14 @@ a {
   color: #dadce1;
   top: 30%;
   left: 30%;
-  width: 40%;
-  height: 40%;
+  width: 35%;
+  height: 50%;
   border: 1px solid #ccc;
   background: #69779b;
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .cornerBtn {

@@ -28,11 +28,10 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
         Show all
       </button>
       <ul className={css.post}>
-        {console.log(homeworkList)}
-        {console.log(hwkState)}
+        {/* {console.log(homeworkList)}
+        {console.log(hwkState)} */}
 
-        {hwkState
-          .map((homework, index) => [
+        {hwkState.map((homework, index) => [
             <li>
               <Post
                 key={index}

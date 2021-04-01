@@ -24,13 +24,17 @@ import { dummyAdd } from "../../libs/dummyAdd";
 // import { ChakraProvider } from "@chakra-ui/react";
 import logo from "../../assets/LogoApp.gif";
 
-function App() {
+function App({ goToFeed }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { isAuthenticated } = useAuth0();
 
   function upload(payload) {
     dispatch({ type: actions.UPLOAD, payload: payload });
+  }
+
+  function toFeed(payload) {
+    dispatch({ type: actions.GO_TO_FEED, payload: payload });
   }
 
   if (isAuthenticated) {
@@ -42,8 +46,10 @@ function App() {
               <div className={css.logo}>
                 <img src={logo} alt="logo" />
               </div>
-              <div className={css.title}>
-                <h1>HomeLearn Hut</h1>
+              <div>
+                <button className={css.logoBtn} onClick={toFeed}>
+                  <h1 className={css.title}>HomeLearn Hut</h1>
+                </button>
               </div>
             </div>
             <div>
@@ -59,7 +65,6 @@ function App() {
               dispatch({ type: actions.UPLOAD, payload: dummyAdd })
             }
           /> */}
-
             <AppContent state={state} dispatch={dispatch} />
           </div>
         </div>

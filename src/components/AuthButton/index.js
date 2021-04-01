@@ -11,9 +11,7 @@ function AuthButton() {
   if (isAuthenticated) {
     return (
       <div className={css.authLogin}>
-        {/* Line to test CSS working */}
-        {/* <p className={css.Test}> Hello </p> */}
-        <LogoutButton/>
+        <LogoutButton />
         <UserProfile />
       </div>
     );
