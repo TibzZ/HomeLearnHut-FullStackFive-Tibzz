@@ -35,9 +35,17 @@ function HomeworkViewer({
   const [customColor, setCustomColor] = useState("blue");
   console.log(customColor);
 
-  const saveableCanvas = useRef(`${homework.name}-${childHomework.name}`);
+  const storageName = `canvasFile`;
+  const refName = `canvasRef`
 
-  //const loadableCanvas = useRef(null);
+  const saveableCanvas = useRef(refName);
+
+  // load homework
+  useEffect(() => {
+    // loadSaveData(string reference of scribbles, false);
+  }, []);
+
+
 
   function handleClear() {
     saveableCanvas.current.clear();
@@ -49,7 +57,7 @@ function HomeworkViewer({
 
   function handleSave() {
     localStorage.setItem(
-      `${homework.name}-${childHomework.name}`,
+      refName,
       saveableCanvas.current.getSaveData()
     );
 
@@ -73,26 +81,18 @@ function HomeworkViewer({
   }
 
   const uploadClick = () => {
-    // number for a folder so files cannot overwrite each other with the same name
-    config.dirName = `marked/${Date.now()}`;
+    console.log("get back string of canvas scribbles");
+    console.log(saveableCanvas.current.getSaveData())
 
-    uploadFile(selectedFile, config)
-      .then((data) => {
-        console.log(
-          `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`
-        );
+    //     mark({
+    //       name: name,
+    //       avatar: avatar,
+    //       individualHomeworkImage: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
+    //       homeworkMarked: true,
+    //       comment: "",
+    //     });
 
-        mark({
-          name: name,
-          avatar: avatar,
-          individualHomeworkImage: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
-          homeworkMarked: true,
-          comment: "",
-        });
-      })
-      .catch((err) => {
-        alert(err);
-      });
+
   };
 
   return (
@@ -138,10 +138,8 @@ function HomeworkViewer({
           //img from database will need to be passed at this level
           canvasWidth={400}
           canvasHeight={500}
-          saveData={localStorage.getItem(`${homework.name}-${name}`)}
+          saveData={localStorage.getItem(storageName)}
         />
-        {console.log("homework image is " + homework.image)}
-        {console.log(saveableCanvas)}
         <div>
           <button className={css.backButton} onClick={clickToClassroom}>
             Back
@@ -153,13 +151,7 @@ function HomeworkViewer({
             <br />
             Due: {homework.dateSet}
             <br />
-            {/* submitted: = {submissionDate} */}
-            {/* CSS test HomeworkViewer module only: */}
-            {/* <p className={css.Test}> test Css</p> */}
-            {/* <img
-        src={logo}
-        alt=""
-      /> */}
+
             <span>Comment:</span>
             <input></input>
           </div>
