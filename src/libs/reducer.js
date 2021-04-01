@@ -6,10 +6,11 @@ import { homework } from "./homework";
 export function reducer(state, action) {
     switch (action.type) {
         case actions.UPLOAD:
+            // Database link would be POST request ( INSERT etc )
             return { ...state, homework: [...state.homework, action.payload] };
         case actions.GO_TO_FEED:
             // back to feed gets the data fresh from the database each time
-            // Do a GET request
+            // Database link would be GET request ( SELECT * etc )
             return { ...state, page: pages.FEED };
         case actions.DOWN_TO_CLASSROOM:
             console.log(`payload for go to classroom ${action.payload}`);
@@ -20,12 +21,13 @@ export function reducer(state, action) {
             console.log(`payload for go to homeworkviewer ${action.payload}`);
             return { ...state, page: pages.VIEWER, childIndex: action.payload };
         case actions.MARK:
+            // Database link would be PUT ( UPDATE etc )
             // accept the homework
             // add the annotation
             throw new Error("MARK - not implemented yet");
         case actions.REJECT:
-            // reject the homework
-            // delete the image url of the homework
+            // reject the homework, make it null
+            // delete the image url of the homework, set done to false
             throw new Error("REJECT - not implemented yet");
         default:
             throw new Error("invalid action");

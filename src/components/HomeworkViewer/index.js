@@ -47,7 +47,7 @@ function HomeworkViewer({
 
   // load homework
   useEffect(() => {
-    // saveableCanvas.current.loadSaveData(tempMark, false)
+    saveableCanvas.current.loadSaveData(tempMark, false)
   }, []);
 
 
@@ -118,9 +118,7 @@ function HomeworkViewer({
           //ref2={loadableCanvas}
           brushColor={customColor}
           brushRadius={2}
-          // imgSrc={childHomework.individualHomeworkImage}
-          imgSrc={"https://www.rewardcharts4kids.com/wp-content/uploads/2011/04/study-charts-1.jpg"}
-
+          imgSrc={childHomework.individualHomeworkImage}
 
           //img from database will need to be passed at this level
           canvasWidth={400}
