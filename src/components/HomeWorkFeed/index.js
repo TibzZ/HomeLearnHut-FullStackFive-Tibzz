@@ -9,11 +9,14 @@ A piece of homework in this list can be clicked to lead to the "MyClassroom" pag
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
+import React, {useState} from "react";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
+  const [hwkState, setHwkState] = useState([])
+
   return (
     <div>
-      <DropDownTerm />
+      <DropDownTerm hwkState={hwkState}/>
       <ul className={css.post}>
         {console.log(homeworkList)}
 
