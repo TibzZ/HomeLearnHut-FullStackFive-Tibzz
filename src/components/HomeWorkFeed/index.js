@@ -25,6 +25,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
       <DropDownTerm hwkState={hwkState} handleClick={handleClick}/>
       <button className={css.resetBtn} onClick={showAllHwks}>Show all</button>
       <ul className={css.post}>
+
         {console.log(homeworkList)}
         {console.log(hwkState)}
 
@@ -38,7 +39,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
               clickToClassroom={() => clickToClassroom(index)}
             />
           </li>,
-        ])}
+        ]).reverse()}
       </ul>
     </div>
   );

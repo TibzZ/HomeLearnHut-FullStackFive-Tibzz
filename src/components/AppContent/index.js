@@ -38,6 +38,11 @@ function AppContent({ state, dispatch }) {
     dispatch({ type: actions.MARK, payload: payload });
   }
 
+  function reject(payload) {
+    console.log("reject called");
+    dispatch({ type: actions.REJECT, payload: payload });
+  }
+
   if (state.page === pages.FEED) {
     return (
       <div className={css.Test}>
@@ -65,6 +70,7 @@ function AppContent({ state, dispatch }) {
         <HomeworkViewer
           clickToClassroom={clickUpToClassroom}
           mark={mark}
+          reject={reject}
           childHomework={
             state.homework[state.homeworkIndex].children[state.childIndex]
           }
