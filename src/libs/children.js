@@ -8,7 +8,7 @@ export const children = [
     name: "Amelia",
     avatar: "https://homelearnhut.s3.eu-west-2.amazonaws.com/avatars/1.png",
     homeworkMarked: false,
-    individualHomeworkImage: null, annotation: null, comment: null
+    individualHomeworkImage: "https://www.rewardcharts4kids.com/wp-content/uploads/2011/04/study-charts-1.jpg", annotation: null, comment: null
   },
   {
     name: "Ariella",

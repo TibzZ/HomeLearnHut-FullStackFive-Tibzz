@@ -47,7 +47,7 @@ function HomeworkViewer({
 
   // load homework
   useEffect(() => {
-    saveableCanvas.current.loadSaveData(tempMark, true)
+    // saveableCanvas.current.loadSaveData(tempMark, false)
   }, []);
 
 
@@ -142,13 +142,17 @@ function HomeworkViewer({
           //ref2={loadableCanvas}
           brushColor={customColor}
           brushRadius={2}
-          // imgSrc={homework.image}
-          imgSrc={null}
+          // imgSrc={childHomework.individualHomeworkImage}
+          imgSrc={"https://www.rewardcharts4kids.com/wp-content/uploads/2011/04/study-charts-1.jpg"}
+
+
           //img from database will need to be passed at this level
           canvasWidth={400}
           canvasHeight={500}
 
         />
+        {console.log(childHomework)}
+        {console.log(childHomework.individualHomeworkImage)}
         {/* saveData={localStorage.getItem(storageName)} */}
         <div>
           <button className={css.backButton} onClick={clickToClassroom}>
