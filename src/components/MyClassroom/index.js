@@ -16,7 +16,7 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
-      <div classname={css.childContain}>
+      <div className={css.childContain}>
       
       
         {/* For CSS test purpose only: */}
