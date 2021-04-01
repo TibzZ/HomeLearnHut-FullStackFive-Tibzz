@@ -28,9 +28,10 @@ export function reducer(state, action) {
 
             return state;
         case actions.REJECT:
-            // reject the homework, make it null
-            // delete the image url of the homework, set done to false
-            throw new Error("REJECT - not implemented yet");
+            state.homework[state.homeworkIndex].children[state.childIndex].comment = action.payload.comment;
+            state.homework[state.homeworkIndex].children[state.childIndex].individualHomeworkImage = null;
+            state.homework[state.homeworkIndex].children[state.childIndex].annotation = null;
+            return state;
         default:
             throw new Error("invalid action");
     }

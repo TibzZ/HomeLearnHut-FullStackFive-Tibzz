@@ -15,7 +15,8 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
     <div>
       <DropDownTerm />
       <ul className={css.post}>
-        {console.log(homeworkList)}
+
+
 
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test ||</h2> */}

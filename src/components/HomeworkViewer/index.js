@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import CanvasDraw from "react-canvas-draw";
-//import logo from "./logo.png";
 
 import { uploadFile } from "react-s3";
 
-// import { children } from "../../libs/children";
 import css from "./HomeworkViewer.module.css";
 
 const {
@@ -24,13 +22,14 @@ const config = {
 
 function HomeworkViewer({
   mark,
+  reject,
   clickToClassroom,
   homework,
   childHomework,
 }) {
 
   const [customColor, setCustomColor] = useState("blue");
-  console.log(customColor);
+
 
   // controlled component
   const [comment, setComment] = useState("");
@@ -62,20 +61,21 @@ function HomeworkViewer({
 
 
   const submitMarking = () => {
-    console.log("get back string of canvas scribbles");
-    console.log(saveableCanvas.current.getSaveData())
-
-    console.log(comment);
-
-    // to be implemented
     mark({
 
       annotation: saveableCanvas.current.getSaveData(),
       comment: comment
     });
 
-
+    clickToClassroom();
   };
+
+  const rejectHomework = () => {
+
+    reject({ comment: comment })
+
+    clickToClassroom();
+  }
 
   // Use a PNG for images!
 
@@ -125,8 +125,7 @@ function HomeworkViewer({
           canvasHeight={500}
 
         />
-        {console.log(childHomework)}
-        {console.log(childHomework.individualHomeworkImage)}
+
         {/* saveData={localStorage.getItem(storageName)} */}
         <div>
           <button className={css.backButton} onClick={clickToClassroom}>
@@ -146,10 +145,10 @@ function HomeworkViewer({
           <button className={css.myButton} onClick={submitMarking}>
             Mark
           </button>
-          {/* // reject just goes back for now */}
-          {/* <button className={css.myButton} onClick={clickToClassroom}>
+
+          <button className={css.myButton} onClick={rejectHomework}>
             Reject
-          </button> */}
+          </button>
         </div>
       </div>
     </body>

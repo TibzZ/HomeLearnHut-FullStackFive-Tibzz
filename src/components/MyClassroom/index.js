@@ -26,7 +26,6 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
                 handleClick={() => studentClick(index)}
                 name={child.name}
                 avatar={child.avatar}
-                age={5}
               />
             </li>,
           ])}
