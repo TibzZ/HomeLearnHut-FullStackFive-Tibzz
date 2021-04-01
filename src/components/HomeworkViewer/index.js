@@ -68,13 +68,16 @@ function HomeworkViewer({
     console.log(comment);
 
     // to be implemented
-    // mark({
-    //   comment: comment,
-    //   annotation: saveableCanvas.current.getSaveData()
-    // });
+    mark({
+
+      annotation: saveableCanvas.current.getSaveData(),
+      comment: comment
+    });
 
 
   };
+
+  // Use a PNG for images!
 
   return (
     <body>

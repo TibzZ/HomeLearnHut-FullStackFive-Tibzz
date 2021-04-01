@@ -22,9 +22,11 @@ export function reducer(state, action) {
             return { ...state, page: pages.VIEWER, childIndex: action.payload };
         case actions.MARK:
             // Database link would be PUT ( UPDATE etc )
-            // accept the homework
-            // add the annotation
-            throw new Error("MARK - not implemented yet");
+            // add homework annotation and comment
+            state.homework[state.homeworkIndex].children[state.childIndex].comment = action.payload.comment;
+            state.homework[state.homeworkIndex].children[state.childIndex].annotation = action.payload.annotation;
+
+            return state;
         case actions.REJECT:
             // reject the homework, make it null
             // delete the image url of the homework, set done to false
