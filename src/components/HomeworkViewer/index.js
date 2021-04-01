@@ -60,30 +60,6 @@ function HomeworkViewer({
     saveableCanvas.current.undo();
   }
 
-  function handleSave() {
-    // localStorage.setItem(
-    //   refName,
-    //   saveableCanvas.current.getSaveData()
-    // );
-
-    // // a series of lines and strokes in a file...
-    // console.log(localStorage.getItem(`${homework.name}-${childHomework.name}`));
-
-    // let mylines = localStorage.getItem("dummy");
-    // console.log("dummy");
-    // console.log(mylines);
-
-    // let mylines2 = localStorage.getItem(`${homework.name}-${name}`);
-    // console.log("actual");
-    // console.log(mylines2);
-
-    // setSelectedFile(localStorage.getItem(`${homework.name}-${name}`));
-    // // "savedDrawing"
-    // uploadClick();
-
-    // // ???
-    // // setSelectedFile();
-  }
 
   const uploadClick = () => {
     console.log("get back string of canvas scribbles");
@@ -129,9 +105,9 @@ function HomeworkViewer({
         <button onClick={handleClear} type="button" className={css.button}>
           Clear
         </button>
-        <button onClick={handleSave} type="button" className={css.button}>
+        {/* <button onClick={handleSave} type="button" className={css.button}>
           Save
-        </button>
+        </button> */}
 
         <br />
       </div>
@@ -173,9 +149,9 @@ function HomeworkViewer({
             Mark
           </button>
           {/* // reject just goes back for now */}
-          <button className={css.myButton} onClick={clickToClassroom}>
+          {/* <button className={css.myButton} onClick={clickToClassroom}>
             Reject
-          </button>
+          </button> */}
         </div>
       </div>
     </body>

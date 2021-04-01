@@ -6,13 +6,7 @@ import { homework } from "./homework";
 export function reducer(state, action) {
     switch (action.type) {
         case actions.UPLOAD:
-
-            // Upload real data
-            //return { ...state, homework: [...state.homework, action.payload] };
             return { ...state, homework: [...state.homework, action.payload] };
-
-        // Dummy data add
-        //return { ...state, homework: [...state.homework, dummyAdd] };
         case actions.GO_TO_FEED:
             // back to feed gets the data fresh from the database each time
             // Do a GET request
@@ -27,7 +21,7 @@ export function reducer(state, action) {
             return { ...state, page: pages.VIEWER, childIndex: action.payload };
         case actions.MARK:
             // accept the homework
-            // change the image url of the homework on the database
+            // add the annotation
             throw new Error("MARK - not implemented yet");
         case actions.REJECT:
             // reject the homework
