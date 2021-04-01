@@ -11,8 +11,6 @@ function Student({ handleClick, name, avatar }) {
 
     <>
       <button className={css.profilebtn} style={{ backgroundImage: `url(${avatar})` }} onClick={handleClick}>
-
-        {console.log(avatar)}
       </button>
       <p className={css.name}>{name}</p>
       <TiInputChecked className={css.tickBox} />

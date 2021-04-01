@@ -49,7 +49,7 @@ export const children = [
   {
     name: "Isaac",
     avatar: "https://homelearnhut.s3.eu-west-2.amazonaws.com/avatars/8.png",
-    homeworkMarked: false,
+    homeworkMarked: true,
     individualHomeworkImage: null, comment: null
   },
   {
@@ -61,7 +61,7 @@ export const children = [
   {
     name: "Jake",
     avatar: "https://homelearnhut.s3.eu-west-2.amazonaws.com/avatars/10.png",
-    homeworkMarked: false,
+    homeworkMarked: true,
     individualHomeworkImage: null, comment: null
   },
   {
@@ -73,7 +73,7 @@ export const children = [
   {
     name: "Lily",
     avatar: "https://homelearnhut.s3.eu-west-2.amazonaws.com/avatars/12.png",
-    homeworkMarked: false,
+    homeworkMarked: true,
     individualHomeworkImage: null, comment: null
   },
   {
