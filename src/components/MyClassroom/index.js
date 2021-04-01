@@ -16,16 +16,21 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
-      <div classname={css.childContain}>
+      <div className={css.childContain}>
+      
+      
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test |</h2> */}
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
             <li className={css.studentList}>
               <Student
+                key={index}
                 handleClick={() => studentClick(index)}
                 name={child.name}
                 avatar={child.avatar}
+                isHomeworkSubmitted={child.individualHomeworkImage} // added prop for tickbox functionality
+                age={5}
               />
             </li>,
           ])}

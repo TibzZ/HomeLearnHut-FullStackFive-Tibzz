@@ -33,7 +33,8 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
         {/* <h2 className={css.Test}>Css Test ||</h2> */}
         {hwkState.map((homework, index) => [
           <li>
-            <Post
+            <Post 
+              key={index}
               homework={homework}
               index={index}
               clickToClassroom={() => clickToClassroom(index)}
