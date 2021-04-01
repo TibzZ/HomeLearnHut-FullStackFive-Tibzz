@@ -123,8 +123,8 @@ function HomeworkViewer({
           lazyRadius={1}
 
           //img from database will need to be passed at this level
-          canvasWidth={400}
-          canvasHeight={500}
+          canvasWidth={420}
+          canvasHeight={594}
 
         />
 
