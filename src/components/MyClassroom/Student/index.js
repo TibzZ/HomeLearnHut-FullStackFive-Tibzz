@@ -28,7 +28,7 @@ function Student({ handleClick, name, avatar, children }) {
       <button className={css.profilebtn} style={{ backgroundImage: `url(${avatar})` }} onClick={handleClick}>
       </button>
       <p className={css.name}>{name}</p>
-      {/* <TiInputChecked style={ children[0].homeworkMarked ? { colour:{css.tickBoxValidated}'} : {display : {css.tickBox} } } className={css.tickBox} /> */}  
+      {/* <TiInputChecked style={ children[0].homeworkMarked ? { colour:{css.tickBoxValidated}'} : {display : {css.tickBox} } } className={css.tickBox} /> */}    
     </>
   );
 }
