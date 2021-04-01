@@ -1,6 +1,6 @@
 import {homework} from "../../libs/homework";
 
-const autumnOne = homework.filter(item => {
+export const autumnOne = homework.filter(item => {
     const {dateSet} = item;
 
     if(dateSet.includes('September') || dateSet.includes('October')) {
@@ -8,42 +8,42 @@ const autumnOne = homework.filter(item => {
     }
 });
 
-const autumnTwo = homework.filter(item => {
+export const autumnTwo = homework.filter(item => {
     const {dateSet} = item;
 
-    if(item.dateSet.includes('November') || item.dateSet.includes('December')) {
+    if(dateSet.includes('November') || dateSet.includes('December')) {
         return item;
     }
 });
 
-const springOne = homework.filter(item => {
+export const springOne = homework.filter(item => {
     const {dateSet} = item;
 
-    if(item.dateSet.includes('January') || item.dateSet.includes('February') ) {
+    if(dateSet.includes('January') || dateSet.includes('February') ) {
         return item;
     }
 });
 
-const springTwo = homework.filter(item => {
+export const springTwo = homework.filter(item => {
     const {dateSet} = item;
 
-    if(item.dateSet.includes('March') || item.dateSet.includes('April')) {
+    if(dateSet.includes('March') || dateSet.includes('April')) {
         return item;
     }
 });
 
-const summerOne = homework.filter(item => {
+export const summerOne = homework.filter(item => {
     const {dateSet} = item;
 
-    if(item.dateSet.includes('April') || item.dateSet.includes('May')) {
+    if(dateSet.includes('April') || dateSet.includes('May')) {
         return item;
     }
 });
 
-const summerTwo = homework.filter(item => {
+export const summerTwo = homework.filter(item => {
     const {dateSet} = item;
 
-    if(item.dateSet.includes('June') || item.dateSet.includes('July')) {
+    if(dateSet.includes('June') || dateSet.includes('July')) {
         return item;
     }
 });

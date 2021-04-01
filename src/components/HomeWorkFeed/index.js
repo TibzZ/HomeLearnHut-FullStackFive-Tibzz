@@ -12,17 +12,25 @@ import DropDownTerm from "../NavFilter";
 import React, {useState} from "react";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
-  const [hwkState, setHwkState] = useState([])
+  const [hwkState, setHwkState] = useState(homeworkList)
+  function handleClick(selection){
+    setHwkState(selection);
+  }
+  function showAllHwks(){
+    setHwkState(homeworkList);
+  }
 
   return (
     <div>
-      <DropDownTerm hwkState={hwkState}/>
+      <DropDownTerm hwkState={hwkState} handleClick={handleClick}/>
+      <button className={css.resetBtn} onClick={showAllHwks}>Show all</button>
       <ul className={css.post}>
         {console.log(homeworkList)}
+        {console.log(hwkState)}
 
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test ||</h2> */}
-        {homeworkList.map((homework, index) => [
+        {hwkState.map((homework, index) => [
           <li>
             <Post
               homework={homework}

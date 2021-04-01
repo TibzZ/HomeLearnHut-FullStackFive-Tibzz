@@ -7,15 +7,14 @@ import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./index.css";
+import {autumnOne, autumnTwo, springOne, springTwo, summerOne, summerTwo} from "./filter";
 //import homework from libs?
 
-function DropDownTerm({ hwkState }) {
-  console.log(hwkState);
-  return <DropdownWork hwkState={hwkState}></DropdownWork>;
+function DropDownTerm({ hwkState, handleClick }) {
+  return <DropdownWork hwkState={hwkState} handleClick={handleClick}></DropdownWork>;
 }
 
-function DropdownWork({ hwkState }) {
-  console.log(hwkState);
+function DropdownWork({ hwkState, handleClick }) {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
@@ -29,14 +28,14 @@ function DropdownWork({ hwkState }) {
     setMenuHeight(height);
   }
 
-  function DropdownItem({ goToMenu, leftIcon, rightIcon, children, hwkState }) {
-    console.log(hwkState);
+  function DropdownItem({ goToMenu, leftIcon, rightIcon, children, hwkState, handleClick }) {
+
     return (
       <a
         style={{ color: "rgb(66, 66, 66)" }}
         href="#"
         className="menu-item2"
-        onClick={() => goToMenu && setActiveMenu(goToMenu)}
+        onClick={handleClick}
       >
         <span className="icon-button2">{leftIcon}</span>
         {children}
@@ -47,7 +46,7 @@ function DropdownWork({ hwkState }) {
 
   return (
     <div className="dropdown2" style={{ height: menuHeight }} ref={dropdownRef}>
-      <CSSTransition
+      <CSSTransition 
         in={activeMenu === "main"}
         timeout={500}
         classNames="menu-primary2"
@@ -56,9 +55,10 @@ function DropdownWork({ hwkState }) {
       >
         <div className="menu2">
           <DropdownItem
+          hwkState={hwkState}
+          handleClick={() => "work set" && setActiveMenu("work set")}
             leftIcon="📙"
             rightIcon={<ChevronIcon />}
-            goToMenu="work set"
           >
             <span className="filter">Filter Work</span>
           </DropdownItem>
@@ -73,28 +73,28 @@ function DropdownWork({ hwkState }) {
         onEnter={calcHeight}
       >
         <div className="menu2">
-          <DropdownItem hwkState={hwkState} goToMenu="main" leftIcon={<ArrowIcon />}>
+          <DropdownItem hwkState={hwkState} handleClick={() => "main" && setActiveMenu("main")} leftIcon={<ArrowIcon />}>
             <h2>
               {" "}
               <span className="filter">Term</span>
             </h2>
           </DropdownItem>
-          <DropdownItem leftIcon="🍂">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(autumnOne)}  leftIcon="🍂">
             <span className="filter">Autumn Pt I</span>
           </DropdownItem>
-          <DropdownItem leftIcon="🦔">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(autumnTwo)} leftIcon="🦔">
             <span className="filter">Autumn Pt II</span>
           </DropdownItem>
-          <DropdownItem leftIcon="🌷">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(springOne)} leftIcon="🌷">
             <span className="filter">Spring Pt I</span>
           </DropdownItem>
-          <DropdownItem leftIcon="🐇">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(springTwo)} leftIcon="🐇">
             <span className="filter">Spring Pt II</span>
           </DropdownItem>
-          <DropdownItem leftIcon="🌞">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(summerOne)} leftIcon="🌞">
             <span className="filter">Summer Pt I</span>
           </DropdownItem>
-          <DropdownItem leftIcon="👙">
+          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(summerTwo)} leftIcon="👙">
             <span className="filter">Summer Pt II</span>
           </DropdownItem>
         </div>
