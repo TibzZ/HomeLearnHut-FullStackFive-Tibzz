@@ -19,7 +19,7 @@ function DropDown({ upload }) {
   const [showModal, hideModal] = useModal(() => (
     <ReactModal className="modalBox" isOpen>
       <p>
-        <Upload upload={upload} />
+        <Upload hideModal={hideModal} upload={upload} />
       </p>
       <button className="cornerBtn" onClick={hideModal}>
         X

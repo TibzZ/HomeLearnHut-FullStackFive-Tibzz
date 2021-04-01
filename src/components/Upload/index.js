@@ -24,7 +24,7 @@ const config = {
   secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
 };
 
-const Upload = ({ upload }) => {
+const Upload = ({ hideModal, upload }) => {
   const [selectedFile, setSelectedFile] = useState();
 
   // Controlled components
@@ -68,6 +68,8 @@ const Upload = ({ upload }) => {
       .catch((err) => {
         alert(err);
       });
+
+    hideModal();
   };
 
   return (
