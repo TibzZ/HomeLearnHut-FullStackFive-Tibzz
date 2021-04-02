@@ -71,7 +71,7 @@ function HomeworkViewer({
   // Use a PNG for images!
 
   return (
-    <body>
+    <>
       <div className={css.tools}>
         <div
           onClick={(e) => setCustomColor("#FF00FF")}
@@ -143,7 +143,7 @@ function HomeworkViewer({
           </button>
         </div>
       </div>
-    </body>
+      </>
   );
 }
 
