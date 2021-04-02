@@ -18,7 +18,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Ariella",
-    avatar: `${avatarsHost}2.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}2.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
@@ -30,20 +30,20 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Charlie",
-    avatar: `${avatarsHost}4.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}4.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
     ,
     name: "Elliott",
-    avatar: `${avatarsHost}5.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}5.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
   },
   {
     ...childTemplate
     ,
     name: "Emma",
-    avatar: `${avatarsHost}6.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}6.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -51,7 +51,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Grace",
-    avatar: `${avatarsHost}7.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}7.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -59,7 +59,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Isaac",
-    avatar: `${avatarsHost}8.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}8.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -67,14 +67,14 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Ivy",
-    avatar: `${avatarsHost}9.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}9.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
   },
   {
     ...childTemplate
     ,
     name: "Jake",
-    avatar: `${avatarsHost}10.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}10.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
@@ -86,25 +86,25 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Lily",
-    avatar: `${avatarsHost}12.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}12.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
     ,
     name: "Madelyn",
-    avatar: `${avatarsHost}13.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}13.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
     ,
     name: "Matthew",
-    avatar: `${avatarsHost}17.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}17.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   },
   {
     ...childTemplate
     ,
     name: "Noah",
-    avatar: `${avatarsHost}15.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}15.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -112,7 +112,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Olivia",
-    avatar: `${avatarsHost}16.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}16.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -120,7 +120,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Peppa",
-    avatar: `${avatarsHost}14.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}14.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
 
 
   },
@@ -128,7 +128,7 @@ export const classroom13 = [
     ...childTemplate
     ,
     name: "Wyatt",
-    avatar: `${avatarsHost}18.png`, individualHomeworkImage: null
+    avatar: `${avatarsHost}18.png`, individualHomeworkImage: `${doneHost}m-maths3.PNG`
   }
 ];
 
