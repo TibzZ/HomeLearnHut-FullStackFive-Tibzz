@@ -22,7 +22,6 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
     <div>
       <DropDownTerm handleClick={changeFilter} />
       <div>
-        
         <button className={css.resetBtn} onClick={showAllHwks}>
           Show all
         </button>
@@ -44,8 +43,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           ])
           .reverse()}
       </ul>
-      <br></br>
-      <a className={css.goToTop} href="#topOfPage">
+      <a className={css.goToTop} href="#1">
         <IoIosArrowDropup />
       </a>
     </div>

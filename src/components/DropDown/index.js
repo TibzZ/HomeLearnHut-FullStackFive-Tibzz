@@ -9,15 +9,18 @@ import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-import { ClickAwayListener, CssBaseline } from "@material-ui/core";
+import { ClickAwayListener } from "@material-ui/core";
 import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
-import { flexbox } from "@material-ui/system";
 
 function DropDown({ upload }) {
   const [showModal, hideModal] = useModal(() => (
-    <ReactModal className="modalBox" isOpen>
+    <ReactModal
+      style={{ overlay: { zIndex: 1000 } }}
+      className="modalBox"
+      isOpen
+    >
       <p>
         <Upload hideModal={hideModal} upload={upload} />
       </p>
