@@ -5,27 +5,15 @@ import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import DropDown from "../DropDown";
-
-/*
-initial idea: Top level app has 4 states ( or routes)
-(- Landing pagedrills down to)
-- NewsFeed page drills down to:
-- MyClassroom page ( can go back )
-drills down to:
-- Homework viewer page ( can go back )
-*/
 import { reducer } from "../../libs/reducer";
 import { initialState } from "../../libs/initialState";
 import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
-import { dummyAdd } from "../../libs/dummyAdd";
-
-// import { ChakraProvider } from "@chakra-ui/react";
 import logo from "../../assets/LogoApp.gif";
+import {BiCopyright} from "react-icons/bi";
 
 function App({ goToFeed }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const { isAuthenticated } = useAuth0();
 
   function upload(payload) {
@@ -61,6 +49,11 @@ function App({ goToFeed }) {
           </div>
           <div className={css.content}>
             <AppContent state={state} dispatch={dispatch} />
+          </div>
+          <div className={css.footer}>
+            <footer className={css.copyright}>
+              <span><BiCopyright/>FullStackFive</span>
+            </footer>
           </div>
         </div>
       </>

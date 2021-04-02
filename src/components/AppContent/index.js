@@ -55,7 +55,7 @@ function AppContent({ state, dispatch }) {
     );
   } else if (state.page === pages.CLASSROOM) {
     return (
-      <div className={css.Test}>
+      <div className={css.myClassroom}>
         <MyClassroom
           studentClick={clickToHomeworkViewer}
           homeworkTitle={state.homework[state.homeworkIndex].name}
