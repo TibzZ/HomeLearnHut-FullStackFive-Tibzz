@@ -103,6 +103,7 @@ function HomeworkViewer({
           {/* <button onClick={handleSave} type="button" className={css.button}>
           Save
         </button> */}
+
           <br />
         </div>
         <div className={css.containCanvas}>
@@ -118,6 +119,8 @@ function HomeworkViewer({
             canvasWidth={530}
             canvasHeight={700}
           />
+          {console.log(childHomework.individualHomeworkImage)}
+
           {/* saveData={localStorage.getItem(storageName)} */}
           <div>
             <button className={css.backButton} onClick={clickToClassroom}>
