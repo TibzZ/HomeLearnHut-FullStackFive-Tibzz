@@ -36,10 +36,12 @@ function HomeworkViewer({
 
   const saveableCanvas = useRef(refName);
 
+
   // load homework annotation if it is there
   useEffect(() => {
     if (childHomework.annotation != null) {
       saveableCanvas.current.loadSaveData(childHomework.annotation, false);
+      setComment(childHomework.comment);
     }
   }, []);
 
@@ -153,8 +155,10 @@ function HomeworkViewer({
           </button>
         </div>
       </div>
+
       </div>
     </div>
+
   );
 }
 

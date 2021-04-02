@@ -5,10 +5,12 @@ import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import DropDown from "../DropDown";
+
 import { reducer } from "../../libs/reducer";
 import { initialState } from "../../libs/initialState";
 import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
+
 import logo from "../../assets/LogoApp.gif";
 import {BiCopyright} from "react-icons/bi";
 
