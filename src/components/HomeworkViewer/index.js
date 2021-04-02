@@ -87,7 +87,7 @@ function HomeworkViewer({
           className={css.colorField}
           style={{ backgroundColor: "magenta" }}
         ></div>
-
+        
         <div
           onClick={(e) => setCustomColor("#66ff00")}
           className={css.colorField}
