@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 45px;
+  
 }
 
 .tools .colorField {
@@ -120,4 +120,12 @@
 
 .childName {
   text-decoration: underline;
+
+}
+
+.resizePic img{
+  margin-top: 40px;
+  width: 7%;
+  height: auto;
+  justify-content: center;
 }
