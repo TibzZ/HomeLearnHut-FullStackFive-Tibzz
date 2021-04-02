@@ -6,6 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import DropDown from "../DropDown";
 import AppTest from "../AppTest";
+import {IoIosArrowDropup} from "react-icons/io";
 
 /*
 initial idea: Top level app has 4 states ( or routes)
@@ -57,14 +58,10 @@ function App({ goToFeed }) {
             </div>
           </div>
           <div className={css.dropdown}>
-            <DropDown upload={upload} />
+            <a name="topOfPage"></a>
+            <DropDown className={css.topOfPageLabel} upload={upload} />
           </div>
           <div className={css.content}>
-            {/* <TopBar
-            uploadClick={() =>
-              dispatch({ type: actions.UPLOAD, payload: dummyAdd })
-            }
-          /> */}
             <AppContent state={state} dispatch={dispatch} />
           </div>
         </div>

@@ -88,10 +88,13 @@ const Upload = ({ hideModal, upload }) => {
       <br />
       Comment:
       <br />
-      <input
+      {/* <input
         value={comment}
         onChange={(event) => setComment(event.target.value)}
-      ></input>
+      ></input> */}
+      <textarea style={{fontFamily: "Reem Kufi, sans-serif", fontSize: "1em"}} rows="4" cols="50" name="comment" form="usrform" value={comment}
+        onChange={(event) => setComment(event.target.value)}>
+Enter text here...</textarea>
       <br />
       Due date:
       <br />

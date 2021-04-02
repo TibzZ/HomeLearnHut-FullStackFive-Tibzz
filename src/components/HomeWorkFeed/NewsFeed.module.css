@@ -15,3 +15,22 @@
   text-decoration: none;
   text-shadow: 0px 1px 0px #acdbdf;
 }
+
+.goToTop{
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0.5em 0.5em 0;
+	border-radius: 50%;
+  color:#69779b;
+  font-size: 50px;
+}
+.goToTop:hover{
+  background: #69779b;
+  color:#d7eaea;
+}
