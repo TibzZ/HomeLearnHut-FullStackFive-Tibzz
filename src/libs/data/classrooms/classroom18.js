@@ -128,7 +128,7 @@ export const classroom18 = [
     ...childTemplate
     ,
     name: "Wyatt",
-    avatar: `${host}18.png`, individualHomeworkImage: null
+    avatar: `${host}18.png`, individualHomeworkImage: "https://homelearnhut.s3.eu-west-2.amazonaws.com/homework/geo.PNG"
   }
 ];
 
