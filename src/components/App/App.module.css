@@ -9,6 +9,7 @@ html {
 
 body {
   min-height: 100%;
+  padding-bottom: 70px;
 }
 
 .AppStyle {
@@ -43,6 +44,7 @@ body {
   margin-right: 20px;
   z-index: 9999;
 }
+
 .copyright {
   margin-right: 30px;
 }
