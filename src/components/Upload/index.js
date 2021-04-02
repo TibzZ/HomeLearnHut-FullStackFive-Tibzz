@@ -42,8 +42,8 @@ const Upload = ({ hideModal, upload }) => {
     // number for a folder so files cannot overwrite each other with the same name
     config.dirName = `homework/${Date.now()}`;
 
-    let day = new Date(Date.now());
-    let formattedDate = dateFormat(day.toJSON(), "mmmm dS, yyyy");
+    let myDate = new Date(Date.now());
+    let formattedDate = dateFormat(myDate.toJSON(), "mmmm dS, yyyy");
 
     uploadFile(selectedFile, config)
       .then((data) => {
@@ -76,6 +76,7 @@ const Upload = ({ hideModal, upload }) => {
     <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
       <h2 style={{ color: "#dadce1" }} className={css.Test}>
+        <br/>
         Upload
       </h2>
       Enter title
@@ -87,10 +88,13 @@ const Upload = ({ hideModal, upload }) => {
       <br />
       Comment:
       <br />
-      <input
+      {/* <input
         value={comment}
         onChange={(event) => setComment(event.target.value)}
-      ></input>
+      ></input> */}
+      <textarea style={{fontFamily: "Reem Kufi, sans-serif", fontSize: "1em"}} rows="4" cols="50" name="comment" form="usrform" value={comment}
+        onChange={(event) => setComment(event.target.value)}>
+Enter text here...</textarea>
       <br />
       Due date:
       <br />

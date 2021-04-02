@@ -1,11 +1,3 @@
-/*
-NewsFeed contains a list of "Posts" which are essentially.
-
-A piece of homework.
-
-A piece of homework in this list can be clicked to lead to the "MyClassroom" page (state/route)
-*/
-
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
@@ -36,6 +28,8 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
       <DropDownTerm handleClick={changeFilter} />
       <button className={css.resetBtn} onClick={showAllHwks}>Show all</button>
       <ul className={css.post}>
+        {/* {console.log(homeworkList)}
+        {console.log(hwkState)} */}
 
         {/* For CSS test purpose only: */}
         {/* <h2 className={css.Test}>Css Test ||</h2> */}
@@ -58,6 +52,10 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           </li>,
         ]).reverse()}
       </ul>
+      <br></br>
+      <a className={css.goToTop} href="#topOfPage">
+        <IoIosArrowDropup />
+      </a>
     </div>
   );
 };
