@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginButton from './LoginButton/index';
+import LoginButton from './index';
 import {render} from '@testing-library/react';
 // import "jest-dom/extent-expect";
 
