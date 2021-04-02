@@ -7,11 +7,9 @@ import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./index.css";
-import {autumnOne, autumnTwo, springOne, springTwo, summerOne, summerTwo} from "./filter";
-//import homework from libs?
 
-function DropDownTerm({ hwkState, handleClick }) {
-  return <DropdownWork hwkState={hwkState} handleClick={handleClick}></DropdownWork>;
+function DropDownTerm({ handleClick }) {
+  return <DropdownWork handleClick={handleClick}></DropdownWork>;
 }
 
 function DropdownWork({ hwkState, handleClick }) {
@@ -46,7 +44,7 @@ function DropdownWork({ hwkState, handleClick }) {
 
   return (
     <div className="dropdown2" style={{ height: menuHeight }} ref={dropdownRef}>
-      <CSSTransition 
+      <CSSTransition
         in={activeMenu === "main"}
         timeout={500}
         classNames="menu-primary2"
@@ -55,8 +53,8 @@ function DropdownWork({ hwkState, handleClick }) {
       >
         <div className="menu2">
           <DropdownItem
-          hwkState={hwkState}
-          handleClick={() => "work set" && setActiveMenu("work set")}
+            hwkState={hwkState}
+            handleClick={() => "work set" && setActiveMenu("work set")}
             leftIcon="📙"
             rightIcon={<ChevronIcon />}
           >
@@ -79,22 +77,22 @@ function DropdownWork({ hwkState, handleClick }) {
               <span className="filter">Term</span>
             </h2>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(autumnOne)}  leftIcon="🍂">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('September', 'October')} leftIcon="🍂">
             <span className="filter">Autumn Pt I</span>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(autumnTwo)} leftIcon="🦔">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('November', 'December')} leftIcon="🦔">
             <span className="filter">Autumn Pt II</span>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(springOne)} leftIcon="🌷">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('January', 'February')} leftIcon="🌷">
             <span className="filter">Spring Pt I</span>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(springTwo)} leftIcon="🐇">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('March', 'April')} leftIcon="🐇">
             <span className="filter">Spring Pt II</span>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(summerOne)} leftIcon="🌞">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('April', 'May')} leftIcon="🌞">
             <span className="filter">Summer Pt I</span>
           </DropdownItem>
-          <DropdownItem  hwkState={hwkState} handleClick={() => handleClick(summerTwo)} leftIcon="👙">
+          <DropdownItem hwkState={hwkState} handleClick={() => handleClick('June', 'July')} leftIcon="👙">
             <span className="filter">Summer Pt II</span>
           </DropdownItem>
         </div>
