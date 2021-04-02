@@ -40,7 +40,7 @@ const Upload = ({ hideModal, upload }) => {
 
   const uploadClick = () => {
     // number for a folder so files cannot overwrite each other with the same name
-    config.dirName = Date.now();
+    config.dirName = `homework/${Date.now()}`;
 
     let day = new Date(Date.now());
     let formattedDate = dateFormat(day.toJSON(), "mmmm dS, yyyy");
