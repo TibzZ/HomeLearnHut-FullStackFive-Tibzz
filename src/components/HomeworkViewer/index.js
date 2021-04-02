@@ -78,83 +78,84 @@ function HomeworkViewer({
           <p className={css.childName}>
             <img src={childHomework.avatar} />{" "}
           </p>
-          
+
           <p>Homework: {homework.name}</p>
         </div>
       </div>
-<div className={css.canvasAndColors}>
-      <div className={css.tools}>
-        <div
-          onClick={(e) => setCustomColor("#FF00FF")}
-          className={css.colorField}
-          style={{ backgroundColor: "magenta" }}
-        ></div>
+      <div className={css.canvasAndColors}>
+        <div className={css.tools}>
+          <div
+            onClick={(e) => setCustomColor("#FF00FF")}
+            className={css.colorField}
+            style={{ backgroundColor: "magenta" }}
+          ></div>
 
-        <div
-          onClick={(e) => setCustomColor("#66ff00")}
-          className={css.colorField}
-          style={{ backgroundColor: "rgb(75, 235, 65)" }}
-        ></div>
+          <div
+            onClick={(e) => setCustomColor("#66ff00")}
+            className={css.colorField}
+            style={{ backgroundColor: "rgb(75, 235, 65)" }}
+          ></div>
 
-        <input
-          onChange={(e) => setCustomColor(e.target.value)}
-          type="color"
-          className={css.colorPicker}
-        />
-        <button onClick={handleUndo} type="button" className={css.button}>
-          Undo
+          <input
+            onChange={(e) => setCustomColor(e.target.value)}
+            type="color"
+            className={css.colorPicker}
+          />
+          <button onClick={handleUndo} type="button" className={css.button}>
+            Undo
         </button>
-        <button onClick={handleClear} type="button" className={css.button}>
-          Clear
+          <button onClick={handleClear} type="button" className={css.button}>
+            Clear
         </button>
-        {/* <button onClick={handleSave} type="button" className={css.button}>
+          {/* <button onClick={handleSave} type="button" className={css.button}>
           Save
         </button> */}
 
-        <br />
-      </div>
-      <div className={css.containCanvas}>
-        <CanvasDraw
-          className={css.myCanvas}
-          ref={saveableCanvas}
-          //ref2={loadableCanvas}
-          brushColor={customColor}
-          imgSrc={childHomework.individualHomeworkImage}
-          brushRadius={1}
-          lazyRadius={1}
-          //img from database will need to be passed at this level
-          canvasWidth={420}
-          canvasHeight={594}
-        />
-
-        {/* saveData={localStorage.getItem(storageName)} */}
-        <div>
-          <button className={css.backButton} onClick={clickToClassroom}>
-            Back
-          </button>
-          <div className={css.contain}>
-            {/* <p className={css.childName}>{childHomework.name}</p> */}
-            {/* <p className={css.childName}><img src={childHomework.avatar}/> </p> */}
-            {/* <p>Homework: {homework.name}</p> */}
-            Set: {homework.dateSet}
-            <br />
-            Due: {homework.dateDue}
-            <br />
-            <span>Comment: </span>
-            <input
-              value={comment}
-              onChange={(event) => setComment(event.target.value)}
-            ></input>
-          </div>
-          <button className={css.myButton} onClick={submitMarking}>
-            Mark
-          </button>
-
-          <button className={css.myButton} onClick={rejectHomework}>
-            Reject
-          </button>
+          <br />
         </div>
-      </div>
+        <div className={css.containCanvas}>
+          <CanvasDraw
+            className={css.myCanvas}
+            ref={saveableCanvas}
+            //ref2={loadableCanvas}
+            brushColor={customColor}
+            imgSrc={childHomework.individualHomeworkImage}
+            brushRadius={1}
+            lazyRadius={1}
+            //img from database will need to be passed at this level
+            canvasWidth={420}
+            canvasHeight={594}
+          />
+          {console.log(childHomework.individualHomeworkImage)}
+
+          {/* saveData={localStorage.getItem(storageName)} */}
+          <div>
+            <button className={css.backButton} onClick={clickToClassroom}>
+              Back
+          </button>
+            <div className={css.contain}>
+              {/* <p className={css.childName}>{childHomework.name}</p> */}
+              {/* <p className={css.childName}><img src={childHomework.avatar}/> </p> */}
+              {/* <p>Homework: {homework.name}</p> */}
+            Set: {homework.dateSet}
+              <br />
+            Due: {homework.dateDue}
+              <br />
+              <span>Comment: </span>
+              <input
+                value={comment}
+                onChange={(event) => setComment(event.target.value)}
+              ></input>
+            </div>
+            <button className={css.myButton} onClick={submitMarking}>
+              Mark
+          </button>
+
+            <button className={css.myButton} onClick={rejectHomework}>
+              Reject
+          </button>
+          </div>
+        </div>
 
       </div>
     </div>
