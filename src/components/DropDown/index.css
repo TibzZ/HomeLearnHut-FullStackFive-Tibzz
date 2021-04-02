@@ -65,7 +65,7 @@ a {
 }
 
 .icon-button:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.4);
 }
 
 .icon-button svg {
@@ -79,7 +79,7 @@ a {
 .dropdown {
   position: fixed;
   top: 138px;
-  width: 250px;
+  width: 230px;
   transform: translateX(-40%);
   background-color: #9692af;
   border: 1px solid #9692af;
@@ -93,8 +93,8 @@ a {
 .dropdownNotif {
   position: fixed;
   top: 138px;
-  width: 250px;
-  transform: translateX(8%);
+  width: 230px;
+  transform: translateX(12%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -107,8 +107,8 @@ a {
 .dropdownMsg {
   position: fixed;
   top: 138px;
-  width: 250px;
-  transform: translateX(-16%);
+  width: 230px;
+  transform: translateX(-14%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -136,12 +136,12 @@ a {
 }
 
 .menu-item .icon-button:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.4);
 }
 
-/* .menu-item:hover {
-  background-color: #69779b;
-} */
+.menu-item:hover {
+  /* background-color: #dadce1; */
+}
 
 .icon-right {
   fill: #dadce1;
@@ -152,6 +152,10 @@ a {
   align-items: center;
   justify-content: center;
   transition: filter 300ms;
+}
+
+.icon-right:hover {
+  filter: brightness(1.4);
 }
 
 /* CSSTransition classes  */
@@ -178,8 +182,10 @@ a {
   transform: translateX(0%);
   transition: all 500ms ease;
 }
-/* .menu-secondary-exit {
-} */
+
+.menu-secondary-exit {
+}
+
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all 500ms ease;

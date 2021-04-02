@@ -28,6 +28,10 @@ body {
   cursor: pointer;
 }
 
+.logoBtn:hover {
+  filter: brightness(1.1);
+}
+
 .footer {
   position: fixed;
   display: flex;

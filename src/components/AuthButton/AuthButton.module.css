@@ -45,6 +45,7 @@
   text-shadow: 0px 1px 0px #acdbdf;
   font-family: "Reem Kufi", sans-serif;
   margin-bottom: -10px;
+  outline: none;
 }
 .authbtn:hover {
   background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
@@ -62,4 +63,5 @@
   margin-right: 30px;
   color: #dadce1;
   font-family: "Reem Kufi", sans-serif;
+  outline: none;
 }

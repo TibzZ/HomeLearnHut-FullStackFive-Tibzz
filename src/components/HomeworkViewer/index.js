@@ -1,8 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import CanvasDraw from "react-canvas-draw";
-
-import { uploadFile } from "react-s3";
-
 import css from "./HomeworkViewer.module.css";
 
 const {
@@ -75,9 +72,8 @@ function HomeworkViewer({
         <div className={css.resizePic}>
           <p className={css.childName}>{childHomework.name}</p>
           <p className={css.childName}>
-            <img src={childHomework.avatar} />{" "}
+            <img src={childHomework.avatar} alt="avatar" />{" "}
           </p>
-
           <p>Homework: {homework.name}</p>
         </div>
       </div>
@@ -88,13 +84,11 @@ function HomeworkViewer({
             className={css.colorField}
             style={{ backgroundColor: "magenta" }}
           ></div>
-
           <div
             onClick={(e) => setCustomColor("#66ff00")}
             className={css.colorField}
             style={{ backgroundColor: "rgb(75, 235, 65)" }}
           ></div>
-
           <input
             onChange={(e) => setCustomColor(e.target.value)}
             type="color"
@@ -109,7 +103,6 @@ function HomeworkViewer({
           {/* <button onClick={handleSave} type="button" className={css.button}>
           Save
         </button> */}
-
           <br />
         </div>
         <div className={css.containCanvas}>
@@ -125,7 +118,6 @@ function HomeworkViewer({
             canvasWidth={530}
             canvasHeight={700}
           />
-
           {/* saveData={localStorage.getItem(storageName)} */}
           <div>
             <button className={css.backButton} onClick={clickToClassroom}>
