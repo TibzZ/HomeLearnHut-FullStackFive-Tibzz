@@ -1,10 +1,19 @@
-/* .post {
-  color: red;
-} */
-
-.resetBtn{
-  margin-top: 100px;
-  margin-left:0px;
+.resetBtn {
+  position: fixed;
+  top: 250px;
+  left: 1.2%;
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 4px;
+  border: 2px solid #d7eaea;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
 }
 
 .goToTop{

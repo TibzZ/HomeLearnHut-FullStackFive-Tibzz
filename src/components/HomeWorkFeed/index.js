@@ -10,31 +10,31 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   function handleClick(selection){
     setHwkState(selection);
   }
-  function showAllHwks(){
+  function showAllHwks() {
     setHwkState(homeworkList);
   }
 
   return (
     <div>
-      <DropDownTerm hwkState={hwkState} handleClick={handleClick}/>
-      <button className={css.resetBtn} onClick={showAllHwks}>Show all</button>
+      <DropDownTerm hwkState={hwkState} handleClick={handleClick} />
+      <button className={css.resetBtn} onClick={showAllHwks}>
+        Show all
+      </button>
       <ul className={css.post}>
+        {/* {console.log(homeworkList)}
+        {console.log(hwkState)} */}
 
-        {console.log(homeworkList)}
-        {console.log(hwkState)}
-
-        {/* For CSS test purpose only: */}
-        {/* <h2 className={css.Test}>Css Test ||</h2> */}
         {hwkState.map((homework, index) => [
-          <li>
-            <Post 
-              key={index}
-              homework={homework}
-              index={index}
-              clickToClassroom={() => clickToClassroom(index)}
-            />
-          </li>,
-        ]).reverse()}
+            <li>
+              <Post
+                key={index}
+                homework={homework}
+                index={index}
+                clickToClassroom={() => clickToClassroom(index)}
+              />
+            </li>,
+          ])
+          .reverse()}
       </ul>
       <br></br>
       <a className={css.goToTop} href="#topOfPage">
