@@ -1,7 +1,6 @@
 import * as actions from "./actions";
 import * as pages from "./pages";
-import { dummyAdd } from "./dummyAdd";
-import { homework } from "./homework";
+import { homework } from "./data/homework";
 
 export function reducer(state, action) {
     switch (action.type) {

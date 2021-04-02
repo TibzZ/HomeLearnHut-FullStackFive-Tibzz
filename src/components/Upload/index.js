@@ -6,7 +6,8 @@ See wireframe for details of this component
 import React, { useState } from "react";
 import { uploadFile } from "react-s3";
 import css from "../Upload/Upload.module.css";
-import { children } from "../../libs/children";
+//So far we just upload an example classroom.
+import { exampleClassroom as children } from "../../libs/data/exampleClassroom";
 import dateFormat from "dateformat";
 
 const {
@@ -76,7 +77,7 @@ const Upload = ({ hideModal, upload }) => {
     <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
       <h2 style={{ color: "#dadce1" }} className={css.Test}>
-        <br/>
+        <br />
         Upload
       </h2>
       Enter title
@@ -92,9 +93,9 @@ const Upload = ({ hideModal, upload }) => {
         value={comment}
         onChange={(event) => setComment(event.target.value)}
       ></input> */}
-      <textarea style={{fontFamily: "Reem Kufi, sans-serif", fontSize: "1em"}} rows="4" cols="50" name="comment" form="usrform" value={comment}
+      <textarea style={{ fontFamily: "Reem Kufi, sans-serif", fontSize: "1em" }} rows="4" cols="50" name="comment" form="usrform" value={comment}
         onChange={(event) => setComment(event.target.value)}>
-Enter text here...</textarea>
+        Enter text here...</textarea>
       <br />
       Due date:
       <br />

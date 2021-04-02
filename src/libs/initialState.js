@@ -1,4 +1,4 @@
-import { homework } from "./homework";
+import { homework } from "./data/homework";
 import * as pages from "./pages";
 
 // Variables
