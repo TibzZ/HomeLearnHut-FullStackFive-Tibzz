@@ -59,7 +59,7 @@ function App({ goToFeed }) {
           </div>
           <div className={css.dropdown}>
             <a name="topOfPage"></a>
-            <DropDown className={css.topOfPageLabel} upload={upload} />
+            <DropDown upload={upload} />
           </div>
           <div className={css.content}>
             <AppContent state={state} dispatch={dispatch} />

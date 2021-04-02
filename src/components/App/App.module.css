@@ -16,17 +16,6 @@ body {
   min-height: 100vh;
 }
 
-/* .logoBtn {
-  background: transparent;
-  border:transparent;
-  font-family: "Reem Kufi", sans-serif;
-  font-size: 35px;
-  align-items: flex-start;
-  margin-top: -10px;
-  margin-left: -10px;
-  color: #dadce1;
-} */
-
 .logoBtn {
   background: transparent;
   border: none;

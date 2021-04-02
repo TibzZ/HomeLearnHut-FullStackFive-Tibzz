@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: -20px;
+  justify-content: center;
 }
 
 .submitBtn {
@@ -14,4 +14,8 @@
   color: rgb(66, 66, 66);
   font-size: 15px;
   font-weight: bold;
+}
+
+.upload {
+  margin-top: 0px;
 }
