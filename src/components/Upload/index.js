@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { uploadFile } from "react-s3";
 import css from "../Upload/Upload.module.css";
 //So far we just upload an example classroom.
-import { exampleClassroom as children } from "../../libs/data/exampleClassroom";
+import { blankClassroom as children } from "../../libs/data/blankClassroom";
 import dateFormat from "dateformat";
 
 const {

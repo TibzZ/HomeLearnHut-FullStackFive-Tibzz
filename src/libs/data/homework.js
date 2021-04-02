@@ -1,6 +1,24 @@
-import { exampleClassroom as children } from "./exampleClassroom";
-import classrooms from "./classrooms/allClassrooms";
+import { blankClassroom as children } from "./blankClassroom";
+
 import { homeworkHost as host } from "./host";
+import { classroom1 as classroom1 } from './classrooms/classroom1';
+import { classroom2 as classroom2 } from './classrooms/classroom2';
+import { classroom3 as classroom3 } from './classrooms/classroom3';
+import { classroom4 as classroom4 } from './classrooms/classroom4';
+import { classroom5 as classroom5 } from './classrooms/classroom5';
+import { classroom6 as classroom6 } from './classrooms/classroom6';
+import { classroom7 as classroom7 } from './classrooms/classroom7';
+import { classroom8 as classroom8 } from './classrooms/classroom8';
+import { classroom9 as classroom9 } from './classrooms/classroom9';
+import { classroom10 as classroom10 } from './classrooms/classroom10';
+import { classroom11 as classroom11 } from './classrooms/classroom11';
+import { classroom12 as classroom12 } from './classrooms/classroom12';
+import { classroom13 as classroom13 } from './classrooms/classroom13';
+import { classroom14 as classroom14 } from './classrooms/classroom14';
+import { classroom15 as classroom15 } from './classrooms/classroom15';
+import { classroom16 as classroom16 } from './classrooms/classroom16';
+import { classroom17 as classroom17 } from './classrooms/classroom17';
+import { classroom18 as classroom18 } from './classrooms/classroom18';
 
 
 //${host}
@@ -16,7 +34,7 @@ export const homework = [
     dateDue: `Wednesday`,
     comment:
       `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
-    children: [...children],
+    children: [...classroom1],
   },
   {
     name: `Maths - Missing Numbers`,
@@ -26,7 +44,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Count carefully to find the missing numbers. They are missing from a hundred square and a number line.`,
-    children: [...children],
+    children: [...classroom2],
   },
   {
     name: `Phonics`,
@@ -35,7 +53,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.`,
-    children: [...children],
+    children: [...classroom3],
   },
   {
     name: `Geography - Identify UK countries and bodies of water`,
@@ -43,7 +61,7 @@ export const homework = [
     dateSet: `November 6th, 2020`,
     dateDue: `Wednesday`,
     comment: `Look carefully at the map and use the word bank to help you.`,
-    children: [...children],
+    children: [...classroom4],
   },
   {
     name: `Maths - Tens and Ones`,
@@ -53,7 +71,7 @@ export const homework = [
     dateDue: `Tuesday`,
     comment:
       `Count carefully and think about your number formation when answering each question.`,
-    children: [...children],
+    children: [...classroom5],
   },
   {
     name: `Religious Education - Diwali`,
@@ -62,7 +80,7 @@ export const homework = [
     dateDue: `First Day Back`,
     comment:
       `Tell your family and friends what you have learned about each word you find.`,
-    children: [...children],
+    children: [...classroom6],
   },
   {
     name: `Maths - Arrays`,
@@ -72,7 +90,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Try to remember all the different vocabulary learned in class to complete all fluency questions.`,
-    children: [...children],
+    children: [...classroom7],
   },
   {
     name: `Reading`,
@@ -81,7 +99,7 @@ export const homework = [
     dateDue: `Wednesday`,
     comment:
       `Read the Peter Harris Biography again, make sure you read it carefully and underline any key words you think might be important. Then answer the questions.`,
-    children: [...children],
+    children: [...classroom8],
   },
   {
     name: `Maths - Division`,
@@ -91,7 +109,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Use objects around your home to help you share equally and answer the fluency questions.`,
-    children: [...children],
+    children: [...classroom9],
   },
   {
     name: `Phonics`,
@@ -101,7 +119,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.`,
-    children: [...children],
+    children: [...classroom10],
   },
   {
     name: `Reading - Comprehension`,
@@ -110,7 +128,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Answer each question using the text from Giraffes Can't Dance. Remember to identify the key words that are going to help you the most.`,
-    children: [...children],
+    children: [...classroom11],
   },
   {
     name: `Geography - Identify continents and oceans`,
@@ -119,7 +137,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Go to youtube and listen to the songs from class to help with remember.`,
-    children: [...children],
+    children: [...classroom12],
   },
   {
     name: `Maths - Multiplication and Division`,
@@ -128,7 +146,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Read each problem carefully, sing the songs from class to help you solve the problems.`,
-    children: [...children],
+    children: [...classroom13],
   },
   {
     name: `Reading - Comprehension`,
@@ -137,7 +155,7 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Each sentence is from the text, The Tiger Who Came To Tea.  Identify the correct word that completes the sentence.`,
-    children: [...children],
+    children: [...classroom14],
   },
   {
     name: `English - Verbs and Nouns`,
@@ -146,7 +164,7 @@ export const homework = [
     dateDue: `Friday`,
     comment:
       `Remind yourself what is a verb and what is a noun. Read the instructions carefully.`,
-    children: [...children],
+    children: [...classroom15],
   },
   {
     name: `Phonics`,
@@ -156,7 +174,7 @@ export const homework = [
     dateDue: `Wednesday`,
     comment:
       `Read each word carefully, what sounds can you hear? Match the word to the correct picture.`,
-    children: [...children],
+    children: [...classroom16],
   },
   {
     name: `Maths - Five Times Table`,
@@ -165,7 +183,7 @@ export const homework = [
     dateDue: `Wednesday`,
     comment:
       `Start with part A of the varied fluency before moving on to part B.`,
-    children: [...children],
+    children: [...classroom17],
   },
   {
     name: `Phonics`,
@@ -174,6 +192,6 @@ export const homework = [
     dateDue: `Monday`,
     comment:
       `Practice reading words that end in 'el' and 'il'. Once you find them in the wordsearch use them in a sentence.`,
-    children: [...children],
+    children: [...classroom18],
   },
 ];
