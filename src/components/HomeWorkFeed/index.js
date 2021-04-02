@@ -2,6 +2,7 @@ import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
 import React, { useState } from "react";
+import { IoIosArrowDropup } from 'react-icons/io';
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
