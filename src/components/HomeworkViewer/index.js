@@ -27,27 +27,21 @@ function HomeworkViewer({
   homework,
   childHomework,
 }) {
-
   const [customColor, setCustomColor] = useState("blue");
-
 
   // controlled component
   const [comment, setComment] = useState("");
 
-  const refName = `canvasRef`
+  const refName = `canvasRef`;
 
   const saveableCanvas = useRef(refName);
 
   // load homework annotation if it is there
   useEffect(() => {
-
     if (childHomework.annotation != null) {
-      saveableCanvas.current.loadSaveData(childHomework.annotation, false)
+      saveableCanvas.current.loadSaveData(childHomework.annotation, false);
     }
-
   }, []);
-
-
 
   function handleClear() {
     saveableCanvas.current.clear();
@@ -57,34 +51,33 @@ function HomeworkViewer({
     saveableCanvas.current.undo();
   }
 
-
   const submitMarking = () => {
     mark({
-
       annotation: saveableCanvas.current.getSaveData(),
-      comment: comment
+      comment: comment,
     });
 
     clickToClassroom();
   };
 
   const rejectHomework = () => {
-
-    reject({ comment: comment })
+    reject({ comment: comment });
 
     clickToClassroom();
-  }
+  };
 
   // Use a PNG for images!
 
   return (
-    <body>
+    <>
       <div className={css.resizePic}>
       <p className={css.childName}><img src={childHomework.avatar}/> </p>
       <p className={css.childName}>{childHomework.name}</p>
       <p>Homework: {homework.name}</p>
       
       </div>
+   
+
       <div className={css.tools}>
         <div
           onClick={(e) => setCustomColor("#FF00FF")}
@@ -121,15 +114,12 @@ function HomeworkViewer({
           ref={saveableCanvas}
           //ref2={loadableCanvas}
           brushColor={customColor}
-
           imgSrc={childHomework.individualHomeworkImage}
           brushRadius={1}
           lazyRadius={1}
-
           //img from database will need to be passed at this level
           canvasWidth={420}
           canvasHeight={594}
-
         />
 
         {/* saveData={localStorage.getItem(storageName)} */}
@@ -144,11 +134,13 @@ function HomeworkViewer({
             {/* <p>Homework: {homework.name}</p> */}
             Set: {homework.dateSet}
             <br />
-            Due: {homework.dateSet}
+            Due: {homework.dateDue}
             <br />
-
-            <span>Comment:</span>
-            <input value={comment} onChange={(event) => setComment(event.target.value)}></input>
+            <span>Comment: </span>
+            <input
+              value={comment}
+              onChange={(event) => setComment(event.target.value)}
+            ></input>
           </div>
           <button className={css.myButton} onClick={submitMarking}>
             Mark
@@ -159,7 +151,7 @@ function HomeworkViewer({
           </button>
         </div>
       </div>
-    </body>
+      </>
   );
 }
 

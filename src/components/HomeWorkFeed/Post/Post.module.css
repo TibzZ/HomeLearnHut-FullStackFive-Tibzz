@@ -36,6 +36,7 @@
   font-family: "Reem Kufi", sans-serif;
   margin-top: 0px;
   margin-bottom: 3px;
+  word-spacing: 0.1em;  
 }
 
 .dateTitle {
@@ -57,7 +58,8 @@
   background-color: #dadce1;
   padding: 0px 1px;
   border-radius: 4px;
-  width: 150%;
+  width: 110%;
+  word-spacing: 0.1em;
 }
 
 .textbox2 {
@@ -70,6 +72,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Reem Kufi", sans-serif;
+  margin-bottom: 20px;
 }
 
 /* background-color: #dadce1; */

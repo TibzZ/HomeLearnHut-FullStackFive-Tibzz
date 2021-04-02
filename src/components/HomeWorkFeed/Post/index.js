@@ -8,7 +8,7 @@ const Post = ({ homework, index, clickToClassroom }) => {
           <span>{homework.name}</span>
         </p>
         <p className={css.dateSet}>
-          <span> Date Set: </span>{homework.dateSet} 
+          <span>Date Set:</span> {homework.dateSet}
         </p>
       </div>
       <div>
@@ -20,12 +20,12 @@ const Post = ({ homework, index, clickToClassroom }) => {
         </button>
       </div>
       <div className={css.textbox2}>
-          <p className={css.dateComment}>
-            <span>Comment: {homework.comment}</span>
-          </p>
-          <p className={css.dateSet}>
-            <span> Date Due: </span>{homework.dateDue}
-          </p>
+        <p className={css.dateComment}>
+          <span>Comment: {homework.comment}</span>
+        </p>
+        <p className={css.dateSet}>
+          <span>Date Due:</span> {homework.dateDue}
+        </p>
       </div>
     </div>
   );
