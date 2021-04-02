@@ -7,7 +7,8 @@ const LoginButton = () => {
 
   return (
     <div>
-      <button className={css.Button1} onClick={() => loginWithRedirect()}>
+      {/* testing ID added in button */}
+      <button data-testid="button" className={css.Button1} onClick={() => loginWithRedirect()}>
         Log In
       </button>
       <p className={css.Text1}>No account yet? Click the Sign up button!</p>
