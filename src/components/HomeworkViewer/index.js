@@ -71,7 +71,18 @@ function HomeworkViewer({
   // Use a PNG for images!
 
   return (
-    <>
+    <div className={css.allOfViewer}>
+      <div className={css.avatarContain}>
+        <div className={css.resizePic}>
+          <p className={css.childName}>{childHomework.name}</p>
+          <p className={css.childName}>
+            <img src={childHomework.avatar} />{" "}
+          </p>
+          
+          <p>Homework: {homework.name}</p>
+        </div>
+      </div>
+<div className={css.canvasAndColors}>
       <div className={css.tools}>
         <div
           onClick={(e) => setCustomColor("#FF00FF")}
@@ -122,8 +133,9 @@ function HomeworkViewer({
             Back
           </button>
           <div className={css.contain}>
-            <p className={css.childName}>{childHomework.name}</p>
-            <p>Homework: {homework.name}</p>
+            {/* <p className={css.childName}>{childHomework.name}</p> */}
+            {/* <p className={css.childName}><img src={childHomework.avatar}/> </p> */}
+            {/* <p>Homework: {homework.name}</p> */}
             Set: {homework.dateSet}
             <br />
             Due: {homework.dateDue}
@@ -143,7 +155,10 @@ function HomeworkViewer({
           </button>
         </div>
       </div>
-    </>
+
+      </div>
+    </div>
+
   );
 }
 

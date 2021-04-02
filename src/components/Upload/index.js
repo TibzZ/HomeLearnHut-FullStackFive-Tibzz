@@ -76,8 +76,9 @@ const Upload = ({ hideModal, upload }) => {
   return (
     <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
-      <h2 style={{ color: "#dadce1" }} className={css.Test}>
-        <br />
+
+      <h2 style={{ color: "#dadce1" }} className={css.upload}>
+
         Upload
       </h2>
       Enter title
@@ -93,9 +94,19 @@ const Upload = ({ hideModal, upload }) => {
         value={comment}
         onChange={(event) => setComment(event.target.value)}
       ></input> */}
-      <textarea style={{ fontFamily: "Reem Kufi, sans-serif", fontSize: "1em" }} rows="4" cols="50" name="comment" form="usrform" value={comment}
-        onChange={(event) => setComment(event.target.value)}>
-        Enter text here...</textarea>
+
+      <textarea
+        style={{ fontFamily: "Reem Kufi, sans-serif", fontSize: "1em" }}
+        rows="4"
+        cols="50"
+        name="comment"
+        form="usrform"
+        value={comment}
+        onChange={(event) => setComment(event.target.value)}
+      >
+        Enter text here...
+      </textarea>
+
       <br />
       Due date:
       <br />
