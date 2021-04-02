@@ -42,8 +42,8 @@ const Upload = ({ hideModal, upload }) => {
     // number for a folder so files cannot overwrite each other with the same name
     config.dirName = `homework/${Date.now()}`;
 
-    let day = new Date(Date.now());
-    let formattedDate = dateFormat(day.toJSON(), "mmmm dS, yyyy");
+    let myDate = new Date(Date.now());
+    let formattedDate = dateFormat(myDate.toJSON(), "mmmm dS, yyyy");
 
     uploadFile(selectedFile, config)
       .then((data) => {
@@ -76,6 +76,7 @@ const Upload = ({ hideModal, upload }) => {
     <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
       <h2 style={{ color: "#dadce1" }} className={css.Test}>
+        <br/>
         Upload
       </h2>
       Enter title

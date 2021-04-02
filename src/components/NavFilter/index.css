@@ -67,6 +67,7 @@ a {
   transition: height 500ms ease;
   font-family: "Reem Kufi", sans-serif;
   font-size: 1.3rem;
+  z-index: 300;
 }
 
 /* .menu2:hover {

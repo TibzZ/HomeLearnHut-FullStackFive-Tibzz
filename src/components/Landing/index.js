@@ -10,27 +10,11 @@ import css from "../Landing/Landing.module.css";
 const Landing = () => {
   return (
     <div className={css.container}>
-      {/* <div className="item">1
-        
-        </div>
-        
-        <div className="item">2</div>
-           
-        <div className="item">3</div>
-           
-        <div className="item">4</div>
-         
-        <div className="item">5</div> */}
-
       <div className={css.BackgroundImg}>
         <div className={css.containLogo}>
           <p className={css.AppLogo} />
           <h1 className={css.Title1}>Welcome</h1>
           <AuthButton />
-          <p className={css.Text1}>
-            No account yet? Click the Sign up button!{" "}
-          </p>
-          <button className={css.button}>Sign Up</button>
         </div>
       </div>
     </div>
