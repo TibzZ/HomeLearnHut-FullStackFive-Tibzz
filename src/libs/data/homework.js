@@ -27,6 +27,7 @@ import { classroom18 as classroom18 } from './classrooms/classroom18';
 
 
 export const homework = [
+  // 1
   {
     name: `English - Conjunctions`,
     image: `${host}eng.PNG`,
@@ -36,6 +37,7 @@ export const homework = [
       `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
     children: [...classroom1],
   },
+  // 2
   {
     name: `Maths - Missing Numbers`,
     image:
@@ -46,6 +48,7 @@ export const homework = [
       `Count carefully to find the missing numbers. They are missing from a hundred square and a number line.`,
     children: [...classroom2],
   },
+  // 3
   {
     name: `Phonics`,
     image: `${host}phon2.PNG`,
@@ -55,6 +58,7 @@ export const homework = [
       `Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.`,
     children: [...classroom3],
   },
+  // 4
   {
     name: `Geography - Identify UK countries and bodies of water`,
     image: `${host}geo2.PNG`,
@@ -63,6 +67,7 @@ export const homework = [
     comment: `Look carefully at the map and use the word bank to help you.`,
     children: [...classroom4],
   },
+  // 5
   {
     name: `Maths - Tens and Ones`,
     image:
@@ -73,6 +78,8 @@ export const homework = [
       `Count carefully and think about your number formation when answering each question.`,
     children: [...classroom5],
   },
+
+  // 6
   {
     name: `Religious Education - Diwali`,
     image: `${host}RE.PNG`,
@@ -82,6 +89,8 @@ export const homework = [
       `Tell your family and friends what you have learned about each word you find.`,
     children: [...classroom6],
   },
+
+  // 7
   {
     name: `Maths - Arrays`,
     image:
@@ -92,6 +101,8 @@ export const homework = [
       `Try to remember all the different vocabulary learned in class to complete all fluency questions.`,
     children: [...classroom7],
   },
+
+  // 8
   {
     name: `Reading`,
     image: `${host}read1.PNG`,
@@ -101,6 +112,7 @@ export const homework = [
       `Read the Peter Harris Biography again, make sure you read it carefully and underline any key words you think might be important. Then answer the questions.`,
     children: [...classroom8],
   },
+  // 9
   {
     name: `Maths - Division`,
     image:
@@ -111,6 +123,8 @@ export const homework = [
       `Use objects around your home to help you share equally and answer the fluency questions.`,
     children: [...classroom9],
   },
+
+  // 10
   {
     name: `Phonics`,
     image:
@@ -121,6 +135,7 @@ export const homework = [
       `Do you know what the picture is? Which sound can you hear when you say it? Circle the correct one.`,
     children: [...classroom10],
   },
+  // 11
   {
     name: `Reading - Comprehension`,
     image: `${host}read.PNG`,
@@ -130,6 +145,7 @@ export const homework = [
       `Answer each question using the text from Giraffes Can't Dance. Remember to identify the key words that are going to help you the most.`,
     children: [...classroom11],
   },
+  // 12
   {
     name: `Geography - Identify continents and oceans`,
     image: `${host}geo.PNG`,
@@ -139,6 +155,7 @@ export const homework = [
       `Go to youtube and listen to the songs from class to help with remember.`,
     children: [...classroom12],
   },
+  // 13
   {
     name: `Maths - Multiplication and Division`,
     image: `${host}math3.PNG`,
@@ -148,6 +165,7 @@ export const homework = [
       `Read each problem carefully, sing the songs from class to help you solve the problems.`,
     children: [...classroom13],
   },
+  // 14
   {
     name: `Reading - Comprehension`,
     image: `${host}read2.PNG`,
@@ -157,6 +175,7 @@ export const homework = [
       `Each sentence is from the text, The Tiger Who Came To Tea.  Identify the correct word that completes the sentence.`,
     children: [...classroom14],
   },
+  // 15
   {
     name: `English - Verbs and Nouns`,
     image: `${host}eng2.PNG`,
@@ -166,6 +185,7 @@ export const homework = [
       `Remind yourself what is a verb and what is a noun. Read the instructions carefully.`,
     children: [...classroom15],
   },
+  // 16
   {
     name: `Phonics`,
     image:
@@ -176,6 +196,7 @@ export const homework = [
       `Read each word carefully, what sounds can you hear? Match the word to the correct picture.`,
     children: [...classroom16],
   },
+  // 17
   {
     name: `Maths - Five Times Table`,
     image: `${host}maths.PNG`,
@@ -185,6 +206,7 @@ export const homework = [
       `Start with part A of the varied fluency before moving on to part B.`,
     children: [...classroom17],
   },
+  // 18
   {
     name: `Phonics`,
     image: `${host}words.PNG`,

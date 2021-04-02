@@ -4,7 +4,7 @@
 //Amelia, Ariella, Arthur, Charlie, Elliott, Emma, Grace, Isaac, Ivy,  Jake, Liam, Lily, Madelyn, Matthew ,Noah, Olivia, Penelope, Wyatt
 
 import childTemplate from "../childTemplate";
-import { avatarsHost as host } from "../host";
+import { avatarsHost, doneHost } from "../host";
 
 export const classroom11 = [
   {
