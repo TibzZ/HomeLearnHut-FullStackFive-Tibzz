@@ -124,7 +124,8 @@
 }
 
 .resizePic img{
-  width: 17%;
+  margin-top: 40px;
+  width: 7%;
   height: auto;
   justify-content: center;
 }
