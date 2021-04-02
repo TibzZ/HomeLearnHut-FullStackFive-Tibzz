@@ -113,7 +113,7 @@ function HomeworkViewer({
             //ref2={loadableCanvas}
             brushColor={customColor}
             imgSrc={childHomework.individualHomeworkImage}
-            brushRadius={1}
+            brushRadius={2}
             lazyRadius={1}
             //img from database will need to be passed at this level
             canvasWidth={530}
