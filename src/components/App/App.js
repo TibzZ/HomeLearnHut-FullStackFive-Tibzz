@@ -43,20 +43,14 @@ function App() {
               <div className={css.logo}>
                 <img src={logo} alt="logo" />
               </div>
-                <button 
-                  className={css.titleBtn} 
-                  onClick={()=>dispatch({ type: actions.GO_TO_FEED})}>
-                    <div className={css.title}>
-                        <h1>HomeLearn Hut</h1>
-                    </div>
-                </button>
+              <div className={css.title}>
+                  <h1>HomeLearn Hut</h1>
+              </div>
             </div>
             <div>
               <AuthButton />
             </div>
           </div>
-          <button className={css.homeBtn}>Homework List</button>
-          <button className={css.classroomBtn}>Classroom</button>
           <div className={css.dropdown}>
             <a name="topOfPage"></a>
             <DropDown className={css.topOfPageLabel} upload={upload} />
