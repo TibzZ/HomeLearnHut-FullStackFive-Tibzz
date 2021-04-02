@@ -1,5 +1,15 @@
 // Unused class for now, see dummy data below if needed
 
+/*
+So far
+done
+1,2,3,5,6,7,15,16
+
+could do
+4,8,9,10,11,12,13,14,17,18
+
+*/
+
 import * as  classroom1 from './classroom1';
 import * as  classroom2 from './classroom2';
 import * as  classroom3 from './classroom3';
