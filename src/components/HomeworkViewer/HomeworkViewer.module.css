@@ -1,128 +1,132 @@
 .myButton {
-	cursor: pointer;
-	color: rgb(66, 66, 66);
-	font-family: "Reem Kufi", sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 5px 18px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #acdbdf;
-	background-color: #d7eaea;
-	box-shadow: 0px 10px 14px -7px #d7eaea;
-	border-radius: 8px;
-	border: 2px solid #d7eaea;
-	margin: 20px 20px 50px 20px;
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 18px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 8px;
+  border: 2px solid #d7eaea;
+  margin: 10px 20px 50px 20px;
   outline: none;
 }
 
 .myButton:hover {
-	background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
-	background-color: #acdbdf;
+  background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
+  background-color: #acdbdf;
 }
 
 .backButton {
-	position: fixed;
-	top: 165px;
-	left: 20px;
-	background-color: #d7eaea;
-	box-shadow: 0px 10px 14px -7px #d7eaea;
-	border-radius: 8px;
-	border: 2px solid #d7eaea;
-	/* display:inline-block; */
-	cursor: pointer;
-	color: rgb(66, 66, 66);
-	font-family: "Reem Kufi", sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 5px 15px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #acdbdf;
+  position: fixed;
+  top: 165px;
+  left: 20px;
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 8px;
+  border: 2px solid #d7eaea;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
   outline: none;
 }
 
 .backButton:hover {
-	background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
-	background-color: #acdbdf;
+  background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
+  background-color: #acdbdf;
 }
 
+/* .containCanvas {
+  z-index: -1;
+} */
+
 .myCanvas {
-	display: flex;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	border: 2px solid #69779b;
-	border-radius: 4px;
-	z-index: -1;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 2px solid #69779b;
+  border-radius: 4px;
 }
 
 .tools {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 45px;
 }
 
 .tools .colorField {
-	height: 40px;
-	width: 40px;
-	min-height: 40px;
-	min-width: 40px;
-	cursor: pointer;
-	display: inline-block;
-	cursor: pointer;
-	box-sizing: border-box;
-	border-radius: 50%;
-	border: 2px solid black;
-	align-self: center;
-	margin: 0 10px;
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid black;
+  align-self: center;
+  margin: 0 10px;
 }
 
 .colorField {
-	margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .tools .button {
-	align-self: center;
+  align-self: center;
   text-align: center;
   line-height: 1em;
-	width: 80px;
-	height: 35px;
-	margin: 0 10px;
-	cursor: pointer;
-	color: rgb(66, 66, 66);
-	font-family: "Reem Kufi", sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 5px 18px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #acdbdf;
-	background-color: #d7eaea;
-	box-shadow: 0px 10px 14px -7px #d7eaea;
-	border-radius: 8px;
-	border: 2px solid #d7eaea;
+  width: 80px;
+  height: 35px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 18px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 8px;
+  border: 2px solid #d7eaea;
   outline: none;
 }
 
 .button:hover {
-	background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
-	background-color: #acdbdf;
+  background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
+  background-color: #acdbdf;
 }
 
 .colorPicker {
-	align-self: center;
-	margin: 10px 10px;
-	height: 50px;
-	cursor: pointer;
+  align-self: center;
+  margin: 10px 10px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .contain {
-	font-family: "Reem Kufi", sans-serif;
-	font-size: 1.2rem;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px;
+  line-height: 2.3rem;
 }
 
 .childName {
   text-decoration: underline;
-  
 }
 
 .resizePic img {
@@ -133,10 +137,10 @@
 }
 
 .avatarContain {
-  width: 30%;
+  width: 20%;
   font-family: "Reem Kufi", sans-serif;
   font-size: 1.3rem;
-  margin-left: 50px;
+  margin-left: 100px;
   margin-top: 50px;
 }
 
@@ -150,4 +154,5 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  width: 45%;
 }

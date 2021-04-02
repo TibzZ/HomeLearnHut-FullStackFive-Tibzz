@@ -12,7 +12,7 @@ import React, { useReducer } from "react";
 import * as actions from "../../libs/actions";
 
 import logo from "../../assets/LogoApp.gif";
-import {BiCopyright} from "react-icons/bi";
+import { BiCopyright } from "react-icons/bi";
 
 function App({ goToFeed }) {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -53,8 +53,14 @@ function App({ goToFeed }) {
             <AppContent state={state} dispatch={dispatch} />
           </div>
           <div className={css.footer}>
-            <footer className={css.copyright}>
-              <span><BiCopyright/>FullStackFive</span>
+            <footer
+              className={css.copyright}
+              style={{ overlay: { zIndex: 1000 } }}
+            >
+              <span>
+                <BiCopyright />
+                FullStackFive
+              </span>
             </footer>
           </div>
         </div>

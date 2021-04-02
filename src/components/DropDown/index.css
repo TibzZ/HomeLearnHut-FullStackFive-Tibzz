@@ -47,7 +47,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 70px;
+  margin-right: 60px;
 }
 
 /* Icon Button */
@@ -94,7 +94,7 @@ a {
   position: fixed;
   top: 138px;
   width: 250px;
-  transform: translateX(15%);
+  transform: translateX(8%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
@@ -108,7 +108,7 @@ a {
   position: fixed;
   top: 138px;
   width: 250px;
-  transform: translateX(-13%);
+  transform: translateX(-16%);
   background-color: #9692af;
   border: 1px solid #9692af;
   border-radius: 8px;
