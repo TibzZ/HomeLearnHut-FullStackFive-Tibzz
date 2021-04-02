@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthButton from "../AuthButton";
 import DropDown from "../DropDown";
 import AppTest from "../AppTest";
-import {IoIosArrowDropup} from "react-icons/io";
+import { IoIosArrowDropup } from "react-icons/io";
 
 /*
 initial idea: Top level app has 4 states ( or routes)
@@ -42,6 +42,7 @@ function App({ goToFeed }) {
     return (
       <>
         <div className={css.AppStyle}>
+          <a name="topOfPage"></a>
           <div className={css.header}>
             <div className={css.leftHeader}>
               <div className={css.logo}>
@@ -58,7 +59,6 @@ function App({ goToFeed }) {
             </div>
           </div>
           <div className={css.dropdown}>
-            <a name="topOfPage"></a>
             <DropDown upload={upload} />
           </div>
           <div className={css.content}>
@@ -70,9 +70,6 @@ function App({ goToFeed }) {
   }
 
   return (
-    // <>
-    //   <HomeworkViewer />
-    // </>
     <div className={css.AppStyle}>
       <Landing />
     </div>
