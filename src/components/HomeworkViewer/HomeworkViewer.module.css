@@ -52,15 +52,14 @@
   border-radius: 4px;
 }
 
-.containCanvas {
+/* .containCanvas {
   z-index: -1;
-}
+} */
 
 .tools {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  
 }
 
 .tools .colorField {
@@ -120,12 +119,32 @@
 
 .childName {
   text-decoration: underline;
-
+  
 }
 
-.resizePic img{
-  margin-top: 40px;
-  width: 7%;
+.resizePic img {
+  margin-top: 0px;
+  width: 30%;
   height: auto;
   justify-content: center;
+}
+
+.avatarContain {
+  width: 30%;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.3rem;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.allOfViewer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.canvasAndColors {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
 }
