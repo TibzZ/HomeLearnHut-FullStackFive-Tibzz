@@ -200,6 +200,7 @@ a {
   border-radius: 4px;
   outline: none;
   font-size: 1rem;
+  z-index:99;
 }
 
 .cornerBtn {
