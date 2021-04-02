@@ -6,7 +6,7 @@
 import childTemplate from "../childTemplate";
 import { avatarsHost, doneHost } from "../host";
 
-export const classroom = [
+export const classroom9 = [
   {
     ...childTemplate
     ,
