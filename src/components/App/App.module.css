@@ -24,6 +24,7 @@ body {
   margin-left: -15px;
   color: #dadce1;
   outline: none;
+  cursor: pointer;
 }
 
 .footer {

@@ -20,6 +20,7 @@
   width: 100%;
   border: 1px solid #69779b;
   outline: none;
+  cursor: pointer;
 }
 
 .textbox {
