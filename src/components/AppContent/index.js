@@ -7,6 +7,7 @@ import Upload from "../Upload";
 import * as pages from "../../libs/pages";
 import * as actions from "../../libs/actions";
 import { useEffect } from "react";
+import { children } from "../../libs/children";
 
 function AppContent({ state, dispatch }) {
   // Go to feed on startup ( which loads initial data )
@@ -76,7 +77,8 @@ function AppContent({ state, dispatch }) {
           }
           homework={state.homework[state.homeworkIndex]}
           homeworkTitle={state.homework[0].name}
-        />
+          />
+  
       </div>
     );
   } else {
