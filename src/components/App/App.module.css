@@ -3,18 +3,24 @@
 #ED6663 (CORAL)
 #FFA372 (ORANGE) */
 
-html {
+html, body {
   height: 100%;
-}
-
-body {
-  min-height: 100%;
-  padding-bottom: 70px;
+  margin: 0;
 }
 
 .AppStyle {
   text-align: center;
-  min-height: 100vh;
+  min-height: 100%;
+}
+
+/* body {
+  min-height: 100%;
+  padding-bottom: 70px;
+} */
+.wrapper {
+  /* text-align: center; */
+  min-height: 100%;
+  margin-bottom: -30px;
 }
 
 .logoBtn {
@@ -33,7 +39,7 @@ body {
 }
 
 .footer {
-  position: fixed;
+  /* position: sticky; */
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -47,6 +53,9 @@ body {
   font-size: 20px;
   margin-right: 20px;
   z-index: 9999;
+}
+.push{
+  height:50px;
 }
 
 .copyright {

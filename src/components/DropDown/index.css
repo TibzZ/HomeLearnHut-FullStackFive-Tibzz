@@ -208,6 +208,7 @@ a {
   border-radius: 4px;
   outline: none;
   font-size: 1.1rem;
+  /* transition:all 150ms ease-in-out */
 }
 
 .cornerBtn {
