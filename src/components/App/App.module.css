@@ -104,25 +104,6 @@ body {
   /* padding: 5px 5px; */
 }
 
-.goToTop {
-  transition: all 0.25s ease-in-out;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  display: inline-flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0.5em 0.5em 0;
-  border-radius: 50%;
-  color: #69779b;
-  font-size: 50px;
-}
-.goToTop:hover {
-  background: #69779b;
-  color: #d7eaea;
-}
-
 .dropdown {
   position: relative;
 }
