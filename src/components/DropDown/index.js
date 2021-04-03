@@ -20,6 +20,8 @@ function DropDown({ upload }) {
       style={{ overlay: { zIndex: 1000 } }}
       className="modalBox"
       isOpen
+      shouldCloseOnOverlayClick={true}
+      onRequestClose={hideModal}
     >
       <p>
         <Upload hideModal={hideModal} upload={upload} />
