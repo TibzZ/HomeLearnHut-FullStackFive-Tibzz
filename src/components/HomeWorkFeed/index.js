@@ -15,16 +15,28 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
   function showAllHwks() {
     setFilter1("");
-    setFilter1("");
   }
 
   return (
     <div>
       <DropDownTerm handleClick={changeFilter} />
       <div>
-        <button className={css.resetBtn} onClick={showAllHwks}>
-          Show all
+        <button
+          className={
+            setFilter1 || setFilter2 !== null
+              ? css.resetBtn
+              : css.resetBtnHidden
+          }
+          onClick={showAllHwks}
+        >
+          Reset
         </button>
+
+        {/* className={
+                homeworkList !== changeFilter
+                  ? css.resetBtnHidden
+                  : css.resetBtn
+              } */}
       </div>
       <ul className={css.post}>
         {homeworkList

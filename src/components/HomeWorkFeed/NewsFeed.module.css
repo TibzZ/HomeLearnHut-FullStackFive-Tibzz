@@ -16,11 +16,17 @@
   text-decoration: none;
   text-shadow: 0px 1px 0px #acdbdf;
   outline: none;
+  
 }
 
 .resetBtn:hover {
   background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
   background-color: #acdbdf;
+}
+
+.resetBtnHidden {
+  display: none;
+  visibility: hidden;
 }
 
 .goToTop {
