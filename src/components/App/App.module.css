@@ -3,18 +3,24 @@
 #ED6663 (CORAL)
 #FFA372 (ORANGE) */
 
-html {
+html, body {
   height: 100%;
-}
-
-body {
-  min-height: 100%;
-  padding-bottom: 70px;
+  margin: 0;
 }
 
 .AppStyle {
   text-align: center;
-  min-height: 100vh;
+  min-height: 100%;
+}
+
+/* body {
+  min-height: 100%;
+  padding-bottom: 70px;
+} */
+.wrapper {
+  /* text-align: center; */
+  min-height: 100%;
+  margin-bottom: -30px;
 }
 
 .logoBtn {
@@ -33,7 +39,7 @@ body {
 }
 
 .footer {
-  position: fixed;
+  /* position: sticky; */
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -47,6 +53,9 @@ body {
   font-size: 20px;
   margin-right: 20px;
   z-index: 9999;
+}
+.push{
+  height:50px;
 }
 
 .copyright {
@@ -77,6 +86,7 @@ body {
   align-items: center;
   float: left;
 }
+
 .title {
   font-family: "Reem Kufi", sans-serif;
   font-size: 50px;
@@ -85,6 +95,14 @@ body {
   margin-left: -10px;
   color: #dadce1;
 }
+@media (max-width: 767px) {
+  .title {
+    font-size: 30px; 
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+
 .titleBtn {
   background-color: transparent;
   border: none;
@@ -102,25 +120,6 @@ body {
   border-radius: 10px;
   align-items: flex-start;
   /* padding: 5px 5px; */
-}
-
-.goToTop {
-  transition: all 0.25s ease-in-out;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  display: inline-flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0.5em 0.5em 0;
-  border-radius: 50%;
-  color: #69779b;
-  font-size: 50px;
-}
-.goToTop:hover {
-  background: #69779b;
-  color: #d7eaea;
 }
 
 .dropdown {

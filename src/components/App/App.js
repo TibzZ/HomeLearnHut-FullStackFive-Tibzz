@@ -29,7 +29,7 @@ function App({ goToFeed }) {
   if (isAuthenticated) {
     return (
       <>
-        <div className={css.AppStyle}>
+        <div className={css.wrapper}>
           <a name="1"></a>
           <div className={css.header}>
             <div className={css.leftHeader}>
@@ -52,6 +52,8 @@ function App({ goToFeed }) {
           <div className={css.content}>
             <AppContent state={state} dispatch={dispatch} />
           </div>
+         </div>
+         <div className={css.push}></div>
           <div className={css.footer}>
             <footer
               className={css.copyright}
@@ -63,7 +65,6 @@ function App({ goToFeed }) {
               </span>
             </footer>
           </div>
-        </div>
       </>
     );
   }

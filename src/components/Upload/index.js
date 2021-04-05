@@ -9,6 +9,7 @@ import css from "../Upload/Upload.module.css";
 //So far we just upload an example classroom.
 import { blankClassroom as children } from "../../libs/data/blankClassroom";
 import dateFormat from "dateformat";
+import { Center } from "@chakra-ui/layout";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -96,9 +97,10 @@ const Upload = ({ hideModal, upload }) => {
       ></input> */}
 
       <textarea
+        className={css.commentBox}
         style={{ fontFamily: "Reem Kufi, sans-serif", fontSize: "1em" }}
-        rows="4"
-        cols="50"
+        rows="3"
+        // cols="50"
         name="comment"
         form="usrform"
         value={comment}
