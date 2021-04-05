@@ -130,12 +130,12 @@ export const homework = [
   },
   // 12
   {
-    name: `Geography - Identify continents and oceans`,
-    image: `${host}geo.PNG`,
+    name: `Phonics`,
+    image: `${host}words.PNG`,
     dateSet: `March 26th, 2021`,
     dateDue: `Monday`,
-    comment: `Go to youtube and listen to the songs from class to help with remember.`,
-    children: [...classroom12],
+    comment: `Practice reading words that use 'oy' and 'oi'. Once you match them to the correct picture, try to use them in a sentence.`,
+    children: [...classroom18],
   },
   // 13
   {
@@ -184,11 +184,11 @@ export const homework = [
   },
   // 18
   {
-    name: `Phonics`,
-    image: `${host}words.PNG`,
+    name: `Geography - Identify continents and oceans`,
+    image: `${host}geo.PNG`,
     dateSet: `July 9th, 2021`,
     dateDue: `Monday`,
-    comment: `Practice reading words that use 'oy' and 'oi'. Once you match them to the correct picture, try to use them in a sentence.`,
-    children: [...classroom18],
+    comment: `Go to youtube and listen to the songs we learnt in class to help you remember.`,
+    children: [...classroom12],
   },
 ];
