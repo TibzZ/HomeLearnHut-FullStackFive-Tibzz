@@ -17,21 +17,20 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
       <div className={css.childContain}>
-
-
-        {/* For CSS test purpose only: */}
-        {/* <h2 className={css.Test}>Css Test |</h2> */}
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
-            <li className=
-              {
-                (child.individualHomeworkImage !== null) ? css.listElement
-                  :
-                  css.listElementDisabled
+            <li
+              className={
+                child.individualHomeworkImage !== null
+                  ? css.listElement
+                  : css.listElementDisabled
+              }
+              title={
+                child.individualHomeworkImage !== null
+                  ? ""
+                  : "No work submitted"
               }
             >
-
-
               <Student
                 key={index}
                 handleClick={() => studentClick(index)}

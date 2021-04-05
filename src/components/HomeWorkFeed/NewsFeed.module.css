@@ -23,6 +23,11 @@
   background-color: #acdbdf;
 }
 
+.resetBtnHidden {
+  display: none;
+  visibility: hidden;
+}
+
 .goToTop {
   transition: all 0.25s ease-in-out;
   position: fixed;
