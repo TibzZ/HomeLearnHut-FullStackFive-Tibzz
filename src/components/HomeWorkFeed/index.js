@@ -15,11 +15,11 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     // return () => {
     //   window.removeEventListener('scroll', handleScroll)
     // }
-  }, [])
+  }, []);
 
   function changeFilter(f1, f2) {
     setFilter1(f1);
@@ -32,6 +32,21 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
   return (
     <div>
+      <h1 className={css.feedTitle}>
+        <span>Good Morning Miss Tot <br/>
+          upload new work using the + icon or browse previous work below
+        </span>
+      </h1>
+      <hr
+        style={{
+          color: "rgb(66, 66, 66)",
+          backgroundColor: "rgb(66, 66, 66)",
+          height: 2,
+          width: "20%",
+          marginTop: "70px",
+          marginBottom: "-50px",
+        }}
+      />
       <DropDownTerm handleClick={changeFilter} />
       <div>
         <button
@@ -69,7 +84,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           .reverse()}
       </ul>
       <a className={css.goToTop} href="#1">
-        {(scrollPosition>1000) && <IoIosArrowDropup/>}
+        {scrollPosition > 1000 && <IoIosArrowDropup />}
       </a>
     </div>
   );
