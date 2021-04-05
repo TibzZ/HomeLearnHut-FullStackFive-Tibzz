@@ -189,10 +189,12 @@ a {
   position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #dadce1;
-  top: 30%;
-  left: 30%;
-  width: 60%;
+  top: 20%;
+  left: 25%;
+  width: 50%;
   height: 60%;
   border: 1px solid #ccc;
   background: #69779b;
