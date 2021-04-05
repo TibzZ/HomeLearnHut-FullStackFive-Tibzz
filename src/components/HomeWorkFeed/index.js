@@ -1,12 +1,25 @@
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  function handleScroll() {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll)
+    // }
+  }, [])
 
   function changeFilter(f1, f2) {
     setFilter1(f1);
@@ -15,17 +28,28 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
   function showAllHwks() {
     setFilter1("");
-    setFilter1("");
   }
 
   return (
     <div>
       <DropDownTerm handleClick={changeFilter} />
       <div>
-        
-        <button className={css.resetBtn} onClick={showAllHwks}>
-          Show all
+        <button
+          className={
+            setFilter1 || setFilter2 !== null
+              ? css.resetBtn
+              : css.resetBtnHidden
+          }
+          onClick={showAllHwks}
+        >
+          Reset
         </button>
+
+        {/* className={
+                homeworkList !== changeFilter
+                  ? css.resetBtnHidden
+                  : css.resetBtn
+              } */}
       </div>
       <ul className={css.post}>
         {homeworkList
@@ -44,9 +68,8 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           ])
           .reverse()}
       </ul>
-      <br></br>
-      <a className={css.goToTop} href="#topOfPage">
-        <IoIosArrowDropup />
+      <a className={css.goToTop} href="#1">
+        {(scrollPosition>1000) && <IoIosArrowDropup/>}
       </a>
     </div>
   );

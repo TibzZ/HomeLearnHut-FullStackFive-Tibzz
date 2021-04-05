@@ -4,11 +4,11 @@
   width: 100px;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-image: url("./avatar.PNG"); */
   background-position: center;
   box-shadow: 2px 2px 5px gray;
   border-radius: 100%;
   outline: none;
+  cursor: pointer;
 }
 
 .name {
@@ -21,12 +21,7 @@
   margin-top: -10px;
 }
 
-
 .tickBox {
   font-size: 40px;
   margin-top: -10px;
 }
-
-
-
-

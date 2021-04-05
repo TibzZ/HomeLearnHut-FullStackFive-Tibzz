@@ -13,6 +13,7 @@
   text-decoration: none;
   text-shadow: 0px 1px 0px #9692af;
   font-family: "Reem Kufi", sans-serif;
+  outline: none;
 }
 
 .Button1:hover {
@@ -35,6 +36,7 @@
   padding: 5px 20px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #9692af;
+  outline: none;
 }
 
 .button2:hover {
