@@ -7,6 +7,7 @@ function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
   return (
     <>
       <button
+      data-testid="clickavatar"
         className={css.profilebtn}
         style={
           hasSubmitted
@@ -24,6 +25,7 @@ function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
 
       {/* <TiInputChecked style={isMarked ? { color: "green" } : { color: "lightgray" }} className={css.tickBox} />
       {console.log(css.tickBox)} */}
+
     </>
   );
 }

@@ -13,6 +13,7 @@ import css from "../MyClassroom/MyClassroom.module.css";
 import cx from "classnames";
 
 function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
+
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
