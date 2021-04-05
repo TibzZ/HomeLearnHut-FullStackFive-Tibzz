@@ -7,11 +7,11 @@ const LoginButton = () => {
 
   return (
     <div>
-      <button className={css.Button1} onClick={() => loginWithRedirect()}>
+      <button data-testid="loginbuttontest"  className={css.Button1} onClick={() => loginWithRedirect()}>
         Log In
       </button>
       <p className={css.Text1}>No account yet? Click the Sign up button!</p>
-      <button className={css.button2} onClick={() => loginWithRedirect()}>
+      <button data-testid="signupbuttontest" className={css.button2} onClick={() => loginWithRedirect()}>
         Sign Up
       </button>
     </div>
