@@ -77,9 +77,7 @@ const Upload = ({ hideModal, upload }) => {
   return (
     <div className={css.uploadBox}>
       {/* For CSS test purpose only: */}
-
       <h2 style={{ color: "#dadce1" }} className={css.upload}>
-
         Upload
       </h2>
       Enter title
