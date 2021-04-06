@@ -33,7 +33,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   return (
     <div>
       <h1 className={css.feedTitle}>
-        <span>Good Morning Miss Tot <br/>
+        <span>Good Morning Teacher, <br/>
           upload new work using the + icon or browse previous work below
         </span>
       </h1>
