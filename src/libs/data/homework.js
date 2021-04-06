@@ -26,14 +26,14 @@ import { classroom18 as classroom18 } from "./classrooms/classroom18";
 
 export const homework = [
   // 1
-  {
-    name: `English - Conjunctions`,
-    image: `${host}eng.PNG`,
-    dateSet: `September 14th, 2020`,
-    dateDue: `Wednesday`,
-    comment: `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
-    children: [...classroom1],
-  },
+  // {
+  //   name: `English - Conjunctions`,
+  //   image: `${host}eng.PNG`,
+  //   dateSet: `September 14th, 2020`,
+  //   dateDue: `Wednesday`,
+  //   comment: `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
+  //   children: [...classroom1],
+  // },
   // 2
   {
     name: `Maths - Missing Numbers`,
@@ -135,7 +135,7 @@ export const homework = [
     dateSet: `March 26th, 2021`,
     dateDue: `Monday`,
     comment: `Practice reading words that use 'oy' and 'oi'. Once you match them to the correct picture, try to use them in a sentence.`,
-    children: [...classroom18],
+    children: [...classroom12],
   },
   // 13
   {
@@ -189,6 +189,6 @@ export const homework = [
     dateSet: `July 9th, 2021`,
     dateDue: `Monday`,
     comment: `Go to youtube and listen to the songs we learnt in class to help you remember.`,
-    children: [...classroom12],
+    children: [...classroom18],
   },
 ];
