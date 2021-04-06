@@ -34,7 +34,9 @@ function App({ goToFeed }) {
           <div className={css.header}>
             <div className={css.leftHeader}>
               <div className={css.logo}>
-                <img src={logo} alt="logo" />
+                <button onClick={toFeed} className={css.logo}>
+                  <img src={logo} alt="logo" />
+                </button>
               </div>
               <div>
                 <button className={css.logoBtn} onClick={toFeed}>
@@ -52,19 +54,19 @@ function App({ goToFeed }) {
           <div className={css.content}>
             <AppContent state={state} dispatch={dispatch} />
           </div>
-         </div>
-         <div className={css.push}></div>
-          <div className={css.footer}>
-            <footer
-              className={css.copyright}
-              style={{ overlay: { zIndex: 1000 } }}
-            >
-              <span>
-                <BiCopyright />
-                FullStackFive
-              </span>
-            </footer>
-          </div>
+        </div>
+        <div className={css.push}></div>
+        <div className={css.footer}>
+          <footer
+            className={css.copyright}
+            style={{ overlay: { zIndex: 1000 } }}
+          >
+            <span>
+              <BiCopyright />
+              FullStackFive
+            </span>
+          </footer>
+        </div>
       </>
     );
   }

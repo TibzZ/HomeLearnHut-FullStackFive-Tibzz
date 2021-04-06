@@ -88,6 +88,14 @@ body {
 	float: left;
 }
 
+.logo {
+	color: #69779b;
+	background-color: #69779b;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
 .title {
 	font-family: "Reem Kufi", sans-serif;
 	font-size: 50px;
