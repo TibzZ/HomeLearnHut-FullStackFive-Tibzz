@@ -26,14 +26,14 @@ import { classroom18 as classroom18 } from "./classrooms/classroom18";
 
 export const homework = [
   // 1
-  // {
-  //   name: `English - Conjunctions`,
-  //   image: `${host}eng.PNG`,
-  //   dateSet: `September 14th, 2020`,
-  //   dateDue: `Wednesday`,
-  //   comment: `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
-  //   children: [...classroom1],
-  // },
+  {
+    name: `English - Conjunctions`,
+    image: `${host}eng.PNG`,
+    dateSet: `September 14th, 2020`,
+    dateDue: `Wednesday`,
+    comment: `Complete each sentence using the correct conjunction. Make sure to read the sentences carefully as you will be using them in class later this week.`,
+    children: [...classroom1],
+  },
   // 2
   {
     name: `Maths - Missing Numbers`,
