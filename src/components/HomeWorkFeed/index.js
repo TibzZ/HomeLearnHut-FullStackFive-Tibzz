@@ -1,16 +1,16 @@
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
-import DropDownTerm from "../NavFilter";
+import DropdownTerm from "../SideFilter";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 import { useHistory } from "react-router-dom";
 
-const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
+const HomeWorkFeed = ({ homeworkList }) => {
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
-  const navigateTo = () => history.push('/myClassroom');
+  const navigateTo = () => history.push("/myClassroom");
 
   function handleScroll() {
     const position = window.pageYOffset;
@@ -33,7 +33,8 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   return (
     <div>
       <h1 className={css.feedTitle}>
-        <span>Good Morning Teacher, <br/>
+        <span>
+          Good Morning Teacher, <br />
           upload new work using the + icon or browse previous work below
         </span>
       </h1>
@@ -47,7 +48,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
           marginBottom: "-50px",
         }}
       />
-      <DropDownTerm handleClick={changeFilter} />
+      <DropdownTerm handleClick={changeFilter} />
       <div>
         <button
           className={

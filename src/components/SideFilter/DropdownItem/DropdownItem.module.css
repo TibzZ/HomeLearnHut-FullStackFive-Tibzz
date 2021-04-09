@@ -1,0 +1,55 @@
+.iconButton2 {
+  width: calc(50px * 0.5);
+  height: calc(50px * 0.5);
+  background-color: #d7eaea;
+  border-radius: 50%;
+  padding: 3px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
+.iconButton2:hover {
+  filter: brightness(1.1);
+}
+
+.iconButton2 svg {
+  fill: rgb(66, 66, 66);
+  width: 20px;
+  height: 20px;
+}
+
+.menuItem2 {
+  background-color: #d7eaea;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 500ms;
+  padding: 0.5rem;
+}
+
+.menuItem2 .iconButton2 {
+  margin-left: 0.5rem;
+}
+
+.menuItem2 .iconButton2:hover {
+  filter: brightness(1.1);
+}
+
+.menuItem2:hover {
+  filter: brightness(1.1);
+}
+
+.iconRight2 {
+  fill: rgb(66, 66, 66);
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}

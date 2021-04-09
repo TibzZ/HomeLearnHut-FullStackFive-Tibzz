@@ -1,16 +1,4 @@
-
-/* font-family: 'Biryani', sans-serif;
-font-family: 'Fira Sans', sans-serif;
-font-family: 'Fira Sans Condensed', sans-serif;
-font-family: 'Heebo', sans-serif;     TITLE
-font-family: 'Nunito Sans', sans-serif; TEXT
-font-family: 'Overpass', sans-serif;
-font-family: 'Proza Libre', sans-serif; LOGO
-font-family: 'Reem Kufi', sans-serif;
-font-family: 'Rokkitt', serif;         TEXT?
-font-family: 'Sorts Mill Goudy', serif; */
-
-.Title1 {
+.title1 {
   font-family: "Proza Libre", sans-serif;
   color: rgb(54, 53, 53);
   font-size: 25px;
@@ -24,19 +12,17 @@ font-family: 'Sorts Mill Goudy', serif; */
   margin: auto;
 }
 
-.BackgroundImg {
-  /* border: 10px solid black; */
+.backgroundImg {
   display: block;
   margin: auto;
-  background: url("../ImagesLogo/Background2.jpg") no-repeat center center fixed;
+  background: url("../../assets/Background2.jpg") no-repeat center center fixed;
   background-size: cover;
   position: fixed;
-  /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
 }
 
-.AppLogo {
+.appLogo {
   display: block;
   margin: auto;
   padding-top: 350px;

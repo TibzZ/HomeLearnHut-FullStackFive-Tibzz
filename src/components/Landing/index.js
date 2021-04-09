@@ -5,15 +5,15 @@ Once you are logged in you are taken to the NewsFeed
 */
 
 import AuthButton from "../AuthButton";
-import css from "../Landing/Landing.module.css";
+import css from "./Landing.module.css";
 
 const Landing = () => {
   return (
     <div className={css.container}>
-      <div className={css.BackgroundImg}>
+      <div className={css.backgroundImg}>
         <div className={css.containLogo}>
-          <p className={css.AppLogo} />
-          <h1 className={css.Title1}>Welcome</h1>
+          <p className={css.appLogo} />
+          <h1 className={css.title1}>Welcome</h1>
           <AuthButton />
         </div>
       </div>

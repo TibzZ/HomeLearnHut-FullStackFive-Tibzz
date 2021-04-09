@@ -2,18 +2,13 @@
 NewsFeed page (state/route) to filter the "posts" according to date, more specifically
 for a teacher the term (semester), the week and so forth
 */
-import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
-import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-import "./index.css";
-import DropdownItem from ".//DropdownItem";
+import { FaChevronRight, FaArrowLeft } from "react-icons/fa";
+import DropdownItem from "./DropdownItem";
+import css from "./SideFilter.module.css";
 
-function DropDownTerm({ handleClick }) {
-  return <DropdownWork handleClick={handleClick}></DropdownWork>;
-}
-
-function DropdownWork({ handleClick }) {
+function DropdownTerm({ handleClick }) {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
@@ -28,7 +23,11 @@ function DropdownWork({ handleClick }) {
   }
 
   return (
-    <div className="dropdown2" style={{ height: menuHeight }} ref={dropdownRef}>
+    <div
+      className={css.dropdown2}
+      style={{ height: menuHeight }}
+      ref={dropdownRef}
+    >
       <CSSTransition
         in={activeMenu === "main"}
         timeout={500}
@@ -36,13 +35,13 @@ function DropdownWork({ handleClick }) {
         unmountOnExit
         onEnter={calcHeight}
       >
-        <div className="menu2">
+        <div className={css.menu2}>
           <DropdownItem
             handleClick={() => "work set" && setActiveMenu("work set")}
             leftIcon="📙"
-            rightIcon={<ChevronIcon />}
+            rightIcon={<FaChevronRight />}
           >
-            <span className="filter">Filter Work</span>
+            <span className={css.filter}>Filter Work</span>
           </DropdownItem>
         </div>
       </CSSTransition>
@@ -54,51 +53,50 @@ function DropdownWork({ handleClick }) {
         unmountOnExit
         onEnter={calcHeight}
       >
-        <div className="menu2">
+        <div className={css.menu2}>
           <DropdownItem
             handleClick={() => "main" && setActiveMenu("main")}
-            leftIcon={<ArrowIcon />}
+            leftIcon={<FaArrowLeft />}
           >
             <h2>
-              {" "}
-              <span className="filter">Term</span>
+              <span className={css.filter}>Term</span>
             </h2>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("September", "October")}
             leftIcon="🍂"
           >
-            <span className="filter">Autumn Pt I</span>
+            <span className={css.filter}>Autumn Pt I</span>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("November", "December")}
             leftIcon="🦔"
           >
-            <span className="filter">Autumn Pt II</span>
+            <span className={css.filter}>Autumn Pt II</span>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("January", "February")}
             leftIcon="🌷"
           >
-            <span className="filter">Spring Pt I</span>
+            <span className={css.filter}>Spring Pt I</span>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("March", "April")}
             leftIcon="🐇"
           >
-            <span className="filter">Spring Pt II</span>
+            <span className={css.filter}>Spring Pt II</span>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("April", "May")}
             leftIcon="🌞"
           >
-            <span className="filter">Summer Pt I</span>
+            <span className={css.filter}>Summer Pt I</span>
           </DropdownItem>
           <DropdownItem
             handleClick={() => handleClick("June", "July")}
             leftIcon="👙"
           >
-            <span className="filter">Summer Pt II</span>
+            <span className={css.filter}>Summer Pt II</span>
           </DropdownItem>
         </div>
       </CSSTransition>
@@ -106,4 +104,4 @@ function DropdownWork({ handleClick }) {
   );
 }
 
-export default DropDownTerm;
+export default DropdownTerm;

@@ -13,7 +13,7 @@ function MyClassroom({ homeworkTitle, children }) {
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
-      <div className={css.childContain}>
+      <div>
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
             <li

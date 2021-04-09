@@ -1,16 +1,16 @@
-import React from "react";
+import css from "./DropdownItem.module.css"
 
 function DropdownItem({ leftIcon, rightIcon, children, handleClick }) {
     return (
       <a
         style={{ color: "rgb(66, 66, 66)" }}
         href="#1"
-        className="menu-item2"
+        className={css.menuItem2}
         onClick={handleClick}
       >
-        <span className="icon-button2">{leftIcon}</span>
+        <span className={css.iconButton2} >{leftIcon}</span>
         {children}
-        <span className="icon-right2">{rightIcon}</span>
+        <span className={css.iconRight2} >{rightIcon}</span>
       </a>
     );
   }

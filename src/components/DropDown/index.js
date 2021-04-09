@@ -2,9 +2,9 @@ import css from "./DropDown.module.css";
 import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
-import {BsFillBellFill, BsCaretDownFill} from "react-icons/bs";
-import {SiMessenger} from "react-icons/si";
-import {FaPlus} from "react-icons/fa";
+import { BsFillBellFill, BsCaretDownFill } from "react-icons/bs";
+import { SiMessenger } from "react-icons/si";
+import { FaPlus } from "react-icons/fa";
 import DropdownNotif from "./DropNotif";
 import DropdownMsg from "./DropMsg";
 import NavItem from "./NavItem";
@@ -33,7 +33,7 @@ function DropDown() {
   return (
     <NavBar>
       <NavLoad icon={<FaPlus />} popupClick={showModal} />
-      <NavItem icon={<BsFillBellFill/>}>
+      <NavItem icon={<BsFillBellFill />}>
         <DropdownNotif />
       </NavItem>
       <NavItem icon={<SiMessenger />}>
