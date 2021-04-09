@@ -1,6 +1,6 @@
 
 import AuthButton from "../AuthButton";
-import css from "../App/App.module.css";
+import css from "./Header.module.css";
 import logo from "../../assets/LogoApp.gif";
 import { useHistory } from "react-router-dom";
 
@@ -10,8 +10,6 @@ function Header(){
     const navigateHome = () => history.push('/');
 
     return(
-        <div className={css.wrapper}>
-        <a name="1"></a>
         <div className={css.header}>
           <div className={css.leftHeader}>
             <div className={css.logo}>
@@ -29,7 +27,6 @@ function Header(){
             <AuthButton />
           </div>
         </div>
-      </div>
     )
 }
 

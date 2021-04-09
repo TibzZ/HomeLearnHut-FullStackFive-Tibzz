@@ -1,0 +1,64 @@
+.header {
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  height: 90px;
+  background-color: #69779b;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 300;
+}
+.leftHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo > img {
+  display: flex;
+  height: 160px;
+  margin-top: -20px;
+  align-items: center;
+  float: left;
+}
+
+.logo {
+  color: #69779b;
+  background-color: #69779b;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 50px;
+  align-items: flex-start;
+  margin-top: 0px;
+  margin-left: -10px;
+  color: #dadce1;
+}
+@media (max-width: 767px) {
+  .title {
+    font-size: 30px;
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+
+.logoBtn {
+  background: transparent;
+  border: none;
+  align-items: flex-start;
+  margin-top: 27px;
+  margin-left: -15px;
+  color: #dadce1;
+  outline: none;
+  cursor: pointer;
+}
+
+.logoBtn:hover {
+  filter: brightness(1.1);
+}
