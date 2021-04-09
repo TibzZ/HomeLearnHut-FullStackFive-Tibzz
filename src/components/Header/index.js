@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 function Header(){
     const history = useHistory();
     console.log(`My history is ${history}`);
-    const navigateHome = () => history.push('/');
+    const navigateHome = () => history.push("/");
 
     return(
         <div className={css.header}>

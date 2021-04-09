@@ -1,5 +1,4 @@
 import * as actions from "./actions";
-import * as pages from "./pages";
 import { homework } from "./data/homework";
 
 export function reducer(state, action) {
