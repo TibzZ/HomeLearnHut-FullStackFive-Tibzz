@@ -20,17 +20,15 @@ const config = {
   secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
 };
 
-function HomeworkViewer({
-  homework,
-  childHomework,
-}) {
+function HomeworkViewer({ homework, childHomework }) {
+  console.log(`what is this ${childHomework}`);
   const [customColor, setCustomColor] = useState("blue");
   const [comment, setComment] = useState("");
   const refName = `canvasRef`;
   const saveableCanvas = useRef(refName);
-  const {dispatch} = UseAppContext();
+  const { dispatch } = UseAppContext();
   const history = useHistory();
-  const navigateBack = () => history.push('/myClassroom');
+  const navigateBack = () => history.push("/myClassroom");
 
   // load homework annotation if it is there
   useEffect(() => {
@@ -104,10 +102,6 @@ function HomeworkViewer({
           <button onClick={handleClear} type="button" className={css.button}>
             Clear
           </button>
-          {/* <button onClick={handleSave} type="button" className={css.button}>
-          Save
-        </button> */}
-
           <br />
         </div>
         <div className={css.containCanvas}>

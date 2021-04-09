@@ -8,13 +8,13 @@ import DropDown from "../DropDown";
 
 function AppContent() {
   const { state } = UseAppContext();
-
+  console.log(state);
   return (
     <Router>
       <Switch>
         <Route path="/homeworkViewer">
           <Header />
-            <DropDown />
+          <DropDown />
           <HomeworkViewer
             homework={state.homework[state.homeworkIndex]}
             childHomework={
@@ -25,7 +25,7 @@ function AppContent() {
         </Route>
         <Route path="/myClassroom">
           <Header />
-            <DropDown />
+          <DropDown />
           <MyClassroom
             children={state.homework[state.homeworkIndex].children}
             homeworkTitle={state.homework[state.homeworkIndex].name}
@@ -33,7 +33,7 @@ function AppContent() {
         </Route>
         <Route path="/">
           <Header />
-            <DropDown />
+          <DropDown />
           <HomeWorkFeed homeworkList={state.homework} />
         </Route>
       </Switch>

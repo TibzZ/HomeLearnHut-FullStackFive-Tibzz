@@ -1,18 +1,17 @@
-import { ReactComponent as BellIcon } from "./icons/bell.svg";
-import { ReactComponent as MessengerIcon } from "./icons/messenger.svg";
-import { ReactComponent as CaretIcon } from "./icons/caret.svg";
-import { ReactComponent as PlusIcon } from "./icons/plus.svg";
-import { ReactComponent as CogIcon } from "./icons/cog.svg";
-import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
-import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
-import { ReactComponent as UserIcon } from "./icons/users.svg";
 import "./index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-import { ClickAwayListener } from "@material-ui/core";
 import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
+import {BsFillBellFill, BsCaretDownFill} from "react-icons/bs";
+import {SiMessenger} from "react-icons/si";
+import {FaPlus, FaCog, FaChevronRight, FaUserCircle, FaArrowLeft} from "react-icons/fa";
+import DropdownNotif from "./DropNotif";
+import DropdownMsg from "./DropMsg";
+import NavItem from "./NavItem";
+import NavBar from "./NavBar";
+import NavLoad from "./NavLoad";
 
 function DropDown() {
   const [showModal, hideModal] = useModal(() => (
@@ -33,98 +32,21 @@ function DropDown() {
   ));
 
   return (
-    <Navbar>
-      <NavLoad icon={<PlusIcon />} popupClick={showModal} />
-      <NavItem icon={<BellIcon />}>
+    <NavBar>
+      <NavLoad icon={<FaPlus />} popupClick={showModal} />
+      <NavItem icon={<BsFillBellFill/>}>
         <DropdownNotif />
       </NavItem>
-      <NavItem icon={<MessengerIcon />}>
+      <NavItem icon={<SiMessenger />}>
         <DropdownMsg />
       </NavItem>
-      <NavItem icon={<CaretIcon />}>
+      <NavItem icon={<BsCaretDownFill />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
-    </Navbar>
+    </NavBar>
   );
 }
 
-function Navbar({ children }) {
-  return (
-    <nav className="navbar">
-      <ul className="navbar-nav">{children}</ul>
-    </nav>
-  );
-}
-
-function NavLoad({ icon, popupClick }) {
-  return (
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={popupClick}>
-        {icon}
-      </a>
-    </li>
-  );
-}
-
-function NavItem({ icon, children }) {
-  const [open, setOpen] = useState(false);
-
-  const handleClickAway = () => {
-    setOpen(false);
-  };
-
-  return (
-    <ClickAwayListener onClickAway={handleClickAway}>
-      <li className="nav-item">
-        <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
-          {icon}
-        </a>
-        {open && children}
-      </li>
-    </ClickAwayListener>
-  );
-}
-
-function DropdownNotif() {
-  const [activeNotif, setActiveNotif] = useState("");
-  const dropdownRef = useRef(null);
-
-  function DropdownItem({ goToMenu, children }) {
-    return (
-      <div onClick={() => goToMenu && setActiveNotif(goToMenu)}>
-        {" "}
-        {children}
-      </div>
-    );
-  }
-
-  return (
-    <div className="dropdownNotif" ref={dropdownRef}>
-      <DropdownItem>
-        <p style={{ color: "white" }}>No recent notifications</p>
-      </DropdownItem>
-    </div>
-  );
-}
-
-function DropdownMsg() {
-  const [activeMsg, setActiveMsg] = useState("");
-  const dropdownRef = useRef(null);
-
-  function DropdownItem({ goToMenu, children }) {
-    return (
-      <div onClick={() => goToMenu && setActiveMsg(goToMenu)}> {children}</div>
-    );
-  }
-
-  return (
-    <div className="dropdownMsg" ref={dropdownRef}>
-      <DropdownItem>
-        <p style={{ color: "white" }}>You have no messages</p>
-      </DropdownItem>
-    </div>
-  );
-}
 
 function DropdownMenu() {
   const [activeMenu, setActiveMenu] = useState("main");
@@ -165,16 +87,16 @@ function DropdownMenu() {
       >
         <div className="menu">
           <DropdownItem
-            leftIcon={<UserIcon />}
-            rightIcon={<ChevronIcon />}
+            leftIcon={<FaUserCircle />}
+            rightIcon={<FaChevronRight />}
             goToMenu="profile"
           >
             My Profile
           </DropdownItem>
 
           <DropdownItem
-            leftIcon={<CogIcon />}
-            rightIcon={<ChevronIcon />}
+            leftIcon={<FaCog />}
+            rightIcon={<FaChevronRight />}
             goToMenu="settings"
           >
             Settings
@@ -190,7 +112,7 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+          <DropdownItem goToMenu="main" leftIcon={<FaArrowLeft />}>
             <h2>More Info</h2>
           </DropdownItem>
           <DropdownItem leftIcon="😎">Class Teacher</DropdownItem>
@@ -208,12 +130,12 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+          <DropdownItem goToMenu="main" leftIcon={<FaArrowLeft />}>
             <h2>More Info</h2>
           </DropdownItem>
-          <DropdownItem leftIcon={<CogIcon />}>Account Details</DropdownItem>
-          <DropdownItem leftIcon={<CogIcon />}>Privacy Details</DropdownItem>
-          <DropdownItem leftIcon={<CogIcon />}>Helpdesk</DropdownItem>
+          <DropdownItem leftIcon={<FaCog />}>Account Details</DropdownItem>
+          <DropdownItem leftIcon={<FaCog />}>Privacy Details</DropdownItem>
+          <DropdownItem leftIcon={<FaCog />}>Helpdesk</DropdownItem>
         </div>
       </CSSTransition>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 import css from "./Student.module.css";
 import { TiInputChecked } from "react-icons/ti";
 
-function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
+function Student({ handleClick, name, avatar, hasSubmitted, isMarked, index }) {
   return (
     <>
       <button
@@ -14,7 +14,7 @@ function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
             ? { backgroundImage: `url(${avatar})` }
             : { backgroundImage: `url(${avatar})` }
         }
-        onClick={handleClick}
+        onClick={() => handleClick(index)}
         disabled={!hasSubmitted}
       ></button>
       <p className={css.name}>{name}</p>
