@@ -14,7 +14,7 @@ import ReactModal from "react-modal";
 import { useModal } from "react-modal-hook";
 import Upload from "../Upload";
 
-function DropDown({ upload }) {
+function DropDown() {
   const [showModal, hideModal] = useModal(() => (
     <ReactModal
       style={{ overlay: { zIndex: 1000 } }}
@@ -24,7 +24,7 @@ function DropDown({ upload }) {
       onRequestClose={hideModal}
     >
       <p>
-        <Upload hideModal={hideModal} upload={upload} />
+        <Upload hideModal={hideModal} />
       </p>
       <button className="cornerBtn" onClick={hideModal}>
         X

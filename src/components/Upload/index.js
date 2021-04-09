@@ -1,15 +1,10 @@
-/*
-This is opened when the upload button is clicked on the TopBar component
-
-See wireframe for details of this component
-*/
 import React, { useState } from "react";
 import { uploadFile } from "react-s3";
 import css from "../Upload/Upload.module.css";
-//So far we just upload an example classroom.
 import { blankClassroom as children } from "../../libs/data/blankClassroom";
 import dateFormat from "dateformat";
-import { Center } from "@chakra-ui/layout";
+import { UseAppContext } from "../../appContext";
+import * as actions from "../../libs/actions";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -26,13 +21,16 @@ const config = {
   secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
 };
 
-const Upload = ({ hideModal, upload }) => {
+const Upload = ({ hideModal }) => {
   const [selectedFile, setSelectedFile] = useState();
-
-  // Controlled components
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
   const [dateDue, setDateDue] = useState("");
+  const {dispatch} = UseAppContext();
+    
+  function upload(payload) {
+      dispatch({ type: actions.UPLOAD, payload: payload });
+  }
 
   // upload functionality
   const browseClick = (event) => {

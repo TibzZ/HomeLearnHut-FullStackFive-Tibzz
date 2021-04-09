@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import CanvasDraw from "react-canvas-draw";
 import css from "./HomeworkViewer.module.css";
+import { UseAppContext } from "../../appContext";
+import * as actions from "../../libs/actions";
+import { useHistory } from "react-router-dom";
 
 const {
   REACT_APP_BUCKETNAME,
@@ -18,20 +21,16 @@ const config = {
 };
 
 function HomeworkViewer({
-  mark,
-  reject,
-  clickToClassroom,
   homework,
   childHomework,
 }) {
   const [customColor, setCustomColor] = useState("blue");
-
-  // controlled component
   const [comment, setComment] = useState("");
-
   const refName = `canvasRef`;
-
   const saveableCanvas = useRef(refName);
+  const {dispatch} = UseAppContext();
+  const history = useHistory();
+  const navigateBack = () => history.push('/myClassroom');
 
   // load homework annotation if it is there
   useEffect(() => {
@@ -49,23 +48,28 @@ function HomeworkViewer({
     saveableCanvas.current.undo();
   }
 
+  function mark(payload) {
+    dispatch({ type: actions.MARK, payload: payload });
+  }
+
+  function reject(payload) {
+    dispatch({ type: actions.REJECT, payload: payload });
+  }
+
   const submitMarking = () => {
     mark({
       annotation: saveableCanvas.current.getSaveData(),
       comment: comment,
     });
-
-    clickToClassroom();
+    navigateBack();
   };
 
   const rejectHomework = () => {
     reject({ comment: comment });
-
-    clickToClassroom();
+    navigateBack();
   };
 
   // Use a PNG for images!
-
   return (
     <div className={css.allOfViewer}>
       <div className={css.avatarContain}>
@@ -123,7 +127,7 @@ function HomeworkViewer({
 
           {/* saveData={localStorage.getItem(storageName)} */}
           <div>
-            <button className={css.backButton} onClick={clickToClassroom}>
+            <button className={css.backButton} onClick={navigateBack}>
               Back
             </button>
             <div className={css.contain}>

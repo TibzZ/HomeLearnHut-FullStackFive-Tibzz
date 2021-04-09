@@ -3,11 +3,14 @@ import css from "./NewsFeed.module.css";
 import DropDownTerm from "../NavFilter";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
+import { useHistory } from "react-router-dom";
 
 const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
+  const history = useHistory();
+  const navigateTo = () => history.push('/myClassroom');
 
   function handleScroll() {
     const position = window.pageYOffset;
@@ -16,9 +19,6 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    // return () => {
-    //   window.removeEventListener('scroll', handleScroll)
-    // }
   }, []);
 
   function changeFilter(f1, f2) {
@@ -76,7 +76,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
                   key={index}
                   homework={homework}
                   index={index}
-                  clickToClassroom={() => clickToClassroom(index)}
+                  clickToClassroom={navigateTo}
                 />
               ) : null}
             </li>,

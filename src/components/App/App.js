@@ -1,58 +1,25 @@
 import css from "./App.module.css";
-//import "./App.css";
 import Landing from "../Landing";
-import AppContent from "../AppContent";
 import { useAuth0 } from "@auth0/auth0-react";
-import AuthButton from "../AuthButton";
+import React from "react";
+import AppContent from "../AppContent";
 import DropDown from "../DropDown";
-
-import { reducer } from "../../libs/reducer";
-import { initialState } from "../../libs/initialState";
-import React, { useReducer } from "react";
-import * as actions from "../../libs/actions";
-
-import logo from "../../assets/LogoApp.gif";
 import { BiCopyright } from "react-icons/bi";
+import Header from "../Header";
 
-function App({ goToFeed }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+function App() {
   const { isAuthenticated } = useAuth0();
-
-  function upload(payload) {
-    dispatch({ type: actions.UPLOAD, payload: payload });
-  }
-
-  function toFeed(payload) {
-    dispatch({ type: actions.GO_TO_FEED, payload: payload });
-  }
 
   if (isAuthenticated) {
     return (
       <>
         <div className={css.wrapper}>
           <a name="1"></a>
-          <div className={css.header}>
-            <div className={css.leftHeader}>
-              <div className={css.logo}>
-                <button onClick={toFeed} className={css.logo}>
-                  <img src={logo} alt="logo" />
-                </button>
-              </div>
-              <div>
-                <button className={css.logoBtn} onClick={toFeed}>
-                  <h1 className={css.title}>HomeLearn Hut</h1>
-                </button>
-              </div>
-            </div>
-            <div>
-              <AuthButton />
-            </div>
-          </div>
           <div className={css.dropdown}>
-            <DropDown upload={upload} />
+            <DropDown />
           </div>
           <div className={css.content}>
-            <AppContent state={state} dispatch={dispatch} />
+            <AppContent/>
           </div>
         </div>
         <div className={css.push}></div>
