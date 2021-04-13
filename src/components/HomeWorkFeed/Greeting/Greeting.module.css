@@ -1,0 +1,28 @@
+.feedTitle {
+  font-size: 20px;
+  font-family: "Reem Kufi", sans-serif;
+  font-weight: 300;
+  margin-top: 60px;
+  color: #69779b;
+  margin-bottom: -60px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedTitle span {
+  background-color: #dadce1;
+  width: 30%;
+  border-radius: 6px;
+}
+
+.separator {
+  color: rgb(66, 66, 66);
+  background-color: rgb(66, 66, 66);
+  height: 2px;
+  width: 20%;
+  margin-top: 70px;
+  margin-bottom: -50px;
+}

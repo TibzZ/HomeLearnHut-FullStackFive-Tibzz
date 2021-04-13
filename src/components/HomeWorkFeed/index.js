@@ -1,13 +1,32 @@
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
-import DropDownTerm from "../NavFilter";
+import DropdownTerm from "../SideFilter";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
+import { useHistory } from "react-router-dom";
+import { UseAppContext } from "../../appContext";
+import ResetButton from "./ResetButton";
+import Greeting from "./Greeting";
+import * as actions from "../../libs/actions";
 
-const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
+const HomeWorkFeed = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const history = useHistory();
+  const { state, dispatch } = UseAppContext();
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
-  const [scrollPosition, setScrollPosition] = useState(0);
+
+  function goToClassroom(index) {
+    dispatch({ type: actions.HOMEWORKCHANGE, payload: index });
+    history.push("/myClassroom");
+  }
+
+  let homeworkList = state.homework;
+
+  function changeFilter(f1, f2) {
+    setFilter1(f1);
+    setFilter2(f2);
+  }
 
   function handleScroll() {
     const position = window.pageYOffset;
@@ -16,56 +35,13 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    // return () => {
-    //   window.removeEventListener('scroll', handleScroll)
-    // }
   }, []);
-
-  function changeFilter(f1, f2) {
-    setFilter1(f1);
-    setFilter2(f2);
-  }
-
-  function showAllHwks() {
-    setFilter1("");
-  }
 
   return (
     <div>
-      <h1 className={css.feedTitle}>
-        <span>Good Morning Teacher, <br/>
-          upload new work using the + icon or browse previous work below
-        </span>
-      </h1>
-      <hr
-        style={{
-          color: "rgb(66, 66, 66)",
-          backgroundColor: "rgb(66, 66, 66)",
-          height: 2,
-          width: "20%",
-          marginTop: "70px",
-          marginBottom: "-50px",
-        }}
-      />
-      <DropDownTerm handleClick={changeFilter} />
-      <div>
-        <button
-          className={
-            setFilter1 || setFilter2 !== null
-              ? css.resetBtn
-              : css.resetBtnHidden
-          }
-          onClick={showAllHwks}
-        >
-          Reset
-        </button>
-
-        {/* className={
-                homeworkList !== changeFilter
-                  ? css.resetBtnHidden
-                  : css.resetBtn
-              } */}
-      </div>
+      <Greeting />
+      <DropdownTerm handleClick={changeFilter} />
+      <ResetButton setFilter1={setFilter1} setFilter2={setFilter2} />
       <ul className={css.post}>
         {homeworkList
           .map((homework, index) => [
@@ -76,7 +52,7 @@ const HomeWorkFeed = ({ homeworkList, clickToClassroom }) => {
                   key={index}
                   homework={homework}
                   index={index}
-                  clickToClassroom={() => clickToClassroom(index)}
+                  clickToClassroom={goToClassroom}
                 />
               ) : null}
             </li>,

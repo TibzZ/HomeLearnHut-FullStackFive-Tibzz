@@ -1,23 +1,29 @@
-/*
-A Particular piece of homework and all the students involved viewable at a glance
-For a particular piece of homework, this displays all the students who it is assigned to.
-Each student could be a component, which contains, their name, their avatar and whether they have:
-a) not submitted the homework ( e.g.  a cross icon)
-b) submitted the homework but is has not been reviwed by teacher ( e.g. a file sheet icon )
-c) submitted the homework and it has been approved ( e.g. a tick icon )
-*/
-
+import * as actions from "../../libs/actions";
 import React from "react";
 import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
-import cx from "classnames";
+import { useHistory } from "react-router-dom";
+import { UseAppContext } from "../../appContext";
+import BackButton from "../BackButton";
 
-function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
+function MyClassroom() {
+  const history = useHistory();
+
+  function goToHomework(index) {
+    dispatch({ type: actions.CHILDCHANGE, payload: index });
+    history.push(`/homeworkViewer`);
+  }
+
+  const navigateBack = () => history.push("/");
+  const { state, dispatch } = UseAppContext();
+
+  let children = state.homework[state.homeworkIndex].children;
+  let homeworkTitle = state.homework[state.homeworkIndex].name;
 
   return (
     <>
       <h1 className={css.pageTitle}>My Classroom - {homeworkTitle}</h1>
-      <div className={css.childContain}>
+      <div>
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
             <li
@@ -34,7 +40,8 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
             >
               <Student
                 key={index}
-                handleClick={() => studentClick(index)}
+                index={index}
+                handleClick={goToHomework}
                 name={child.name}
                 avatar={child.avatar}
                 hasSubmitted={child.individualHomeworkImage !== null} // added prop for tickbox functionality
@@ -45,9 +52,7 @@ function MyClassroom({ homeworkTitle, studentClick, children, backClick }) {
         </ul>
         <br />
       </div>
-      <button className={css.goBack} onClick={backClick}>
-        Back
-      </button>
+      <BackButton navigateBack={navigateBack} />
     </>
   );
 }

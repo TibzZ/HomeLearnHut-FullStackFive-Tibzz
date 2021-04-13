@@ -3,18 +3,18 @@ import React from "react";
 import css from "./Student.module.css";
 import { TiInputChecked } from "react-icons/ti";
 
-function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
+function Student({ handleClick, name, avatar, hasSubmitted, isMarked, index }) {
   return (
     <>
       <button
-      data-testid="clickavatar"
+        data-testid="clickavatar"
         className={css.profilebtn}
         style={
           hasSubmitted
             ? { backgroundImage: `url(${avatar})` }
             : { backgroundImage: `url(${avatar})` }
         }
-        onClick={handleClick}
+        onClick={() => handleClick(index)}
         disabled={!hasSubmitted}
       ></button>
       <p className={css.name}>{name}</p>
@@ -22,10 +22,6 @@ function Student({ handleClick, name, avatar, hasSubmitted, isMarked }) {
       {isMarked ? (
         <TiInputChecked style={{ color: "green" }} className={css.tickBox} />
       ) : null}
-
-      {/* <TiInputChecked style={isMarked ? { color: "green" } : { color: "lightgray" }} className={css.tickBox} />
-      {console.log(css.tickBox)} */}
-
     </>
   );
 }

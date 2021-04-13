@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  position: fixed;
+  z-index: -1;
+}
+
+/* Dropdown Menu */
+
+.dropdown2 {
+  position: fixed;
+  top: 160px;
+  width: 12%;
+  transform: translateX(8%);
+  background-color: #d7eaea;
+  border: 1px solid #d7eaea;
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow: hidden;
+  transition: height 500ms ease;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.3rem;
+  z-index: 300;
+}
+
+@media all and (max-width: 800px) {
+  .filter {
+    display: none;
+  }
+}
+
+.menu2 {
+  width: 100%;
+}
+
+/* CSSTransition classes  */
+:global .menu-primary2-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+:global .menu-primary2-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+:global .menu-primary2-exit {
+  position: absolute;
+}
+
+:global .menu-primary2-exit-active {
+  transform: translateX(-110%);
+  transition: all 500ms ease;
+}
+
+:global .menu-secondary2-enter {
+  transform: translateX(110%);
+}
+
+:global .menu-secondary2-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+
+:global .menu-secondary2-exit-active {
+  transform: translateX(110%);
+  transition: all 500ms ease;
+}

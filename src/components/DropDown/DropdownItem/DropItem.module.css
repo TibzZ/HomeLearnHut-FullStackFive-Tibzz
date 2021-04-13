@@ -1,0 +1,48 @@
+.menuItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background 500ms;
+  padding: 0.5rem;
+}
+
+.menuItem .iconButton {
+  margin-left: 0.5rem;
+}
+
+.menuItem .iconButton:hover {
+  filter: brightness(1.4);
+}
+
+.iconRight {
+  fill: #dadce1;
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
+.iconRight:hover {
+  filter: brightness(1.4);
+}
+
+.iconButton {
+  width: calc(40px * 0.5);
+  height: calc(40px * 0.5);
+  background-color: #9692af;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
+.iconButton:hover {
+  filter: brightness(1.4);
+}
