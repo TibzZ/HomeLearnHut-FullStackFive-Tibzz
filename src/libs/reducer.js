@@ -18,6 +18,10 @@ export function reducer(state, action) {
             state.homework[state.homeworkIndex].children[state.childIndex].individualHomeworkImage = null;
             state.homework[state.homeworkIndex].children[state.childIndex].annotation = null;
             return state;
+        case actions.HOMEWORKCHANGE:
+            return { ...state, homeworkIndex: action.payload }
+        case actions.CHILDCHANGE:
+            return { ...state, childIndex: action.payload }
         default:
             throw new Error("invalid action");
     }

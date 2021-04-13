@@ -8,7 +8,9 @@ import BackButton from "../BackButton";
 
 function HomeworkViewer() {
   const [comment, setComment] = useState("");
+
   const { state, dispatch } = UseAppContext();
+
   const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
   const navigateBack = () => history.push("/myClassroom");
@@ -24,7 +26,7 @@ function HomeworkViewer() {
       saveableCanvas.current.loadSaveData(childHomework.annotation, false);
       setComment(childHomework.comment);
     }
-  }, []);
+  }, [state.childIndex]);
 
   function mark(payload) {
     dispatch({ type: actions.MARK, payload: payload });

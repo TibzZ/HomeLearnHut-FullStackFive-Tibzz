@@ -1,3 +1,4 @@
+import * as actions from "../../libs/actions";
 import React from "react";
 import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
@@ -8,10 +9,20 @@ import BackButton from "../BackButton";
 function MyClassroom() {
   const history = useHistory();
   const homeworkIndex = useParams();
-  const navigateTo = (index) =>
-    history.push(`/homeworkViewer/${homeworkIndex}/${index}`);
+
+
+  // const navigateTo = (index) =>
+  //   history.push(`/homeworkViewer/${homeworkIndex}/${index}`);
+
+  function goToHomework(index) {
+    dispatch({ type: actions.CHILDCHANGE, payload: index })
+    history.push(`/homeworkViewer`);
+  }
+
   const navigateBack = () => history.push("/");
-  const { state } = UseAppContext();
+
+
+  const { state, dispatch } = UseAppContext();
 
   let children = state.homework[state.homeworkIndex].children;
   let homeworkTitle = state.homework[state.homeworkIndex].name;
@@ -37,7 +48,7 @@ function MyClassroom() {
               <Student
                 key={index}
                 index={index}
-                handleClick={navigateTo}
+                handleClick={goToHomework}
                 name={child.name}
                 avatar={child.avatar}
                 hasSubmitted={child.individualHomeworkImage !== null} // added prop for tickbox functionality
