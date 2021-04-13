@@ -3,22 +3,16 @@ import Landing from "../Landing";
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import AppContent from "../AppContent";
-import Footer from "../Footer";
 
 function App() {
   const { isAuthenticated } = useAuth0();
 
   if (isAuthenticated) {
     return (
-      <>
-        <div className={css.wrapper}>
-          <a name="1"></a>
-          <div className={css.content}>
-            <AppContent />
-          </div>
-          <Footer />
-        </div>
-      </>
+      <div className={css.wrapper}>
+        <a name="1"></a>
+        <AppContent />
+      </div>
     );
   }
 

@@ -2,45 +2,30 @@ import HomeworkViewer from "../HomeworkViewer";
 import MyClassroom from "../MyClassroom";
 import HomeWorkFeed from "../HomeWorkFeed";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { UseAppContext, AppProvider } from "../../appContext";
 import Header from "../Header";
 import DropDown from "../DropDown";
+import Footer from "../Footer";
 
 function AppContent() {
-  const { state } = UseAppContext();
-  console.log(state);
-
   return (
-    <AppProvider>
+    <>
+      <Header />
+      <DropDown />
       <Router>
         <Switch>
           <Route path="/homeworkViewer">
-            <Header />
-            <DropDown />
-            <HomeworkViewer
-              homework={state.homework[state.homeworkIndex]}
-              childHomework={
-                state.homework[state.homeworkIndex].children[state.childIndex]
-              }
-              homeworkTitle={state.homework[0].name}
-            />
+            <HomeworkViewer />
           </Route>
           <Route path="/myClassroom">
-            <Header />
-            <DropDown />
-            <MyClassroom
-              children={state.homework[state.homeworkIndex].children}
-              homeworkTitle={state.homework[state.homeworkIndex].name}
-            />
+            <MyClassroom />
           </Route>
           <Route path="/">
-            <Header />
-            <DropDown />
-            <HomeWorkFeed homeworkList={state.homework} />
+            <HomeWorkFeed />
           </Route>
         </Switch>
       </Router>
-    </AppProvider>
+      <Footer />
+    </>
   );
 }
 

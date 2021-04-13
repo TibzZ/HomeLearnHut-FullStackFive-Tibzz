@@ -2,13 +2,18 @@ import React from "react";
 import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
 import { useHistory, useParams } from "react-router-dom";
+import { UseAppContext } from "../../appContext";
 
-function MyClassroom({ homeworkTitle, children }) {
+function MyClassroom() {
   const history = useHistory();
   const homeworkIndex = useParams();
   const navigateTo = (index) =>
     history.push(`/homeworkViewer/${homeworkIndex}/${index}`);
   const navigateBack = () => history.push("/");
+  const { state } = UseAppContext();
+
+  let children = state.homework[state.homeworkIndex].children;
+  let homeworkTitle = state.homework[state.homeworkIndex].name;
 
   return (
     <>

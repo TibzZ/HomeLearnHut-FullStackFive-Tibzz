@@ -1,35 +1,24 @@
 import React, { useState, useRef, useEffect } from "react";
-import CanvasDraw from "react-canvas-draw";
+
 import css from "./HomeworkViewer.module.css";
 import { UseAppContext } from "../../appContext";
 import * as actions from "../../libs/actions";
 import { useHistory } from "react-router-dom";
 
-const {
-  REACT_APP_BUCKETNAME,
-  REACT_APP_REGION,
-  REACT_APP_ACCESS_KEY_ID,
-  REACT_APP_SECRET_ACCESS_KEY,
-} = process.env;
-
-const config = {
-  bucketName: REACT_APP_BUCKETNAME,
-  dirName: "placeholder",
-  region: REACT_APP_REGION,
-  accessKeyId: REACT_APP_ACCESS_KEY_ID,
-  secretAccessKey: REACT_APP_SECRET_ACCESS_KEY,
-};
-
-function HomeworkViewer({ homework, childHomework }) {
-  console.log(`what is this ${childHomework}`);
-  const [customColor, setCustomColor] = useState("blue");
+function HomeworkViewer() {
+  //const [customColor, setCustomColor] = useState("blue");
   const [comment, setComment] = useState("");
-  const refName = `canvasRef`;
-  const saveableCanvas = useRef(refName);
-  const { dispatch } = UseAppContext();
+  //const refName = `canvasRef`;
+  //const saveableCanvas = useRef(refName);
+  const { state, dispatch } = UseAppContext();
   const history = useHistory();
   const navigateBack = () => history.push("/myClassroom");
 
+  let homework = state.homework[state.homeworkIndex];
+  let childHomework = state.homework[state.homeworkIndex].children[state.childIndex];
+  console.log(`what is this ${childHomework}`);
+
+  
   // load homework annotation if it is there
   useEffect(() => {
     if (childHomework.annotation != null) {
@@ -38,13 +27,13 @@ function HomeworkViewer({ homework, childHomework }) {
     }
   }, []);
 
-  function handleClear() {
-    saveableCanvas.current.clear();
-  }
+  // function handleClear() {
+  //   saveableCanvas.current.clear();
+  // }
 
-  function handleUndo() {
-    saveableCanvas.current.undo();
-  }
+  // function handleUndo() {
+  //   saveableCanvas.current.undo();
+  // }
 
   function mark(payload) {
     dispatch({ type: actions.MARK, payload: payload });
@@ -80,7 +69,7 @@ function HomeworkViewer({ homework, childHomework }) {
         </div>
       </div>
       <div className={css.canvasAndColors}>
-        <div className={css.tools}>
+        {/* <div className={css.tools}>
           <div
             onClick={(e) => setCustomColor("#FF00FF")}
             className={css.colorField}
@@ -103,9 +92,9 @@ function HomeworkViewer({ homework, childHomework }) {
             Clear
           </button>
           <br />
-        </div>
+        </div> */}
         <div className={css.containCanvas}>
-          <CanvasDraw
+          {/* <CanvasDraw
             className={css.myCanvas}
             ref={saveableCanvas}
             //ref2={loadableCanvas}
@@ -116,7 +105,7 @@ function HomeworkViewer({ homework, childHomework }) {
             //img from database will need to be passed at this level
             canvasWidth={530}
             canvasHeight={700}
-          />
+          /> */}
           {console.log(childHomework.individualHomeworkImage)}
 
           {/* saveData={localStorage.getItem(storageName)} */}

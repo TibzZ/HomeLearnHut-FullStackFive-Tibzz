@@ -4,13 +4,17 @@ import DropdownTerm from "../SideFilter";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 import { useHistory } from "react-router-dom";
+import { UseAppContext } from "../../appContext";
 
-const HomeWorkFeed = ({ homeworkList }) => {
+const HomeWorkFeed = () => {
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
   const navigateTo = () => history.push("/myClassroom");
+  const { state } = UseAppContext();
+
+  let homeworkList = state.homework;
 
   function handleScroll() {
     const position = window.pageYOffset;
