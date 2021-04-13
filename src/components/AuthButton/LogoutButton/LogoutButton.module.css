@@ -1,0 +1,22 @@
+.authbtn {
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 8px;
+  border: 2px solid #d7eaea;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 3px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
+  font-family: "Reem Kufi", sans-serif;
+  margin-bottom: -10px;
+  outline: none;
+}
+
+.authbtn:hover {
+  background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
+  background-color: #acdbdf;
+}

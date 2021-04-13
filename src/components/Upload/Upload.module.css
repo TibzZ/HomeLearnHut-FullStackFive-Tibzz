@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  padding-right:20px;
+  padding-right: 20px;
   line-height: 2;
 }
 
@@ -20,9 +20,16 @@
 
 .upload {
   margin: auto;
+  color: #dadce1;
 }
 
-.commentBox{
+.commentBox {
   width: 80%;
   justify-content: center;
+  font-family: "Reem Kufi, sans-serif";
+  font-size: 1em;
+}
+
+p {
+  margin-bottom: 0;
 }

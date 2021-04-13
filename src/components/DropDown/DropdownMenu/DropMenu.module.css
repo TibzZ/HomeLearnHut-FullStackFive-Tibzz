@@ -1,0 +1,53 @@
+.dropdown {
+  position: fixed;
+  top: 138px;
+  width: 230px;
+  transform: translateX(-40%);
+  background-color: #9692af;
+  border: 1px solid #9692af;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height 500ms ease;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+a {
+  font-size: 1.3rem;
+}
+
+.menu {
+  width: 100%;
+}
+
+:global .menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+:global .menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+
+:global .menu-primary-exit {
+  position: absolute;
+}
+
+:global .menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all 500ms ease;
+}
+
+:global .menu-secondary-enter {
+  transform: translateX(110%);
+}
+
+:global .menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+
+:global .menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all 500ms ease;
+}

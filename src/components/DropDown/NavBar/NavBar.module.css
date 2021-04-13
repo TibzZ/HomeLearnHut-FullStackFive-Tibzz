@@ -1,0 +1,23 @@
+.navbar {
+  height: 50px;
+  background-color: #9692af;
+  padding: 0 1rem;
+  border-bottom: 1px solid white;
+  position: fixed;
+  width: 100%;
+  z-index: 300;
+}
+
+/* <ul> */
+.navbarNav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
