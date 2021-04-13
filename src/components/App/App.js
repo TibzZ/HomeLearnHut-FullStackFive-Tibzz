@@ -1,7 +1,6 @@
 import css from "./App.module.css";
 import Landing from "../Landing";
 import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
 import AppContent from "../AppContent";
 
 function App() {
