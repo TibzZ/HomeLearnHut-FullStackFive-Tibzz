@@ -2,26 +2,19 @@ import * as actions from "../../libs/actions";
 import React from "react";
 import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
 import BackButton from "../BackButton";
 
 function MyClassroom() {
   const history = useHistory();
-  const homeworkIndex = useParams();
-
-
-  // const navigateTo = (index) =>
-  //   history.push(`/homeworkViewer/${homeworkIndex}/${index}`);
 
   function goToHomework(index) {
-    dispatch({ type: actions.CHILDCHANGE, payload: index })
+    dispatch({ type: actions.CHILDCHANGE, payload: index });
     history.push(`/homeworkViewer`);
   }
 
   const navigateBack = () => history.push("/");
-
-
   const { state, dispatch } = UseAppContext();
 
   let children = state.homework[state.homeworkIndex].children;

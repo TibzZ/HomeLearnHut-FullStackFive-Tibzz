@@ -12,23 +12,12 @@ import * as actions from "../../libs/actions";
 const HomeWorkFeed = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
-
-
-
-
-  //const navigateTo = () => history.push("/myClassroom");
-
-
   const { state, dispatch } = UseAppContext();
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
 
-
-
-
   function goToClassroom(index) {
-    // changing the index in the state
-    dispatch({ type: actions.HOMEWORKCHANGE, payload: index })
+    dispatch({ type: actions.HOMEWORKCHANGE, payload: index });
     history.push("/myClassroom");
   }
 
@@ -58,7 +47,7 @@ const HomeWorkFeed = () => {
           .map((homework, index) => [
             <li>
               {homework.dateSet.includes(filter1) ||
-                homework.dateSet.includes(filter2) ? (
+              homework.dateSet.includes(filter2) ? (
                 <Post
                   key={index}
                   homework={homework}
