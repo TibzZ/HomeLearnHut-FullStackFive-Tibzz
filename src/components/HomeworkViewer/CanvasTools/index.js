@@ -1,7 +1,21 @@
-function CanvasTools() {
+import React, { useState } from "react";
+import CanvasDraw from "react-canvas-draw";
+import css from "./CanvasTools.module.css";
+
+function CanvasTools({childHomework, saveableCanvas}) {
+  const [customColor, setCustomColor] = useState("blue");
+
+  function handleClear() {
+    saveableCanvas.current.clear();
+  }
+
+  function handleUndo() {
+    saveableCanvas.current.undo();
+  }
 
 return (
-<div className={css.tools}>
+  <>
+    <div className={css.tools}>
           <div
             onClick={(e) => setCustomColor("#FF00FF")}
             className={css.colorField}
@@ -24,7 +38,18 @@ return (
             Clear
           </button>
           <br />
-        </div>
+    </div>
+    <CanvasDraw
+      className={css.myCanvas}
+      ref={saveableCanvas}
+      brushColor={customColor}
+      imgSrc={childHomework.individualHomeworkImage}
+      brushRadius={2}
+      lazyRadius={1}
+      canvasWidth={530}
+      canvasHeight={700}
+    />
+  </>
 )
 }
 

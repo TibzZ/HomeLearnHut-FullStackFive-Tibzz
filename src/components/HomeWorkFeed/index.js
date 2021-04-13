@@ -5,16 +5,23 @@ import React, { useState, useEffect } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 import { useHistory } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
+import ResetButton from "./ResetButton";
+import Greeting from "./Greeting";
 
 const HomeWorkFeed = () => {
-  const [filter1, setFilter1] = useState("");
-  const [filter2, setFilter2] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
   const navigateTo = () => history.push("/myClassroom");
   const { state } = UseAppContext();
+  const [filter1, setFilter1] = useState("");
+  const [filter2, setFilter2] = useState("");
 
   let homeworkList = state.homework;
+
+  function changeFilter(f1, f2) {
+    setFilter1(f1);
+    setFilter2(f2);
+  }
 
   function handleScroll() {
     const position = window.pageYOffset;
@@ -25,52 +32,11 @@ const HomeWorkFeed = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  function changeFilter(f1, f2) {
-    setFilter1(f1);
-    setFilter2(f2);
-  }
-
-  function showAllHwks() {
-    setFilter1("");
-  }
-
   return (
     <div>
-      <h1 className={css.feedTitle}>
-        <span>
-          Good Morning Teacher, <br />
-          upload new work using the + icon or browse previous work below
-        </span>
-      </h1>
-      <hr
-        style={{
-          color: "rgb(66, 66, 66)",
-          backgroundColor: "rgb(66, 66, 66)",
-          height: 2,
-          width: "20%",
-          marginTop: "70px",
-          marginBottom: "-50px",
-        }}
-      />
+      <Greeting/>
       <DropdownTerm handleClick={changeFilter} />
-      <div>
-        <button
-          className={
-            setFilter1 || setFilter2 !== null
-              ? css.resetBtn
-              : css.resetBtnHidden
-          }
-          onClick={showAllHwks}
-        >
-          Reset
-        </button>
-
-        {/* className={
-                homeworkList !== changeFilter
-                  ? css.resetBtnHidden
-                  : css.resetBtn
-              } */}
-      </div>
+      <ResetButton setFilter1={setFilter1} setFilter2={setFilter2}/>
       <ul className={css.post}>
         {homeworkList
           .map((homework, index) => [

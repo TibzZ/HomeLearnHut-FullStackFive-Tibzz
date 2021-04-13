@@ -9,17 +9,21 @@ import Footer from "../Footer";
 function AppContent() {
   return (
     <>
-      <Header />
-      <DropDown />
       <Router>
         <Switch>
           <Route path="/homeworkViewer">
+            <Header />
+            <DropDown />
             <HomeworkViewer />
           </Route>
           <Route path="/myClassroom">
+            <Header />
+            <DropDown />
             <MyClassroom />
           </Route>
           <Route path="/">
+            <Header />
+            <DropDown />
             <HomeWorkFeed />
           </Route>
         </Switch>

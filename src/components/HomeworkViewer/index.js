@@ -1,16 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import css from "./HomeworkViewer.module.css";
 import { UseAppContext } from "../../appContext";
 import * as actions from "../../libs/actions";
 import { useHistory } from "react-router-dom";
+import CanvasTools from "./CanvasTools";
 
 function HomeworkViewer() {
-  //const [customColor, setCustomColor] = useState("blue");
   const [comment, setComment] = useState("");
-  //const refName = `canvasRef`;
-  //const saveableCanvas = useRef(refName);
   const { state, dispatch } = UseAppContext();
+  const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
   const navigateBack = () => history.push("/myClassroom");
 
@@ -18,22 +16,13 @@ function HomeworkViewer() {
   let childHomework = state.homework[state.homeworkIndex].children[state.childIndex];
   console.log(`what is this ${childHomework}`);
 
-  
-  // load homework annotation if it is there
+  //load homework annotation if it is there
   useEffect(() => {
     if (childHomework.annotation != null) {
       saveableCanvas.current.loadSaveData(childHomework.annotation, false);
       setComment(childHomework.comment);
     }
   }, []);
-
-  // function handleClear() {
-  //   saveableCanvas.current.clear();
-  // }
-
-  // function handleUndo() {
-  //   saveableCanvas.current.undo();
-  // }
 
   function mark(payload) {
     dispatch({ type: actions.MARK, payload: payload });
@@ -69,46 +58,7 @@ function HomeworkViewer() {
         </div>
       </div>
       <div className={css.canvasAndColors}>
-        {/* <div className={css.tools}>
-          <div
-            onClick={(e) => setCustomColor("#FF00FF")}
-            className={css.colorField}
-            style={{ backgroundColor: "magenta" }}
-          ></div>
-          <div
-            onClick={(e) => setCustomColor("#66ff00")}
-            className={css.colorField}
-            style={{ backgroundColor: "rgb(75, 235, 65)" }}
-          ></div>
-          <input
-            onChange={(e) => setCustomColor(e.target.value)}
-            type="color"
-            className={css.colorPicker}
-          />
-          <button onClick={handleUndo} type="button" className={css.button}>
-            Undo
-          </button>
-          <button onClick={handleClear} type="button" className={css.button}>
-            Clear
-          </button>
-          <br />
-        </div> */}
-        <div className={css.containCanvas}>
-          {/* <CanvasDraw
-            className={css.myCanvas}
-            ref={saveableCanvas}
-            //ref2={loadableCanvas}
-            brushColor={customColor}
-            imgSrc={childHomework.individualHomeworkImage}
-            brushRadius={2}
-            lazyRadius={1}
-            //img from database will need to be passed at this level
-            canvasWidth={530}
-            canvasHeight={700}
-          /> */}
-          {console.log(childHomework.individualHomeworkImage)}
-
-          {/* saveData={localStorage.getItem(storageName)} */}
+          <CanvasTools childHomework={childHomework} saveableCanvas={saveableCanvas}/>
           <div>
             <button className={css.backButton} onClick={navigateBack}>
               Back
@@ -127,14 +77,12 @@ function HomeworkViewer() {
             <button className={css.myButton} onClick={submitMarking}>
               Mark
             </button>
-
             <button className={css.myButton} onClick={rejectHomework}>
               Reject
             </button>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
