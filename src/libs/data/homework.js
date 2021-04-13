@@ -21,6 +21,23 @@ import { classroom17 as classroom17 } from "./classrooms/classroom17";
 import { classroom18 as classroom18 } from "./classrooms/classroom18";
 
 //${host}
+// To add use Effect
+
+const BACK_END = "http://localhost:5000";
+const GET_PUPILS = "Homework";
+
+
+async function FetchFromBackEnd() {
+    
+    let response = await fetch(`${BACK_END}/${GET_PUPILS}`);
+    let dataObject = await response.json();
+    console.log(dataObject);
+
+}
+
+
+export default FetchFromBackEnd;
+
 
 // 18 pieces of homework
 

@@ -4,6 +4,7 @@ It is a landing page where you can sign up or login to the service
 Once you are logged in you are taken to the NewsFeed
 */
 
+import FetchFromBackEnd from "../../libs/data/homework";
 import AuthButton from "../AuthButton";
 import css from "../Landing/Landing.module.css";
 
@@ -14,6 +15,7 @@ const Landing = () => {
         <div className={css.containLogo}>
           <p className={css.AppLogo} />
           <h1 className={css.Title1}>Welcome</h1>
+          {console.log(FetchFromBackEnd())}
           <AuthButton />
         </div>
       </div>
