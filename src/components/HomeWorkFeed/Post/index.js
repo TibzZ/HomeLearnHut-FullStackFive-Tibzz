@@ -14,7 +14,7 @@ const Post = ({ homework, index, clickToClassroom }) => {
       <div>
         <button
           className={css.button}
-          onClick={(index) => clickToClassroom(index)}
+          onClick={() => clickToClassroom(index)}
         >
           <img className={css.image} src={homework.image} alt="homework" />
         </button>
