@@ -3,6 +3,7 @@ import Student from "./Student";
 import css from "../MyClassroom/MyClassroom.module.css";
 import { useHistory, useParams } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
+import BackButton from "../BackButton";
 
 function MyClassroom() {
   const history = useHistory();
@@ -47,9 +48,7 @@ function MyClassroom() {
         </ul>
         <br />
       </div>
-      <button className={css.goBack} onClick={navigateBack}>
-        Back
-      </button>
+      <BackButton navigateBack={navigateBack} />
     </>
   );
 }

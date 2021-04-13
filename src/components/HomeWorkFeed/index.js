@@ -34,9 +34,9 @@ const HomeWorkFeed = () => {
 
   return (
     <div>
-      <Greeting/>
+      <Greeting />
       <DropdownTerm handleClick={changeFilter} />
-      <ResetButton setFilter1={setFilter1} setFilter2={setFilter2}/>
+      <ResetButton setFilter1={setFilter1} setFilter2={setFilter2} />
       <ul className={css.post}>
         {homeworkList
           .map((homework, index) => [
