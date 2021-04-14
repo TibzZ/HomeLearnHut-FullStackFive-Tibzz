@@ -16,7 +16,7 @@ function useFetch() {
     }
 
     fetchData();
-  }, [dispatch]);
+  }, [state]);
 
   return state;
 }
