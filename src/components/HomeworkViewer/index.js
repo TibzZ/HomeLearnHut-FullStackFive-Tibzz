@@ -4,6 +4,7 @@ import { UseAppContext } from "../../appContext";
 import { useHistory } from "react-router-dom";
 import CanvasTools from "./CanvasTools";
 import BackButton from "../BackButton";
+//import dateFormat from "dateformat";
 
 function HomeworkViewer() {
   const [comment, setComment] = useState("");
@@ -70,6 +71,10 @@ function HomeworkViewer() {
     navigateBack();
   };
 
+  // let mySQLDate = homework.dateset;
+  // let altDate = new Date(Date.parse(mySQLDate));
+  // let formattedDate = dateFormat(altDate.toJSON(), "mmmm dS, yyyy");
+
   // Use a PNG for images!
   return (
     <div className={css.allOfViewer}>
@@ -90,7 +95,7 @@ function HomeworkViewer() {
         <div>
           <BackButton navigateBack={navigateBack} />
           <div className={css.contain}>
-            Set: {homework.dateset}
+            Set: {homework.dateset.replace(/00:00:00/, "")}
             <br />
             Due: {homework.datedue}
             <br />

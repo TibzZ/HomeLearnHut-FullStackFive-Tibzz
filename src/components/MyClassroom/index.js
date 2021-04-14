@@ -10,7 +10,7 @@ function MyClassroom() {
   const history = useHistory();
 
   function goToHomework(index) {
-    dispatch({ type: actions.CHILDCHANGE, payload: index });
+    dispatch({ type: actions.CHILD_CHANGE, payload: index });
     history.push(`/homeworkViewer`);
   }
 

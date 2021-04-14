@@ -17,7 +17,7 @@ const HomeWorkFeed = () => {
   const [filter2, setFilter2] = useState("");
 
   function goToClassroom(index) {
-    dispatch({ type: actions.HOMEWORKCHANGE, payload: index });
+    dispatch({ type: actions.HOMEWORK_CHANGE, payload: index });
     history.push("/myClassroom");
   }
 
@@ -46,15 +46,15 @@ const HomeWorkFeed = () => {
         {homeworkList
           .map((homework, index) => [
             <li>
-              {/* {homework.dateset.includes(filter1) ||
-              homework.dateset.includes(filter2) ? ( */}
-              <Post
-                key={index}
-                homework={homework}
-                index={index}
-                clickToClassroom={goToClassroom}
-              />
-              {/* // ) : null} */}
+              {homework.dateset.includes(filter1) ||
+              homework.dateset.includes(filter2) ? (
+                <Post
+                  key={index}
+                  homework={homework}
+                  index={index}
+                  clickToClassroom={goToClassroom}
+                />
+              ) : null}
             </li>,
           ])
           .reverse()}

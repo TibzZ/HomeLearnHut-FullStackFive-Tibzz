@@ -1,8 +1,4 @@
-/* An optional component that would be implemented most likely solely within the
-NewsFeed page (state/route) to filter the "posts" according to date, more specifically
-for a teacher the term (semester), the week and so forth
-*/
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { FaChevronRight, FaArrowLeft } from "react-icons/fa";
 import DropdownItem from "./DropdownItem";
@@ -63,37 +59,37 @@ function DropdownTerm({ handleClick }) {
             </h2>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("September", "October")}
+            handleClick={() => handleClick("09", "10")}
             leftIcon="🍂"
           >
             <span className={css.filter}>Autumn Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("November", "December")}
+            handleClick={() => handleClick("11", "12")}
             leftIcon="🦔"
           >
             <span className={css.filter}>Autumn Pt II</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("January", "February")}
+            handleClick={() => handleClick("01", "02")}
             leftIcon="🌷"
           >
             <span className={css.filter}>Spring Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("March", "April")}
+            handleClick={() => handleClick("03", "04")}
             leftIcon="🐇"
           >
             <span className={css.filter}>Spring Pt II</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("April", "May")}
+            handleClick={() => handleClick("04", "05")}
             leftIcon="🌞"
           >
             <span className={css.filter}>Summer Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("June", "July")}
+            handleClick={() => handleClick("06", "07")}
             leftIcon="👙"
           >
             <span className={css.filter}>Summer Pt II</span>

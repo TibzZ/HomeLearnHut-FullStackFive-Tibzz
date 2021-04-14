@@ -13,12 +13,6 @@ function useFetch() {
       let response = await fetch(`${BACK_END}/${GET_PUPILS}`);
       let data = await response.json();
       console.log(data);
-
-      // format date
-      for (let i = 0; i < data.length; i++) {
-        // change dateset
-        // data[i].dateset = "dummy!";
-      }
       dispatch({ type: actions.FETCH, payload: data });
     }
 
