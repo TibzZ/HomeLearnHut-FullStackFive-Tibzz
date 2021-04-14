@@ -22,7 +22,6 @@ const HomeWorkFeed = () => {
   }
 
   let homeworkList = state.homework;
-  //console.log(homeworkList);
 
   function changeFilter(f1, f2) {
     setFilter1(f1);

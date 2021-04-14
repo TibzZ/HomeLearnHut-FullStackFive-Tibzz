@@ -9,7 +9,7 @@ import BackButton from "../BackButton";
 function HomeworkViewer() {
   const [comment, setComment] = useState("");
 
-  const { state, dispatch } = UseAppContext();
+  const { state, dispatch, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
@@ -28,26 +28,58 @@ function HomeworkViewer() {
     }
   }, [state.childIndex]);
 
-  function mark(payload) {
-    dispatch({ type: actions.MARK, payload: payload });
-  }
+  // function mark(payload) {
+  //   dispatch({ type: actions.MARK, payload: payload });
+  // }
 
-  function reject(payload) {
-    dispatch({ type: actions.REJECT, payload: payload });
-  }
+  // function reject(payload) {
+  //   dispatch({ type: actions.REJECT, payload: payload });
+  // }
 
   const submitMarking = () => {
-    mark({
-      annotation: saveableCanvas.current.getSaveData(),
-      comment: comment,
-    });
+    markWork();
+    setRefreshSwitch(!refreshSwitch);
     navigateBack();
   };
 
   const rejectHomework = () => {
-    reject({ comment: comment });
+    rejectWork();
+    setRefreshSwitch(!refreshSwitch);
     navigateBack();
   };
+
+  const BACKEND_URL = "http://localhost:5000";
+
+  async function rejectWork() {
+    // Create our object to PUT (Update) into childrenshomework on SQL
+    const childrenshomework = {
+      id: childHomework.id,
+      image: null,
+      comment: comment,
+      annotation: null,
+    };
+    putHomework(`/homework/${homework.id}`, "PUT", childrenshomework);
+  }
+
+  async function markWork() {
+    const childrenshomework = {
+      id: childHomework.id,
+      image: childHomework.image,
+      comment: comment,
+      annotation: saveableCanvas.current.getSaveData(),
+    };
+    // Make the PUT request (UPDATE)
+    putHomework(`/homework/${homework.id}`, "PUT", childrenshomework);
+  }
+
+  async function putHomework(path, method, body) {
+    // const res =
+    await fetch(`${BACKEND_URL}${path}`, {
+      method,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  }
 
   // Use a PNG for images!
   return (
