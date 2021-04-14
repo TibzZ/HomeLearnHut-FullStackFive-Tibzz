@@ -69,9 +69,9 @@ function HomeworkViewer() {
         <div>
           <BackButton navigateBack={navigateBack} />
           <div className={css.contain}>
-            Set: {homework.dateSet}
+            Set: {homework.dateset}
             <br />
-            Due: {homework.dateDue}
+            Due: {homework.datedue}
             <br />
             <span>Comment: </span>
             <input

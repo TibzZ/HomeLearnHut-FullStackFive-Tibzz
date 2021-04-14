@@ -28,12 +28,12 @@ function MyClassroom() {
           {children.map((child, index) => [
             <li
               className={
-                child.individualHomeworkImage !== null
+                child.image !== null
                   ? css.listElement
                   : css.listElementDisabled
               }
               title={
-                child.individualHomeworkImage !== null
+                child.image !== null
                   ? ""
                   : "No work submitted"
               }
@@ -44,7 +44,7 @@ function MyClassroom() {
                 handleClick={goToHomework}
                 name={child.name}
                 avatar={child.avatar}
-                hasSubmitted={child.individualHomeworkImage !== null} // added prop for tickbox functionality
+                hasSubmitted={child.image !== null} // added prop for tickbox functionality
                 isMarked={child.annotation !== null}
               />
             </li>,

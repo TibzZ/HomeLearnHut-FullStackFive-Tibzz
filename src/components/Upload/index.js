@@ -33,8 +33,8 @@ const Upload = ({ hideModal }) => {
         upload({
           name: title,
           image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
-          dateSet: formattedDate,
-          dateDue: dateDue,
+          dateset: formattedDate,
+          datedue: dateDue,
           comment: comment,
           children: [...children],
         });

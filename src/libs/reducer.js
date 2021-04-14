@@ -18,7 +18,7 @@ export function reducer(state, action) {
         action.payload.comment;
       state.homework[state.homeworkIndex].children[
         state.childIndex
-      ].individualHomeworkImage = null;
+      ].image = null;
       state.homework[state.homeworkIndex].children[
         state.childIndex
       ].annotation = null;

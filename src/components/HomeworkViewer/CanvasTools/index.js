@@ -43,7 +43,7 @@ return (
       className={css.myCanvas}
       ref={saveableCanvas}
       brushColor={customColor}
-      imgSrc={childHomework.individualHomeworkImage}
+      imgSrc={childHomework.image}
       brushRadius={2}
       lazyRadius={1}
       canvasWidth={530}

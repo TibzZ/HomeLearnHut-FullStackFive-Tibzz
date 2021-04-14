@@ -9,9 +9,8 @@ import ScrollToTop from "../../scrollTop";
 import useFetch from "../../hooks/useFetch";
 
 function AppContent() {
-  let appData = useFetch();
-  console.log(appData);
-
+  useFetch();
+  
   return (
     <>
       <Router>
@@ -30,7 +29,7 @@ function AppContent() {
             <Route path="/">
               <Header />
               <DropDown />
-              <HomeWorkFeed data={appData} />
+              <HomeWorkFeed />
             </Route>
           </Switch>
         </ScrollToTop>

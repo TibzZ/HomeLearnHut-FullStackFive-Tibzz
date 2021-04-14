@@ -9,10 +9,10 @@ import ResetButton from "./ResetButton";
 import Greeting from "./Greeting";
 import * as actions from "../../libs/actions";
 
-const HomeWorkFeed = ({ data }) => {
+const HomeWorkFeed = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
-  const { dispatch } = UseAppContext();
+  const { state, dispatch } = UseAppContext();
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
 
@@ -21,7 +21,7 @@ const HomeWorkFeed = ({ data }) => {
     history.push("/myClassroom");
   }
 
-  let homeworkList = data.homework;
+  let homeworkList = state.homework;
   console.log(homeworkList);
 
   function changeFilter(f1, f2) {
@@ -47,8 +47,8 @@ const HomeWorkFeed = ({ data }) => {
         {homeworkList
           .map((homework, index) => [
             <li>
-              {/* {homework.dateSet.includes(filter1) ||
-              homework.dateSet.includes(filter2) ? ( */}
+              {/* {homework.dateset.includes(filter1) ||
+              homework.dateset.includes(filter2) ? ( */}
                 <Post
                   key={index}
                   homework={homework}
