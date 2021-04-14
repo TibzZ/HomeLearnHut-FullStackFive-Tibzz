@@ -22,7 +22,7 @@ const HomeWorkFeed = () => {
   }
 
   let homeworkList = state.homework;
-  console.log(homeworkList);
+  //console.log(homeworkList);
 
   function changeFilter(f1, f2) {
     setFilter1(f1);
@@ -49,12 +49,12 @@ const HomeWorkFeed = () => {
             <li>
               {/* {homework.dateset.includes(filter1) ||
               homework.dateset.includes(filter2) ? ( */}
-                <Post
-                  key={index}
-                  homework={homework}
-                  index={index}
-                  clickToClassroom={goToClassroom}
-                />
+              <Post
+                key={index}
+                homework={homework}
+                index={index}
+                clickToClassroom={goToClassroom}
+              />
               {/* // ) : null} */}
             </li>,
           ])

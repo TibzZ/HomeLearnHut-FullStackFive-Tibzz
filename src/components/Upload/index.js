@@ -8,12 +8,15 @@ import * as actions from "../../libs/actions";
 import { config } from "../../configS3";
 
 
+
 const Upload = ({ hideModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
   const [dateDue, setDateDue] = useState("");
   const BACKEND_URL = "http://localhost:5000";
+
+  const { dispatch, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   //const { dispatch } = UseAppContext();
 
@@ -47,6 +50,9 @@ const Upload = ({ hideModal }) => {
       .catch((err) => {
         alert(err);
       });
+
+    // dispatch({ type: actions.REFRESH });
+    setRefreshSwitch(!refreshSwitch);
     hideModal();
   };
 
