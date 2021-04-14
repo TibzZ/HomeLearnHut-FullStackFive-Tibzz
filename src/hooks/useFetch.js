@@ -4,6 +4,7 @@ import { UseAppContext } from "../appContext";
 
 function useFetch() {
   const { dispatch, refreshSwitch, state } = UseAppContext();
+
   const BACK_END = "http://localhost:5000";
   const GET_PUPILS = "Homework";
 

@@ -28,15 +28,9 @@ function MyClassroom() {
           {children.map((child, index) => [
             <li
               className={
-                child.image !== null
-                  ? css.listElement
-                  : css.listElementDisabled
+                child.image !== null ? css.listElement : css.listElementDisabled
               }
-              title={
-                child.image !== null
-                  ? ""
-                  : "No work submitted"
-              }
+              title={child.image !== null ? "" : "No work submitted"}
             >
               <Student
                 key={index}

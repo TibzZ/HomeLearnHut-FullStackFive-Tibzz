@@ -5,15 +5,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "../Header";
 import DropDown from "../DropDown";
 import Footer from "../Footer";
-import ScrollToTop from "../../scrollTop";
+import ScrollToTop from "../../libs/scrollTop";
 import useFetch from "../../hooks/useFetch";
-import { useState } from "react";
 
 function AppContent() {
-
-
-
-
   useFetch();
 
   return (

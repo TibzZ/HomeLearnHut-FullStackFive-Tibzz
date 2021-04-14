@@ -8,9 +8,10 @@ export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [refreshSwitch, setRefreshSwitch] = useState(true);
 
-
   return (
-    <AppContext.Provider value={{ state, dispatch, refreshSwitch, setRefreshSwitch }}>
+    <AppContext.Provider
+      value={{ state, dispatch, refreshSwitch, setRefreshSwitch }}
+    >
       {children}
     </AppContext.Provider>
   );

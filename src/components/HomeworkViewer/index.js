@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import css from "./HomeworkViewer.module.css";
 import { UseAppContext } from "../../appContext";
-import * as actions from "../../libs/actions";
 import { useHistory } from "react-router-dom";
 import CanvasTools from "./CanvasTools";
 import BackButton from "../BackButton";
@@ -9,7 +8,7 @@ import BackButton from "../BackButton";
 function HomeworkViewer() {
   const [comment, setComment] = useState("");
 
-  const { state, dispatch, refreshSwitch, setRefreshSwitch } = UseAppContext();
+  const { state, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   const saveableCanvas = useRef(`canvasRef`);
   const history = useHistory();
@@ -18,7 +17,6 @@ function HomeworkViewer() {
   let homework = state.homework[state.homeworkIndex];
   let childHomework =
     state.homework[state.homeworkIndex].children[state.childIndex];
-  console.log(`what is this ${childHomework}`);
 
   //load homework annotation if it is there
   useEffect(() => {
@@ -27,26 +25,6 @@ function HomeworkViewer() {
       setComment(childHomework.comment);
     }
   }, [state.childIndex]);
-
-  // function mark(payload) {
-  //   dispatch({ type: actions.MARK, payload: payload });
-  // }
-
-  // function reject(payload) {
-  //   dispatch({ type: actions.REJECT, payload: payload });
-  // }
-
-  const submitMarking = () => {
-    markWork();
-    setRefreshSwitch(!refreshSwitch);
-    navigateBack();
-  };
-
-  const rejectHomework = () => {
-    rejectWork();
-    setRefreshSwitch(!refreshSwitch);
-    navigateBack();
-  };
 
   const BACKEND_URL = "http://localhost:5000";
 
@@ -73,13 +51,24 @@ function HomeworkViewer() {
   }
 
   async function putHomework(path, method, body) {
-    // const res =
     await fetch(`${BACKEND_URL}${path}`, {
       method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
     });
   }
+
+  const submitMarking = () => {
+    markWork();
+    setRefreshSwitch(!refreshSwitch);
+    navigateBack();
+  };
+
+  const rejectHomework = () => {
+    rejectWork();
+    setRefreshSwitch(!refreshSwitch);
+    navigateBack();
+  };
 
   // Use a PNG for images!
   return (
