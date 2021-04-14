@@ -16,7 +16,7 @@ const Upload = ({ hideModal }) => {
   const [dateDue, setDateDue] = useState("");
   const BACKEND_URL = "http://localhost:5000";
 
-  const { dispatch } = UseAppContext();
+  const { dispatch, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   //const { dispatch } = UseAppContext();
 
@@ -52,7 +52,7 @@ const Upload = ({ hideModal }) => {
       });
 
     // dispatch({ type: actions.REFRESH });
-
+    setRefreshSwitch(!refreshSwitch);
     hideModal();
   };
 
