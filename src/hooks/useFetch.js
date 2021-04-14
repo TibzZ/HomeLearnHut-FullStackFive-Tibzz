@@ -16,7 +16,7 @@ function useFetch() {
       // format date
       for (let i = 0; i < data.length; i++) {
         // change dateset
-        data[i].dateset = "dummy!";
+        // data[i].dateset = "dummy!";
       }
       dispatch({ type: actions.FETCH, payload: data });
     }
