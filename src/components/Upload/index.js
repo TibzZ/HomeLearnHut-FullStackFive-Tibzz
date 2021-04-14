@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { uploadFile } from "react-s3";
+import { uploadFile as uploadToS3 } from "react-s3";
 import css from "../Upload/Upload.module.css";
 import { blankClassroom as children } from "../../libs/data/blankClassroom";
 import dateFormat from "dateformat";
@@ -7,43 +7,75 @@ import { UseAppContext } from "../../appContext";
 import * as actions from "../../libs/actions";
 import { config } from "../../configS3";
 
+
 const Upload = ({ hideModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
   const [dateDue, setDateDue] = useState("");
-  const { dispatch } = UseAppContext();
+  const BACKEND_URL = "http://localhost:5000";
 
-  function upload(payload) {
-    dispatch({ type: actions.UPLOAD, payload: payload });
-  }
+  //const { dispatch } = UseAppContext();
+
+  //  function upload(payload) {
+  //   dispatch({ type: actions.UPLOAD, payload: payload });
+  // }
+
 
   const browseClick = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
+  // S3 Upload
   const uploadClick = () => {
     config.dirName = `homework/${Date.now()}`;
-
     let myDate = new Date(Date.now());
-    let formattedDate = dateFormat(myDate.toJSON(), "mmmm dS, yyyy");
 
-    uploadFile(selectedFile, config)
+
+    // S3 upload method
+    uploadToS3(selectedFile, config)
       .then(() => {
-        upload({
-          name: title,
-          image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
-          dateset: formattedDate,
-          datedue: dateDue,
-          comment: comment,
-          children: [...children],
-        });
+        // if successful uploading to AWS S3 then insert into SQL homework database
+        uploadToSQL(
+          {
+            name: title,
+            image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
+            datedue: dateDue,
+            comment: comment
+          });
       })
       .catch((err) => {
         alert(err);
       });
     hideModal();
   };
+
+  // Upload to SQL...
+  async function uploadToSQL(payload) {
+    // Create our object to POST (Insert) into Homework on SQL
+    const homework = {
+      name: title,
+      image: `https://${config.bucketName}.s3.${config.region}.amazonaws.com/${config.dirName}/${selectedFile.name}`,
+      datedue: dateDue,
+      comment: comment
+    }
+
+    // Make the POST request (INSERT)
+    postHomework("/homework", "POST", homework);
+  }
+  async function postHomework(path, method, body) {
+    // const res =
+    await fetch(`${BACKEND_URL}${path}`, {
+      method,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    // await response (res) from the INSERT
+    // const data = await res.json();
+    // // return response
+    // return data;
+  }
+  // end upload to SQL
 
   return (
     <div className={css.uploadBox}>
@@ -77,6 +109,36 @@ const Upload = ({ hideModal }) => {
       </button>
     </div>
   );
+
 };
 
+
 export default Upload;
+
+  //  let formattedDate = dateFormat(myDate.toJSON(), "mmmm dS, yyyy");
+// async function submit() {
+
+
+//     const entry = {
+//       journalEntry: text
+//     }
+
+//     // blank text out
+//     setText("");
+
+//     const entryAdd = await postJournalEntry("/journal", "POST", entry);
+
+//   }
+
+//   async function postJournalEntry(path, method, body) {
+//     const res = await fetch(`${BACKEND_URL}${path}`, {
+//       method,
+//       headers: { "content-type": "application/json" },
+//       body: JSON.stringify(body),
+//     });
+//     // await response (res) from the INSERT
+//     const data = await res.json();
+//     // return response
+//     return data;
+//   }
+
