@@ -20,20 +20,16 @@ function AppContent() {
     <>
       <Router>
         <ScrollToTop>
+          <Header />
+          <DropDown />
           <Switch>
             <Route path="/homeworkViewer">
-              <Header />
-              <DropDown />
               <HomeworkViewer />
             </Route>
             <Route path="/myClassroom">
-              <Header />
-              <DropDown />
               <MyClassroom />
             </Route>
             <Route path="/">
-              <Header />
-              <DropDown />
               <HomeWorkFeed />
             </Route>
           </Switch>
