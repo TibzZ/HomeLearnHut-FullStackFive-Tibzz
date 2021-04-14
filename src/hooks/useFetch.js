@@ -3,7 +3,7 @@ import * as actions from "../libs/actions";
 import { UseAppContext } from "../appContext";
 
 function useFetch() {
-  const { state, dispatch } = UseAppContext();
+  const { dispatch, refreshSwitch, state } = UseAppContext();
   const BACK_END = "http://localhost:5000";
   const GET_PUPILS = "Homework";
 
@@ -12,11 +12,17 @@ function useFetch() {
       let response = await fetch(`${BACK_END}/${GET_PUPILS}`);
       let data = await response.json();
       console.log(data);
+
+      // format date
+      for (let i = 0; i < data.length; i++) {
+        // change dateset
+        // data[i].dateset = "dummy!";
+      }
       dispatch({ type: actions.FETCH, payload: data });
     }
 
     fetchData();
-  }, [dispatch]);
+  }, [refreshSwitch]);
 
   return state;
 }

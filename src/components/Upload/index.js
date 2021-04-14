@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { uploadFile as uploadToS3 } from "react-s3";
 import css from "../Upload/Upload.module.css";
-import { blankClassroom as children } from "../../libs/data/blankClassroom";
+
 import dateFormat from "dateformat";
 import { UseAppContext } from "../../appContext";
 import * as actions from "../../libs/actions";
 import { config } from "../../configS3";
+
 
 
 const Upload = ({ hideModal }) => {
@@ -14,6 +15,8 @@ const Upload = ({ hideModal }) => {
   const [comment, setComment] = useState("");
   const [dateDue, setDateDue] = useState("");
   const BACKEND_URL = "http://localhost:5000";
+
+  const { dispatch, refreshSwitch, setRefreshSwitch } = UseAppContext();
 
   //const { dispatch } = UseAppContext();
 
@@ -47,6 +50,9 @@ const Upload = ({ hideModal }) => {
       .catch((err) => {
         alert(err);
       });
+
+    // dispatch({ type: actions.REFRESH });
+    setRefreshSwitch(!refreshSwitch);
     hideModal();
   };
 

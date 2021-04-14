@@ -48,12 +48,12 @@ const HomeWorkFeed = () => {
             <li>
               {/* {homework.dateset.includes(filter1) ||
               homework.dateset.includes(filter2) ? ( */}
-                <Post
-                  key={index}
-                  homework={homework}
-                  index={index}
-                  clickToClassroom={goToClassroom}
-                />
+              <Post
+                key={index}
+                homework={homework}
+                index={index}
+                clickToClassroom={goToClassroom}
+              />
               {/* // ) : null} */}
             </li>,
           ])

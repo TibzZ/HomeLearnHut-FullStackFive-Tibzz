@@ -7,28 +7,29 @@ import DropDown from "../DropDown";
 import Footer from "../Footer";
 import ScrollToTop from "../../scrollTop";
 import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
 
 function AppContent() {
+
+
+
+
   useFetch();
-  
+
   return (
     <>
       <Router>
         <ScrollToTop>
+          <Header />
+          <DropDown />
           <Switch>
             <Route path="/homeworkViewer">
-              <Header />
-              <DropDown />
               <HomeworkViewer />
             </Route>
             <Route path="/myClassroom">
-              <Header />
-              <DropDown />
               <MyClassroom />
             </Route>
             <Route path="/">
-              <Header />
-              <DropDown />
               <HomeWorkFeed />
             </Route>
           </Switch>
