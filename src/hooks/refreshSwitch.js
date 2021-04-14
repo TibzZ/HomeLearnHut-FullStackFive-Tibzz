@@ -1,1 +1,6 @@
-export let refreshSwitch = true;
+function refreshSwitch() {
+
+
+}
+
+export default refreshSwitch();
