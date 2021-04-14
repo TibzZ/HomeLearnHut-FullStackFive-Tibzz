@@ -51,7 +51,7 @@ const Upload = ({ hideModal }) => {
         alert(err);
       });
 
-    dispatch({ type: actions.REFRESH });
+    // dispatch({ type: actions.REFRESH });
 
     hideModal();
   };
