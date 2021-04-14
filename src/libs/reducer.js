@@ -27,9 +27,6 @@ export function reducer(state, action) {
       return { ...state, homeworkIndex: action.payload };
     case actions.CHILDCHANGE:
       return { ...state, childIndex: action.payload };
-    case actions.REFRESH:
-      return { ...state, refreshSwitch: (!state.refreshSwitch) };
-
     default:
       throw new Error("invalid action");
   }
