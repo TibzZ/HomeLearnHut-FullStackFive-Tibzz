@@ -26,14 +26,13 @@ function MyClassroom() {
       <div>
         <ul className={css.myClassroom}>
           {children.map((child, index) => [
-            <li
+            <li key={index}
               className={
                 child.image !== null ? css.listElement : css.listElementDisabled
               }
               title={child.image !== null ? "" : "No work submitted"}
             >
               <Student
-                key={index}
                 index={index}
                 handleClick={goToHomework}
                 name={child.name}

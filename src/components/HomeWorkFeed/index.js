@@ -1,16 +1,16 @@
 import Post from "./Post";
 import css from "./NewsFeed.module.css";
 import DropdownTerm from "../SideFilter";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { IoIosArrowDropup } from "react-icons/io";
 import { useHistory } from "react-router-dom";
 import { UseAppContext } from "../../appContext";
 import ResetButton from "./ResetButton";
 import Greeting from "./Greeting";
 import * as actions from "../../libs/actions";
+import { useScrollPosition } from "../../hooks/useScroll";
 
 const HomeWorkFeed = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const history = useHistory();
   const { state, dispatch } = UseAppContext();
   const [filter1, setFilter1] = useState("");
@@ -28,14 +28,15 @@ const HomeWorkFeed = () => {
     setFilter2(f2);
   }
 
-  // function handleScroll() {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // }
+  const [hideOnScroll, setHideOnScroll] = useState(true);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  // }, []);
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y;
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow);
+    },
+    [hideOnScroll]
+  );
 
   return (
     <div>
@@ -45,11 +46,10 @@ const HomeWorkFeed = () => {
       <ul className={css.post}>
         {homeworkList
           .map((homework, index) => [
-            <li>
+            <li key={index}>
               {homework.dateset.includes(filter1) ||
-                homework.dateset.includes(filter2) ? (
+              homework.dateset.includes(filter2) ? (
                 <Post
-                  key={index}
                   homework={homework}
                   index={index}
                   clickToClassroom={goToClassroom}
@@ -60,7 +60,7 @@ const HomeWorkFeed = () => {
           .reverse()}
       </ul>
       <a className={css.goToTop} href="#1">
-        {scrollPosition > 1000 && <IoIosArrowDropup />}
+        {hideOnScroll && <IoIosArrowDropup />}
       </a>
     </div>
   );
