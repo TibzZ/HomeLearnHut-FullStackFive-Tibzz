@@ -1,12 +1,6 @@
 import css from "./Post.module.css";
-import dateFormat from "dateformat";
 
 const Post = ({ homework, index, clickToClassroom }) => {
-  // let mySQLDate = homework.dateset;
-  // let altDate = new Date(Date.parse(mySQLDate));
-  // let formattedDate = dateFormat(altDate.toJSON(), "mmmm dS, yyyy");
-  // // console.log(`this date ${formattedDate}`);
-
   return (
     <div className={css.container}>
       <div className={css.textbox}>
