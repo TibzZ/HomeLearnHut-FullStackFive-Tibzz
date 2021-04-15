@@ -15,6 +15,7 @@ const HomeWorkFeed = () => {
   const { state, dispatch } = UseAppContext();
   const [filter1, setFilter1] = useState("");
   const [filter2, setFilter2] = useState("");
+  const [hideOnScroll, setHideOnScroll] = useState(true);
 
   function goToClassroom(index) {
     dispatch({ type: actions.HOMEWORK_CHANGE, payload: index });
@@ -22,13 +23,12 @@ const HomeWorkFeed = () => {
   }
 
   let homeworkList = state.homework;
+  console.log(homeworkList);
 
   function changeFilter(f1, f2) {
     setFilter1(f1);
     setFilter2(f2);
   }
-
-  const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {

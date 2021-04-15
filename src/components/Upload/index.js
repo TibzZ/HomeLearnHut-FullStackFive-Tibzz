@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { uploadFile as uploadToS3 } from "react-s3";
 import css from "../Upload/Upload.module.css";
 import { UseAppContext } from "../../appContext";
