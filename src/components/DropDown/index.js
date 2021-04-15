@@ -17,13 +17,14 @@ function DropDown() {
     <ReactModal
       style={{ overlay: { zIndex: 1000 } }}
       className={css.modalBox}
+      ariaHideApp={false}
       isOpen
       shouldCloseOnOverlayClick={true}
       onRequestClose={hideModal}
     >
-      <p>
+      <div>
         <Upload hideModal={hideModal} />
-      </p>
+      </div>
       <button className={css.cornerBtn} onClick={hideModal}>
         X
       </button>
