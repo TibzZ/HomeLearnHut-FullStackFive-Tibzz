@@ -28,14 +28,14 @@ const HomeWorkFeed = () => {
     setFilter2(f2);
   }
 
-  function handleScroll() {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  }
+  // function handleScroll() {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <div>
@@ -47,7 +47,7 @@ const HomeWorkFeed = () => {
           .map((homework, index) => [
             <li>
               {homework.dateset.includes(filter1) ||
-              homework.dateset.includes(filter2) ? (
+                homework.dateset.includes(filter2) ? (
                 <Post
                   key={index}
                   homework={homework}
