@@ -59,37 +59,37 @@ function DropdownTerm({ handleClick }) {
             </h2>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("09", "10")}
+            handleClick={() => handleClick("September", "October")}
             leftIcon="🍂"
           >
             <span className={css.filter}>Autumn Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("11", "12")}
+            handleClick={() => handleClick("November", "December")}
             leftIcon="🦔"
           >
             <span className={css.filter}>Autumn Pt II</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("01", "02")}
+            handleClick={() => handleClick("January", "February")}
             leftIcon="🌷"
           >
             <span className={css.filter}>Spring Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("03", "04")}
+            handleClick={() => handleClick("March", "April")}
             leftIcon="🐇"
           >
             <span className={css.filter}>Spring Pt II</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("04", "05")}
+            handleClick={() => handleClick("April", "May")}
             leftIcon="🌞"
           >
             <span className={css.filter}>Summer Pt I</span>
           </DropdownItem>
           <DropdownItem
-            handleClick={() => handleClick("06", "07")}
+            handleClick={() => handleClick("June", "July")}
             leftIcon="👙"
           >
             <span className={css.filter}>Summer Pt II</span>

@@ -2,10 +2,10 @@ import css from "./Post.module.css";
 import dateFormat from "dateformat";
 
 const Post = ({ homework, index, clickToClassroom }) => {
-  let mySQLDate = homework.dateset;
-  let altDate = new Date(Date.parse(mySQLDate));
-  let formattedDate = dateFormat(altDate.toJSON(), "mmmm dS, yyyy");
-  // console.log(`this date ${formattedDate}`);
+  // let mySQLDate = homework.dateset;
+  // let altDate = new Date(Date.parse(mySQLDate));
+  // let formattedDate = dateFormat(altDate.toJSON(), "mmmm dS, yyyy");
+  // // console.log(`this date ${formattedDate}`);
 
   return (
     <div className={css.container}>
@@ -14,7 +14,7 @@ const Post = ({ homework, index, clickToClassroom }) => {
           <span>{homework.name}</span>
         </p>
         <p className={css.dateSet}>
-          <span>Date Set:</span> {formattedDate}
+          <span>Date Set:</span> {homework.dateset}
         </p>
       </div>
       <div>
