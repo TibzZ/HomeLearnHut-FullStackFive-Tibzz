@@ -33,9 +33,9 @@ const HomeWorkFeed = () => {
     setScrollPosition(position);
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <div>
