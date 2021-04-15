@@ -33,7 +33,7 @@ const HomeWorkFeed = () => {
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y > prevPos.y;
-      if (isShow !== hideOnScroll) setHideOnScroll(isShow);
+      if (isShow === hideOnScroll) setHideOnScroll(isShow);
     },
     [hideOnScroll]
   );
