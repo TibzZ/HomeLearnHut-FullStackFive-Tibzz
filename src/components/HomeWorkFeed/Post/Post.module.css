@@ -1,0 +1,80 @@
+/* @import url(//db.onlinewebfonts.com/c/00710fca992abacb1342069968a6997d?family=Sassoon); */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  /* align-self: center; */
+  margin: 65px auto -30px auto;
+}
+
+.image {
+  border-radius: 4px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.button {
+  border-radius: 4px;
+  align-self: stretch;
+  width: 100%;
+  border: 1px solid #69779b;
+  outline: none;
+  cursor: pointer;
+}
+
+.textbox {
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 4px;
+  color: #69779b;
+  display: flex;
+  flex-direction: column;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.dateSet {
+  align-self: flex-start;
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  word-spacing: 0.1em;
+}
+
+.dateTitle {
+  align-self: flex-start;
+  font-family: "Reem Kufi", sans-serif;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.dateComment {
+  align-self: flex-start;
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.dateSet span {
+  background-color: #dadce1;
+  padding: 0px 1px;
+  border-radius: 4px;
+  width: 110%;
+  word-spacing: 0.1em;
+}
+
+.textbox2 {
+  font-size: 1rem;
+  font-weight: 300;
+  border: 1px solid #69779b;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: #69779b;
+  display: flex;
+  flex-direction: column;
+  font-family: "Reem Kufi", sans-serif;
+  margin-bottom: 0px;
+}
+
+/* background-color: #dadce1; */

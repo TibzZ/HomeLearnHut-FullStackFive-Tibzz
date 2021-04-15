@@ -1,0 +1,53 @@
+.button1 {
+  background-color: #69779b;
+  box-shadow: 0px 10px 14px -7px #69779b;
+  border-radius: 8px;
+  border: 2px solid #9692af;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9692af;
+  font-family: "Reem Kufi", sans-serif;
+  outline: none;
+}
+
+.button1:hover {
+  background: linear-gradient(to bottom, #9692af 5%, #69779b 100%);
+  background-color: #9692af;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.button2 {
+  background-color: #69779b;
+  box-shadow: 0px 10px 14px -7px #69779b;
+  border-radius: 8px;
+  border: 2px solid #9692af;
+  /* display:inline-block; */
+  cursor: pointer;
+  color: white;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #9692af;
+  outline: none;
+}
+
+.button2:hover {
+  background: linear-gradient(to bottom, #9692af 5%, #69779b 100%);
+  background-color: #9692af;
+}
+
+.text1 {
+  font-family: "Proza Libre", sans-serif;
+  color: rgb(54, 53, 53);
+  font-size: 20px;
+  min-width: 100%;
+  min-height: 100%;
+}

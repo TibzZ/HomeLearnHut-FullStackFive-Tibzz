@@ -1,0 +1,23 @@
+.footer {
+  /* position: fixed; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  bottom: 0px;
+  height: 30px;
+  background-color: #69779b;
+  color: #dadce1;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 20px;
+  margin-right: 20px;
+  z-index: 9999;
+}
+.push {
+  height: 50px;
+}
+
+.copyright {
+  margin-right: 30px;
+}

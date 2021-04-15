@@ -1,0 +1,13 @@
+.dropdownMsg {
+  position: fixed;
+  top: 138px;
+  width: 230px;
+  transform: translateX(-14%);
+  background-color: #9692af;
+  border: 1px solid #9692af;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height 500ms ease;
+  font-family: "Reem Kufi", sans-serif;
+}

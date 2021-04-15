@@ -1,0 +1,16 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+.AppStyle {
+  text-align: center;
+  min-height: 100%;
+}
+
+.wrapper {
+  text-align: center;
+  min-height: 100%;
+  margin-bottom: -100px;
+}

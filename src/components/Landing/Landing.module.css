@@ -1,0 +1,36 @@
+.title1 {
+  font-family: "Proza Libre", sans-serif;
+  color: rgb(54, 53, 53);
+  font-size: 25px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.containLogo {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.backgroundImg {
+  display: block;
+  margin: auto;
+  background: url("../../assets/Background2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.appLogo {
+  display: block;
+  margin: auto;
+  padding-top: 350px;
+  min-width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  background: url("../../assets/LogoLand.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px 500px;
+}

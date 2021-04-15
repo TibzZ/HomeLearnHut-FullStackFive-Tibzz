@@ -1,0 +1,61 @@
+.allOfViewer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.avatarContain {
+  width: 20%;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.3rem;
+  margin-left: 100px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.resizePic img {
+  margin-top: 0px;
+  width: 40%;
+  height: auto;
+  justify-content: center;
+}
+
+.childName {
+  text-decoration: underline;
+}
+
+.canvasAndColors {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 45%;
+}
+
+.contain {
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px;
+  line-height: 2.3rem;
+}
+
+.myButton {
+  cursor: pointer;
+  color: rgb(66, 66, 66);
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 18px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #acdbdf;
+  background-color: #d7eaea;
+  box-shadow: 0px 10px 14px -7px #d7eaea;
+  border-radius: 8px;
+  border: 2px solid #d7eaea;
+  margin: 10px 20px 0px 20px;
+  outline: none;
+}
+
+.myButton:hover {
+  background: linear-gradient(to bottom, #acdbdf 5%, #d7eaea 100%);
+  background-color: #acdbdf;
+}

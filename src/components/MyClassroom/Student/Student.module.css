@@ -1,0 +1,57 @@
+.profilebtn {
+  margin-left: -15px;
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.name {
+  margin-top: 0;
+  font-size: 1em;
+}
+
+.tickBoxValidated {
+  color: rgb(46, 170, 30);
+  font-size: 40px;
+  margin-top: -10px;
+}
+
+.tickBox {
+  font-size: 40px;
+  margin-top: -10px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .profilebtn {
+    margin-left: -18px;
+    height: 65px;
+    width: 65px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 100%;
+    outline: none;
+    cursor: pointer;
+  }
+  .name {
+    margin-top: 0;
+    margin-left: -5px;
+  }
+  .tickBox {
+    font-size: 30px;
+    margin-top: -35px;
+    margin-left: 5px;
+  }
+  .tickBoxValidated {
+    color: rgb(46, 170, 30);
+    font-size: 30px;
+    margin-top: -35px;
+  }
+}
