@@ -1,4 +1,4 @@
-HomeLearnHut is an educational platform tailored for Primary School students which the aim to faciliated their learning needs.
+HomeLearnHut is an educational platform tailored for Primary School students whith the aim to faciliated their learning needs.
 
 # Packages used
 
