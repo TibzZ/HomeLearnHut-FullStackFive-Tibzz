@@ -1,3 +1,5 @@
+HomeLearnHut is an educational platform tailored for Primary School students which the aim to faciliated their learning needs.
+
 # Packages used
 
 `npm install --save react-s3`  
